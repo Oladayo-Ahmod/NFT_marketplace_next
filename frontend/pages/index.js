@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <>
+    // <>
       <Head>
         <title>NFT Marketplace</title>
         <meta name="description" content="An awesome nft marketplace" />
@@ -16,6 +16,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-    </>
+    // </>
   )
 }

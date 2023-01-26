@@ -7,8 +7,8 @@ const Navbar =()=>{
             <div className="header-inner">
                 <div className="header-left">
                     <div className="logo-thumbnail logo-custom-css">
-                        <a className="logo-light" href="index.html"><Image src="assets/images/logo/logo-white.png" alt="nft-logo" /></a>
-                        <a className="logo-dark" href="index.html"><Image src="assets/images/logo/logo-dark.png" alt="nft-logo" /></a>
+                        <a className="logo-light" href="index.html"><Image src="/images/logo/logo-white.png" fill alt="nft-logo" /></a>
+                        <a className="logo-dark" href="index.html"><Image src="/images/logo/logo-dark.png" fill alt="nft-logo" /></a>
                     </div>
                     <div className="mainmenu-wrapper">
                         <nav id="sideNav" className="mainmenu-nav d-none d-xl-block">
@@ -174,7 +174,7 @@ const Navbar =()=>{
                     <div className="header_admin" id="header_admin">
                         <div className="setting-option rn-icon-list user-account">
                             <div className="icon-box">
-                                <a href="author.html"><Image src="assets/images/icons/boy-avater.png" alt="Images" /></a>
+                                <a href="author.html"><Image src="/images/icons/boy-avater.png" fill alt="Images" /></a>
                                 <div className="rn-dropdown">
                                     <div className="rn-inner-top">
                                         <h4 className="title"><a href="product-details.html">Christopher William</a></h4>
@@ -184,7 +184,7 @@ const Navbar =()=>{
                                         <ul className="product-list">
                                             <li className="single-product-list">
                                                 <div className="thumbnail">
-                                                    <a href="product-details.html"><Image src="assets/images/portfolio/portfolio-07.jpg" alt="Nft Product Images" /></a>
+                                                    <a href="product-details.html"><Image src="/images/portfolio/portfolio-07.jpg" fill alt="Nft Product Images" /></a>
                                                 </div>
                                                 <div className="content">
                                                     <h6 className="title"><a href="product-details.html">Balance</a></h6>
@@ -194,7 +194,7 @@ const Navbar =()=>{
                                             </li>
                                             <li className="single-product-list">
                                                 <div className="thumbnail">
-                                                    <a href="product-details.html"><Image src="assets/images/portfolio/portfolio-01.jpg" alt="Nft Product Images" /></a>
+                                                    <a href="product-details.html"><Image src="/images/portfolio/portfolio-01.jpg" fill alt="Nft Product Images" /></a>
                                                 </div>
                                                 <div className="content">
                                                     <h6 className="title"><a href="product-details.html">Balance</a></h6>
@@ -231,12 +231,12 @@ const Navbar =()=>{
                         <ul>
                             <li>
                                 <a href="javascript: void(0);" data-theme="light" className="setColor light">
-                                    <Image className="sun-image" src="assets/images/icons/sun-01.svg" alt="Sun images" />
+                                    <Image className="sun-image" src="/images/icons/sun-01.svg" alt="Sun images" fill/>
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript: void(0);" data-theme="dark" className="setColor dark">
-                                    <Image className="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images" />
+                                    <Image className="Victor Image" src="/images/icons/vector.svg" alt="Vector Images" fill/>
                                 </a>
                             </li>
                         </ul>

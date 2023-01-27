@@ -20,7 +20,7 @@ const NewestItem =()=>{
                     <h3 className="title mb--0">Newest Items</h3>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
-                    <div className="view-more-btn text-start text-sm-end" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div className="view-more-btn text-start text-sm-end">
                         <a className="btn-transparent" href="#">VIEW ALL<i data-feather="arrow-right"></i></a>
                     </div>
                 </div>
@@ -28,16 +28,16 @@ const NewestItem =()=>{
             <div className="row g-5">
                 {/* <!-- start single product --> */}
                 <Slider {...setting}>
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-01.jpg" width={339} height={339} alt="NFT_portfolio" /></a>
                         </div>
                         <div className="product-share-wrapper">
                             <div className="profile-share">
-                                <a href="author.html" className="avatar" data-tooltip="Jone lee"><Image src="/images/client/client-1.png"  width={26} height={26} alt="Nft_Profile" /></a>
-                                <a href="author.html" className="avatar" data-tooltip="Jone Due"><Image src="/images/client/client-2.png"  width={26} height={26} alt="Nft_Profile" /></a>
-                                <a href="author.html" className="avatar" data-tooltip="Nisat Tara"><Image src="/images/client/client-3.png"  width={26} height={26} alt="Nft_Profile" /></a>
+                                <a href="author.html" className="avatar" ><Image src="/images/client/client-1.png"  width={26} height={26} alt="Nft_Profile" /></a>
+                                <a href="author.html" className="avatar"><Image src="/images/client/client-2.png"  width={26} height={26} alt="Nft_Profile" /></a>
+                                <a href="author.html" className="avatar" ><Image src="/images/client/client-3.png"  width={26} height={26} alt="Nft_Profile" /></a>
                                 <a className="more-author-text" href="#">9+ Place Bit.</a>
                             </div>
                             <div className="share-btn share-btn-activation dropdown">
@@ -47,11 +47,11 @@ const NewestItem =()=>{
                                     </svg>
                                 </button>
 
-                                <div className="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" className="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                <div className="share-btn-setting dropdown-menu dropdown-menu-end d-none">
+                                    <button type="button" className="btn-setting-text share-text">
                                         Share
                                     </button>
-                                    <button type="button" className="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
+                                    <button type="button" className="btn-setting-text report-text">
                                         Report
                                     </button>
                                 </div>
@@ -71,22 +71,21 @@ const NewestItem =()=>{
                         </div>
                     </div>
                 </div>
-                </Slider>
                
                 {/* <!-- end single product --> */}
 
                 {/* <!-- start single product --> */}
-                <Slider {...setting}>
-                <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
+
+                <div  className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-02.jpg" alt="NFT_portfolio"  width={339} height={339}/></a>
                         </div>
                         <div className="product-share-wrapper">
                             <div className="profile-share">
-                                <a href="author.html" className="avatar" data-tooltip="Jone lee"><Image src="/images/client/client-4.png"  width={26} height={26} alt="Nft_Profile" /></a>
-                                <a href="author.html" className="avatar" data-tooltip="Nira Ara"><Image src="/images/client/client-5.png"  width={26} height={26} alt="Nft_Profile" /></a>
-                                <a href="author.html" className="avatar" data-tooltip="Fatima Afrafy"><Image src="/images/client/client-6.png"  width={26} height={26} alt="Nft_Profile" /></a>
+                                <a href="author.html" className="avatar" ><Image src="/images/client/client-4.png"  width={26} height={26} alt="Nft_Profile" /></a>
+                                <a href="author.html" className="avatar" ><Image src="/images/client/client-5.png"  width={26} height={26} alt="Nft_Profile" /></a>
+                                <a href="author.html" className="avatar"><Image src="/images/client/client-6.png"  width={26} height={26} alt="Nft_Profile" /></a>
                                 <a className="more-author-text" href="#">10+ Place Bit.</a>
                             </div>
                             <div className="share-btn share-btn-activation dropdown">
@@ -120,20 +119,20 @@ const NewestItem =()=>{
                         </div>
                     </div>
                 </div>
-                </Slider>
+     
                 {/* <!-- end single product --> */}
 
                 {/* <!-- start single product --> */}
-                <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-03.jpg" alt="NFT_portfolio"  width={500} height={339} /></a>
                         </div>
                         <div className="product-share-wrapper">
                             <div className="profile-share">
-                                <a href="author.html" className="avatar" data-tooltip="Jone lee"><Image src="/images/client/client-1.png" width={26} height={26} alt="Nft_Profile" /></a>
-                                <a href="author.html" className="avatar" data-tooltip="Janin Ara"><Image src="/images/client/client-8.png"  width={26} height={26} alt="Nft_Profile" /></a>
-                                <a href="author.html" className="avatar" data-tooltip="Atif Islam"><Image src="/images/client/client-9.png"  width={26} height={26} alt="Nft_Profile" /></a>
+                                <a href="author.html" className="avatar"><Image src="/images/client/client-1.png" width={26} height={26} alt="Nft_Profile" /></a>
+                                <a href="author.html" className="avatar"><Image src="/images/client/client-8.png"  width={26} height={26} alt="Nft_Profile" /></a>
+                                <a href="author.html" className="avatar"><Image src="/images/client/client-9.png"  width={26} height={26} alt="Nft_Profile" /></a>
                                 <a className="more-author-text" href="#">10+ Place Bit.</a>
                             </div>
                             <div className="share-btn share-btn-activation dropdown">
@@ -170,16 +169,16 @@ const NewestItem =()=>{
                 {/* <!-- end single product --> */}
 
                 {/* <!-- start single product --> */}
-                <div data-sal="slide-up" data-sal-delay="300" data-sal-duration="800" className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-04.jpg" width={339} height={339}  alt="NFT_portfolio" /></a>
                         </div>
                         <div className="product-share-wrapper">
                             <div className="profile-share">
-                                <a href="author.html" className="avatar" data-tooltip="Jone lee"><Image src="/images/client/client-1.png" alt="Nft_Profile" width={26} height={26} /></a>
-                                <a href="author.html" className="avatar" data-tooltip="Jone lee"><Image src="/images/client/client-3.png" alt="Nft_Profile" width={26} height={26} /></a>
-                                <a href="author.html" className="avatar" data-tooltip="Jone lee"><Image src="/images/client/client-5.png" alt="Nft_Profile" width={26} height={26} /></a>
+                                <a href="author.html" className="avatar"><Image src="/images/client/client-1.png" alt="Nft_Profile" width={26} height={26} /></a>
+                                <a href="author.html" className="avatar"><Image src="/images/client/client-3.png" alt="Nft_Profile" width={26} height={26} /></a>
+                                <a href="author.html" className="avatar"><Image src="/images/client/client-5.png" alt="Nft_Profile" width={26} height={26} /></a>
                                 <a className="more-author-text" href="#">8+ Place Bit.</a>
                             </div>
                             <div className="share-btn share-btn-activation dropdown">
@@ -216,16 +215,16 @@ const NewestItem =()=>{
                 {/* <!-- end single product --> */}
 
                 {/* <!-- start single product --> */}
-                <div data-sal="slide-up" data-sal-delay="350" data-sal-duration="800" className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-05.jpg" width={339} height={339}  alt="NFT_portfolio" /></a>
                         </div>
                         <div className="product-share-wrapper">
                             <div className="profile-share">
-                                <a href="author.html" className="avatar" data-tooltip="Jone lee"><Image src="/images/client/client-2.png" alt="Nft_Profile" width={26} height={26} /></a>
-                                <a href="author.html" className="avatar" data-tooltip="Jone lee"><Image src="/images/client/client-7.png" alt="Nft_Profile" width={26} height={26} /></a>
-                                <a href="author.html" className="avatar" data-tooltip="Jone lee"><Image src="/images/client/client-9.png" alt="Nft_Profile" width={26} height={26} /></a>
+                                <a href="author.html" className="avatar"><Image src="/images/client/client-2.png" alt="Nft_Profile" width={26} height={26} /></a>
+                                <a href="author.html" className="avatar"><Image src="/images/client/client-7.png" alt="Nft_Profile" width={26} height={26} /></a>
+                                <a href="author.html" className="avatar"><Image src="/images/client/client-9.png" alt="Nft_Profile" width={26} height={26} /></a>
                                 <a className="more-author-text" href="#">15+ Place Bit.</a>
                             </div>
                             <div className="share-btn share-btn-activation dropdown">

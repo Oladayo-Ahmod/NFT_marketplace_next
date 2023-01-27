@@ -1,6 +1,11 @@
 import Image from "next/image"
+import { useEffect } from "react"
 
 const Banner =()=>{
+    useEffect(()=>{
+        require('bootstrap/dist/js/bootstrap.bundle')
+        require('../public/js/slick.min.js')
+    },[])
     return (
         <>
           {/* <!-- start banner area --> */}

@@ -18,23 +18,7 @@ const Navbar =()=>{
                                     <a href="index.html">Home</a>
                                     <ul className="submenu">
                                         <li><a href="index.html">Home page - 01 <i className="feather-home"></i></a></li>
-                                        <li><a href="index-two.html">Home page - 02<i className="feather-home"></i></a></li>
-                                        <li><a href="index-three.html">Home page - 03<i className="feather-home"></i></a></li>
-                                        <li><a href="index-four.html">Home page - 04<i className="feather-home"></i></a></li>
-                                        <li><a href="index-five.html">Home page - 05<i className="feather-home"></i></a></li>
-                                        <li><a href="index-six.html">Home page - 06<i className="feather-home"></i></a></li>
-                                        <li><a href="index-seven.html">Home page - 07<i className="feather-home"></i></a></li>
-                                        <li><a href="index-eight.html">Home page - 08<i className="feather-home"></i></a></li>
-                                        <li><a href="index-nine.html">Home page - 09<i className="feather-home"></i></a></li>
-                                        <li><a href="index-ten.html">Home page - 10<i className="feather-home"></i></a></li>
-                                        <li><a href="index-eleven.html">Home page - 11<i className="feather-home"></i></a></li>
-                                        <li><a href="index-twelve.html">Home page - 12<i className="feather-home"></i></a></li>
-                                        <li><a href="index-thirteen.html">Home page - 13<i className="feather-home"></i></a></li>
-                                        <li><a href="index-fourteen.html">Home page - 14<i className="feather-home"></i></a></li>
-                                        <li><a href="index-fifteen.html">Home page - 15<i className="feather-home"></i></a></li>
-                                        <li><a href="index-sixteen.html">Home page - 16<i className="feather-home"></i></a></li>
-                                        <li><a href="index-seventeen.html">Home page - 17<i className="feather-home"></i></a></li>
-                                        <li><a href="index-eighteen.html">Home page - 18<i className="feather-home"></i></a></li>
+                                       
                                     </ul>
                                 </li>
                                 <li><a href="about.html">About</a>
@@ -126,10 +110,6 @@ const Navbar =()=>{
                                     <a className="down" href="blog.html">Blog</a>
                                     <ul className="submenu">
                                         <li><a href="blog-single-col.html">Blog Single Column<i className="feather-fast-forward"></i></a></li>
-                                        <li><a href="blog-col-two.html">Blog Two Column<i className="feather-fast-forward"></i></a></li>
-                                        <li><a href="blog-col-three.html">Blog Three Column<i className="feather-fast-forward"></i></a></li>
-                                        <li><a href="blog.html">Blog Four Column<i className="feather-fast-forward"></i></a></li>
-                                        <li><a href="blog-details.html">Blog Details<i className="feather-fast-forward"></i></a></li>
                                     </ul>
                                 </li>
                                 <li><a href="contact.html">Contact</a></li>
@@ -147,7 +127,7 @@ const Navbar =()=>{
                             </div>
                         </form>
                     </div>
-                    <div className="setting-option rn-icon-list d-block d-lg-none">
+                    {/* <div className="setting-option rn-icon-list d-block d-lg-none">
                         <div className="icon-box search-mobile-icon">
                             <button><i className="feather-search"></i></button>
                         </div>
@@ -157,7 +137,7 @@ const Navbar =()=>{
                                 <input type="text" placeholder="Search ..." />
                             </div>
                         </form>
-                    </div>
+                    </div> */}
 
                     <div className="setting-option header-btn rbt-site-header" id="rbt-site-header">
                         <div className="icon-box">

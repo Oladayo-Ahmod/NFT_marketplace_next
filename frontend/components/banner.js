@@ -5,6 +5,7 @@ const Banner =()=>{
     useEffect(()=>{
         require('bootstrap/dist/js/bootstrap.bundle')
         require('../public/js/slick.min.js')
+        // require('../public/js/jquery')
     },[])
     return (
         <>

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import Banner from '../components/banner'
+import NewestItem from '../components/newestItem'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,6 +18,7 @@ export default function Home() {
       </Head>
       <main>
       <Banner />
+      <NewestItem />
       </main>
       
     </>

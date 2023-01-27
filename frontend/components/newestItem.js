@@ -11,13 +11,13 @@ var setting = {
 const NewestItem =()=>{
     
     return (
-        <>
-                {/* <!-- New items Start --> */}
+        
+              
     <div className="rn-new-items rn-section-gapTop">
         <div className="container">
             <div className="row mb--50 align-items-center">
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <h3 className="title mb--0" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Newest Items</h3>
+                    <h3 className="title mb--0">Newest Items</h3>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
                     <div className="view-more-btn text-start text-sm-end" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
@@ -127,7 +127,7 @@ const NewestItem =()=>{
                 <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
-                            <a href="product-details.html"><Image src="/images/portfolio/portfolio-03.jpg" alt="NFT_portfolio"  width={339} height={339} /></a>
+                            <a href="product-details.html"><Image src="/images/portfolio/portfolio-03.jpg" alt="NFT_portfolio"  width={500} height={339} /></a>
                         </div>
                         <div className="product-share-wrapper">
                             <div className="profile-share">
@@ -259,12 +259,12 @@ const NewestItem =()=>{
                         </div>
                     </div>
                 </div>
-                {/* <!-- end single product --> */}
+               
             </div>
         </div>
     </div>
-    {/* <!-- New items End --> */}
-        </>
+
+        
     )
 }
 

@@ -1,6 +1,15 @@
 import Image from 'next/image'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
+var setting = {
+    infinite: true,
+    slidesToShow : 3,
+    slidesToScroll : 3
+}
 const NewestItem =()=>{
+    
     return (
         <>
                 {/* <!-- New items Start --> */}
@@ -18,6 +27,7 @@ const NewestItem =()=>{
             </div>
             <div className="row g-5">
                 {/* <!-- start single product --> */}
+                <Slider {...setting}>
                 <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
@@ -61,9 +71,12 @@ const NewestItem =()=>{
                         </div>
                     </div>
                 </div>
+                </Slider>
+               
                 {/* <!-- end single product --> */}
 
                 {/* <!-- start single product --> */}
+                <Slider {...setting}>
                 <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
@@ -107,6 +120,7 @@ const NewestItem =()=>{
                         </div>
                     </div>
                 </div>
+                </Slider>
                 {/* <!-- end single product --> */}
 
                 {/* <!-- start single product --> */}

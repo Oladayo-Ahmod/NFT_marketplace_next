@@ -1,5 +1,14 @@
 import Image from "next/image"
 import { useEffect } from "react"
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+
+var setting = {
+    infinite: true,
+    slidesToShow : 3,
+    slidesToScroll : 3
+}
 
 const Banner =()=>{
     useEffect(()=>{
@@ -11,9 +20,10 @@ const Banner =()=>{
     <div className="banner-area pt--25">
         <div className="container-fluid">
             <div className="row">
-                <div className="slider-style-2 slick-activation-01 slick-arrow-style-one slick-arrow-between">
+                <div className="slider-style-2 container slick-activation-01 slick-arrow-style-one slick-arrow-between">
 
                     {/* <!-- Start Single Portfolio  --> */}
+                    <Slider {...setting}>
                     <div className="single-slide">
                         <div className="inner">
                             <div className="thumbnail">
@@ -25,9 +35,11 @@ const Banner =()=>{
                             </div>
                         </div>
                     </div>
+    
                     {/* <!-- Start Single Portfolio  --> */}
 
                     {/* <!-- Start Single Portfolio  --> */}
+
                     <div className="single-slide">
                         <div className="inner">
                             <div className="thumbnail">
@@ -39,9 +51,11 @@ const Banner =()=>{
                             </div>
                         </div>
                     </div>
+            
                     {/* <!-- Start Single Portfolio  --> */}
 
                     {/* <!-- Start Single Portfolio  --> */}
+      
                     <div className="single-slide">
                         <div className="inner">
                             <div className="thumbnail">
@@ -53,9 +67,11 @@ const Banner =()=>{
                             </div>
                         </div>
                     </div>
+          
                     {/* <!-- Start Single Portfolio  --> */}
 
                     {/* <!-- Start Single Portfolio  --> */}
+        
                     <div className="single-slide">
                         <div className="inner">
                             <div className="thumbnail">
@@ -67,6 +83,7 @@ const Banner =()=>{
                             </div>
                         </div>
                     </div>
+                    </Slider>
                     {/* <!-- Start Single Portfolio  --> */}
 
                 </div>

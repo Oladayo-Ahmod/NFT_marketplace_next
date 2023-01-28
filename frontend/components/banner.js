@@ -33,7 +33,7 @@ var setting = {
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 dots: true,
-                arrows: false,
+                arrows: true,
             }
         }
     ]

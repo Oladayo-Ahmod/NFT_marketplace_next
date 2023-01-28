@@ -5,8 +5,36 @@ import 'slick-carousel/slick/slick-theme.css'
 
 var setting = {
     infinite: true,
-    slidesToShow : 3,
-    slidesToScroll : 3
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true,
+    cssEase: 'linear',
+    adaptiveHeight: true,
+    responsive: [{
+            breakpoint: 1124,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 868,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: true,
+            }
+        }
+    ]
 }
 const NewestItem =()=>{
     

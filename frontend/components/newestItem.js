@@ -26,6 +26,7 @@ const NewestItem =()=>{
                 </div>
             </div>
             <div className="row g-5">
+                <div className='container'>
                 {/* <!-- start single product --> */}
                 <Slider {...setting}>
                 <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
@@ -258,7 +259,10 @@ const NewestItem =()=>{
                         </div>
                     </div>
                 </div>
+
+                </Slider>
                
+            </div>
             </div>
         </div>
     </div>

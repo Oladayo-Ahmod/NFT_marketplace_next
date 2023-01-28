@@ -1,13 +1,42 @@
 import Image from "next/image"
 import { useEffect } from "react"
 import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+
 
 var setting = {
     infinite: true,
-    slidesToShow : 3,
-    slidesToScroll : 3
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true,
+    cssEase: 'linear',
+    adaptiveHeight: true,
+    // prevArrow: '<button className="slide-arrow prev-arrow"><i className="feather-arrow-left"></i></button>',
+    // nextArrow: '<button className="slide-arrow next-arrow"><i className="feather-arrow-right"></i></button>',
+    responsive: [{
+            breakpoint: 1124,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 868,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: false,
+            }
+        }
+    ]
 }
 
 const Banner =()=>{

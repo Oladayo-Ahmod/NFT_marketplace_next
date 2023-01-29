@@ -17,7 +17,7 @@ const Service =()=>{
                     <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" className="rn-service-one color-shape-7">
                         <div className="inner">
                             <div className="icon">
-                                <Image  src="assets/images/icons/shape-7.png" alt="Shape" />
+                                <Image  src="/images/icons/shape-7.png" alt="Shape" />
                             </div>
                             <div className="subtitle">Step-01</div>
                             <div className="content">
@@ -36,7 +36,7 @@ const Service =()=>{
                     <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" className="rn-service-one color-shape-1">
                         <div className="inner">
                             <div className="icon">
-                                <Image  src="assets/images/icons/shape-1.png" alt="Shape" />
+                                <Image  src="/images/icons/shape-1.png" alt="Shape" />
                             </div>
                             <div className="subtitle">Step-02</div>
                             <div className="content">
@@ -55,7 +55,7 @@ const Service =()=>{
                     <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" className="rn-service-one color-shape-5">
                         <div className="inner">
                             <div className="icon">
-                                <Image  src="assets/images/icons/shape-5.png" alt="Shape" />
+                                <Image  src="/images/icons/shape-5.png" alt="Shape" />
                             </div>
                             <div className="subtitle">Step-03</div>
                             <div className="content">
@@ -74,7 +74,7 @@ const Service =()=>{
                     <div data-sal="slide-up" data-sal-delay="300" data-sal-duration="800" className="rn-service-one color-shape-6">
                         <div className="inner">
                             <div className="icon">
-                                <Image  src="assets/images/icons/shape-6.png" alt="Shape" />
+                                <Image  src="/images/icons/shape-6.png" alt="Shape" />
                             </div>
                             <div className="subtitle">Step-04</div>
                             <div className="content">

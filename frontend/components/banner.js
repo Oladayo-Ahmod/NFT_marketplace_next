@@ -11,8 +11,6 @@ var setting = {
     arrows: true,
     cssEase: 'linear',
     adaptiveHeight: true,
-    // prevArrow: '<button className="slide-arrow prev-arrow"><i className="feather-arrow-left"></i></button>',
-    // nextArrow: '<button className="slide-arrow next-arrow"><i className="feather-arrow-right"></i></button>',
     responsive: [{
             breakpoint: 1124,
             settings: {

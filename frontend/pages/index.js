@@ -4,7 +4,7 @@ import { Inter } from '@next/font/google'
 import Banner from '../components/banner'
 import Service from '../components/service'
 import NewestItem from '../components/newestItem'
-import TopCollection from '@c/mponents/topCollection'
+import TopCollection from '@/components/topCollection'
 
 
 

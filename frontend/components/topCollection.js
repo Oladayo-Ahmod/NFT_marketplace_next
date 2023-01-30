@@ -8,7 +8,7 @@ const TopCollection=()=>{
         <div className="container">
             <div className="row mb--50 align-items-center">
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <h3 className="title mb--0">Top Collection</h3>
+                    <h3 className="title mb--0">Top Collection</h3> 
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
                     <div className="view-more-btn text-start text-sm-end">

@@ -3,6 +3,22 @@ import Image from 'next/image'
 const TopCollection=()=>{
     return (
         <>
+        <div>
+        <style jsx>
+            {
+            `
+            .test-some{
+                border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    transition: var(--transition);
+            }
+            `
+            }
+            
+        </style>
+        </div>
                {/* <!-- collection area Start --> */}
     <div className="rn-collection-area rn-section-gapTop">
         <div className="container">
@@ -23,15 +39,15 @@ const TopCollection=()=>{
                     <a href="product-details.html" className="rn-collection-inner-one">
                         <div className="collection-wrapper">
                             <div className="collection-big-thumbnail">
-                                <Image  src="/images/collection/collection-lg-01.jpg" alt="Nft_Profile" />
+                                <Image  src="/images/collection/collection-lg-01.jpg" className='test-some' alt="Nft_Profile" width={245} height={146} />
                             </div>
                             <div className="collenction-small-thumbnail">
-                                <Image  src="/images/collection/collection-sm-01.jpg" alt="Nft_Profile" />
-                                <Image  src="/images/collection/collection-sm-02.jpg" alt="Nft_Profile" />
-                                <Image  src="/images/collection/collection-sm-03.jpg" alt="Nft_Profile" />
+                                <Image  src="/images/collection/collection-sm-01.jpg" alt="Nft_Profile" width={67} height={45} />
+                                <Image  src="/images/collection/collection-sm-02.jpg" alt="Nft_Profile" width={67} height={45} />
+                                <Image  src="/images/collection/collection-sm-03.jpg" alt="Nft_Profile" width={67} height={45} />
                             </div>
                             <div className="collection-profile">
-                                <Image  src="/images/client/client-15.png" alt="Nft_Profile" />
+                                <Image  src="/images/client/client-15.png" alt="Nft_Profile" width={70} height={70}/>
                             </div>
                             <div className="collection-deg">
                                 <h6 className="title">Cubic Trad</h6>
@@ -46,15 +62,15 @@ const TopCollection=()=>{
                     <a href="product-details.html" className="rn-collection-inner-one">
                         <div className="collection-wrapper">
                             <div className="collection-big-thumbnail">
-                                <Image  src="/images/collection/collection-lg-03.jpg" alt="Nft_Profile" />
+                                <Image  src="/images/collection/collection-lg-03.jpg" className='img-fluid' fill  alt="Nft_Profile" />
                             </div>
                             <div className="collenction-small-thumbnail">
-                                <Image  src="/images/collection/collection-sm-04.jpg" alt="Nft_Profile" />
-                                <Image  src="/images/collection/collection-sm-05.jpg" alt="Nft_Profile" />
-                                <Image  src="/images/collection/collection-sm-06.jpg" alt="Nft_Profile" />
+                                <Image  src="/images/collection/collection-sm-04.jpg" alt="Nft_Profile" fill />
+                                <Image  src="/images/collection/collection-sm-05.jpg" alt="Nft_Profile" fill />
+                                <Image  src="/images/collection/collection-sm-06.jpg" alt="Nft_Profile" fill />
                             </div>
                             <div className="collection-profile">
-                                <Image  src="/images/client/client-12.png" alt="Nft_Profile" />
+                                <Image  src="/images/client/client-12.png" alt="Nft_Profile" fill />
                             </div>
                             <div className="collection-deg">
                                 <h6 className="title">Diamond Dog</h6>
@@ -69,15 +85,15 @@ const TopCollection=()=>{
                     <a href="product-details.html" className="rn-collection-inner-one">
                         <div className="collection-wrapper">
                             <div className="collection-big-thumbnail">
-                                <Image  src="/images/collection/collection-lg-02.jpg" alt="Nft_Profile" />
+                                <Image  src="/images/collection/collection-lg-02.jpg" alt="Nft_Profile" fill />
                             </div>
                             <div className="collenction-small-thumbnail">
-                                <Image  src="/images/collection/collection-sm-07.jpg" alt="Nft_Profile" />
-                                <Image  src="/images/collection/collection-sm-08.jpg" alt="Nft_Profile" />
-                                <Image  src="/images/collection/collection-sm-09.jpg" alt="Nft_Profile" />
+                                <Image  src="/images/collection/collection-sm-07.jpg" alt="Nft_Profile" fill />
+                                <Image  src="/images/collection/collection-sm-08.jpg" alt="Nft_Profile" fill />
+                                <Image  src="/images/collection/collection-sm-09.jpg" alt="Nft_Profile" fill />
                             </div>
                             <div className="collection-profile">
-                                <Image  src="/images/client/client-13.png" alt="Nft_Profile" />
+                                <Image  src="/images/client/client-13.png" alt="Nft_Profile" fill />
                             </div>
                             <div className="collection-deg">
                                 <h6 className="title">Morgan11</h6>
@@ -92,15 +108,15 @@ const TopCollection=()=>{
                     <a href="product-details.html" className="rn-collection-inner-one">
                         <div className="collection-wrapper">
                             <div className="collection-big-thumbnail">
-                                <Image  src="/images/collection/collection-lg-04.jpg" alt="Nft_Profile" />
+                                <Image  src="/images/collection/collection-lg-04.jpg" alt="Nft_Profile" fill />
                             </div>
                             <div className="collenction-small-thumbnail">
-                                <Image  src="/images/collection/collection-sm-10.jpg" alt="Nft_Profile" />
-                                <Image  src="/images/collection/collection-sm-11.jpg" alt="Nft_Profile" />
-                                <Image  src="/images/collection/collection-sm-12.jpg" alt="Nft_Profile" />
+                                <Image  src="/images/collection/collection-sm-10.jpg" alt="Nft_Profile" fill />
+                                <Image  src="/images/collection/collection-sm-11.jpg" alt="Nft_Profile" fill />
+                                <Image  src="/images/collection/collection-sm-12.jpg" alt="Nft_Profile" fill />
                             </div>
                             <div className="collection-profile">
-                                <Image  src="/images/client/client-14.png" alt="Nft_Profile" />
+                                <Image  src="/images/client/client-14.png" alt="Nft_Profile" fill />
                             </div>
                             <div className="collection-deg">
                                 <h6 className="title">Orthogon#720</h6>

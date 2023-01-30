@@ -52,7 +52,7 @@ const Service =()=>{
                 {/* <!-- End single service --> */}
                 {/* <!-- start single service --> */}
                 <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div data-sal="slide-up" className="rn-service-one color-shape-5">
+                    <div className="rn-service-one color-shape-5">
                         <div className="inner">
                             <div className="icon">
                                 <Image  src="/images/icons/shape-5.png" fill alt="Shape" />
@@ -71,7 +71,7 @@ const Service =()=>{
                 {/* <!-- End single service --> */}
                 {/* <!-- start single service --> */}
                 <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div data-sal="slide-up" className="rn-service-one color-shape-6">
+                    <div className="rn-service-one color-shape-6">
                         <div className="inner">
                             <div className="icon">
                                 <Image  src="/images/icons/shape-6.png" fill alt="Shape" />

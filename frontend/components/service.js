@@ -17,7 +17,7 @@ const Service =()=>{
                     <div className="rn-service-one color-shape-7">
                         <div className="inner">
                             <div className="icon">
-                                <Image  src="/images/icons/shape-7.png" alt="Shape" fill />
+                                <Image  src="/images/icons/shape-7.png" alt="Shape" width={75} height={84} />
                             </div>
                             <div className="subtitle">Step-01</div>
                             <div className="content">
@@ -36,7 +36,7 @@ const Service =()=>{
                     <div className="rn-service-one color-shape-1">
                         <div className="inner">
                             <div className="icon">
-                                <Image  src="/images/icons/shape-1.png"fill  alt="Shape" />
+                                <Image  src="/images/icons/shape-1.png" width={75} height={84}  alt="Shape" />
                             </div>
                             <div className="subtitle">Step-02</div>
                             <div className="content">
@@ -55,7 +55,7 @@ const Service =()=>{
                     <div className="rn-service-one color-shape-5">
                         <div className="inner">
                             <div className="icon">
-                                <Image  src="/images/icons/shape-5.png" fill alt="Shape" />
+                                <Image  src="/images/icons/shape-5.png" width={75} height={84} alt="Shape" />
                             </div>
                             <div className="subtitle">Step-03</div>
                             <div className="content">
@@ -74,7 +74,7 @@ const Service =()=>{
                     <div className="rn-service-one color-shape-6">
                         <div className="inner">
                             <div className="icon">
-                                <Image  src="/images/icons/shape-6.png" fill alt="Shape" />
+                                <Image  src="/images/icons/shape-6.png" width={75} height={84} alt="Shape" />
                             </div>
                             <div className="subtitle">Step-04</div>
                             <div className="content">

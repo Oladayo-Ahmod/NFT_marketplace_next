@@ -4,7 +4,8 @@ import { Inter } from '@next/font/google'
 import Banner from '../components/banner'
 import Service from '../components/service'
 import NewestItem from '../components/newestItem'
-import Footer from '@/components/footer'
+import TopCollection from '@c/mponents/topCollection'
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,7 +23,7 @@ export default function Home() {
       <Banner />
       <NewestItem />
       <Service />
-      <Footer />
+      <TopCollection />
       </main>
       
     </>

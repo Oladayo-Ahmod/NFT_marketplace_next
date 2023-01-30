@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const TopCollection=()=>{
     return (
         <>
@@ -17,7 +19,7 @@ const TopCollection=()=>{
 
             <div className="row g-5">
                  {/* <!-- start single collention --> */}
-                <div data-sal="slide-up" className="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                <div  className="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
                     <a href="product-details.html" className="rn-collection-inner-one">
                         <div className="collection-wrapper">
                             <div className="collection-big-thumbnail">
@@ -40,7 +42,7 @@ const TopCollection=()=>{
                 </div>
                  {/* <!-- End single collention --> */}
                  {/* <!-- start single collention --> */}
-                <div data-sal="slide-up"  className="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                <div   className="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
                     <a href="product-details.html" className="rn-collection-inner-one">
                         <div className="collection-wrapper">
                             <div className="collection-big-thumbnail">
@@ -63,7 +65,7 @@ const TopCollection=()=>{
                 </div>
                  {/* <!-- End single collention --> */}
                  {/* <!-- start single collention --> */}
-                <div data-sal="slide-up"  className="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                <div   className="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
                     <a href="product-details.html" className="rn-collection-inner-one">
                         <div className="collection-wrapper">
                             <div className="collection-big-thumbnail">
@@ -86,7 +88,7 @@ const TopCollection=()=>{
                 </div>
                  {/* <!-- End single collention --> */}
                  {/* <!-- start single collention --> */}
-                <div data-sal="slide-up" className="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                <div className="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
                     <a href="product-details.html" className="rn-collection-inner-one">
                         <div className="collection-wrapper">
                             <div className="collection-big-thumbnail">

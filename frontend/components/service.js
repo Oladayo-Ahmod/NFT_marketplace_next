@@ -8,16 +8,16 @@ const Service =()=>{
         <div className="container">
             <div className="row">
                 <div className="col-12 mb--50">
-                    <h3 className="title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Create and sell your NFTs</h3>
+                    <h3 className="title" >Create and sell your NFTs</h3>
                 </div>
             </div>
             <div className="row g-5">
                 {/* <!-- start single service --> */}
                 <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" className="rn-service-one color-shape-7">
+                    <div className="rn-service-one color-shape-7">
                         <div className="inner">
                             <div className="icon">
-                                <Image  src="/images/icons/shape-7.png" alt="Shape" />
+                                <Image  src="/images/icons/shape-7.png" alt="Shape" fill />
                             </div>
                             <div className="subtitle">Step-01</div>
                             <div className="content">
@@ -33,10 +33,10 @@ const Service =()=>{
                 {/* <!-- End single service --> */}
                 {/* <!-- start single service --> */}
                 <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" className="rn-service-one color-shape-1">
+                    <div className="rn-service-one color-shape-1">
                         <div className="inner">
                             <div className="icon">
-                                <Image  src="/images/icons/shape-1.png" alt="Shape" />
+                                <Image  src="/images/icons/shape-1.png"fill  alt="Shape" />
                             </div>
                             <div className="subtitle">Step-02</div>
                             <div className="content">
@@ -52,10 +52,10 @@ const Service =()=>{
                 {/* <!-- End single service --> */}
                 {/* <!-- start single service --> */}
                 <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" className="rn-service-one color-shape-5">
+                    <div data-sal="slide-up" className="rn-service-one color-shape-5">
                         <div className="inner">
                             <div className="icon">
-                                <Image  src="/images/icons/shape-5.png" alt="Shape" />
+                                <Image  src="/images/icons/shape-5.png" fill alt="Shape" />
                             </div>
                             <div className="subtitle">Step-03</div>
                             <div className="content">
@@ -71,10 +71,10 @@ const Service =()=>{
                 {/* <!-- End single service --> */}
                 {/* <!-- start single service --> */}
                 <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div data-sal="slide-up" data-sal-delay="300" data-sal-duration="800" className="rn-service-one color-shape-6">
+                    <div data-sal="slide-up" className="rn-service-one color-shape-6">
                         <div className="inner">
                             <div className="icon">
-                                <Image  src="/images/icons/shape-6.png" alt="Shape" />
+                                <Image  src="/images/icons/shape-6.png" fill alt="Shape" />
                             </div>
                             <div className="subtitle">Step-04</div>
                             <div className="content">

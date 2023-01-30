@@ -12,7 +12,7 @@ const NewestItem =()=>{
 
     var setting = {
         infinite: true,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         dots: false,
         arrows: true,
@@ -77,7 +77,7 @@ const NewestItem =()=>{
                 <div className='slider-style-2 slick-activation-01 slick-arrow-style-one slick-arrow-between'>
                 {/* <!-- start single product --> */}
                 <Slider {...setting}>
-                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-01.jpg" width={339} height={339} alt="NFT_portfolio" /></a>
@@ -125,7 +125,7 @@ const NewestItem =()=>{
 
                 {/* <!-- start single product --> */}
 
-                <div  className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div  className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-02.jpg" alt="NFT_portfolio"  width={339} height={339}/></a>
@@ -172,7 +172,7 @@ const NewestItem =()=>{
                 {/* <!-- end single product --> */}
 
                 {/* <!-- start single product --> */}
-                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-03.jpg" alt="NFT_portfolio"  width={500} height={339} /></a>
@@ -218,7 +218,7 @@ const NewestItem =()=>{
                 {/* <!-- end single product --> */}
 
                 {/* <!-- start single product --> */}
-                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-04.jpg" width={339} height={339}  alt="NFT_portfolio" /></a>
@@ -264,7 +264,7 @@ const NewestItem =()=>{
                 {/* <!-- end single product --> */}
 
                 {/* <!-- start single product --> */}
-                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-05.jpg" width={339} height={339}  alt="NFT_portfolio" /></a>

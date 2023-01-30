@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import Banner from '../components/banner'
+import Service from '../components/service'
 import NewestItem from '../components/newestItem'
 import Footer from '@/components/footer'
 
@@ -20,6 +21,7 @@ export default function Home() {
       <main>
       <Banner />
       <NewestItem />
+      <Service />
       <Footer />
       </main>
       

@@ -11,8 +11,8 @@ const Footer =()=>{
                     <div className="widget-content-wrapper">
                         <div className="footer-left">
                             <div className="logo-thumbnail logo-custom-css">
-                                <a className="logo-light" href="index.html"><Image  src="assets/images/logo/logo-white.png" alt="nft-logo" /></a>
-                                <a className="logo-dark" href="index.html"><Image  src="assets/images/logo/logo-dark.png" alt="nft-logo" /></a>
+                                <a className="logo-light" href="index.html"><Image width={106} height={35} src="/images/logo/logo-white.png" alt="nft-logo" /></a>
+                                <a className="logo-dark" href="index.html"><Image width={106} height={35} src="/images/logo/logo-dark.png" alt="nft-logo" /></a>
                             </div>
                             <p className="rn-footer-describe">
                                 Created with the collaboration of over 60 of the world's best Nuron Artists.
@@ -70,7 +70,7 @@ const Footer =()=>{
                             <li className="recent-post">
                                 <div className="thumbnail">
                                     <a href="product-details.html">
-                                        <Image  src="assets/images/portfolio/portfolio-01.jpg" alt="Product Images" />
+                                        <Image  src="/images/portfolio/portfolio-01.jpg" alt="Product Images" width={60} height={60}/>
                                     </a>
                                 </div>
                                 <div className="content">
@@ -82,7 +82,7 @@ const Footer =()=>{
                             <li className="recent-post">
                                 <div className="thumbnail">
                                     <a href="product-details.html">
-                                        <Image  src="assets/images/portfolio/portfolio-02.jpg" alt="Product Images" />
+                                        <Image  src="/images/portfolio/portfolio-02.jpg" alt="Product Images" width={60} height={60}/>
                                     </a>
                                 </div>
                                 <div className="content">
@@ -94,7 +94,7 @@ const Footer =()=>{
                             <li className="recent-post">
                                 <div className="thumbnail">
                                     <a href="product-details.html">
-                                        <Image  src="assets/images/portfolio/portfolio-03.jpg" alt="Product Images" />
+                                        <Image  src="/images/portfolio/portfolio-03.jpg" alt="Product Images" width={60} height={60} />
                                     </a>
                                 </div>
                                 <div className="content">

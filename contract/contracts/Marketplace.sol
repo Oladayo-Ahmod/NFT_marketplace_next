@@ -43,6 +43,8 @@ contract Marketplace is ERC721URIStorage {
         uint256 newTokenId = _tokenId.current();
         _mint(msg.sender,newTokenId);
         _setTokenURI(newTokenId,tokenURI);
+        createItem(newTokenId,price);
+        
         return newTokenId;
 
     }
@@ -58,7 +60,9 @@ contract Marketplace is ERC721URIStorage {
           price,
           false
         );
-        
+
+        _transfer(msg.sender,address(this),tokenId);
+
     }
     
     

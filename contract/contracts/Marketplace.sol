@@ -38,9 +38,13 @@ contract Marketplace is ERC721URIStorage {
     }
 
     // create and mint token
-    function createToken(string memory itemURI, uint256 price) public payable returns(uint256){
+    function createToken(string memory tokenURI, uint256 price) public payable returns(uint){
         _tokenId.increment();
-        itemURI = _tokenId.current();
+        uint256 newTokenId = _tokenId.current();
+        _mint(msg.sender,newTokenId);
+        _setTokenURI(newTokenId,tokenURI);
+        return newTokenId;
+
     }
  
     

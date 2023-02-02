@@ -11,9 +11,31 @@ contract Marketplace is ERC721URIStorage {
     Counters.Counter private _itemId;
     Counters.Counter private _itemSold;
     address payable marketplaceOwner;
+    uint256 listingPrice = 0.05 ether;
+    
+    mapping(uint256 => MarketItem) MarketItemId;
+    struct MarketItem {
+      uint256 tokenId;
+      address payable seller;
+      address payable owner;
+      uint256 price;
+      bool sold;
+    }
 
     constructor() ERC721("Ahmad Token","AMT"){
         marketplaceOwner = payable(msg.sender);
     }
+
+    // get listing price
+    function getListingPrice() public view returns (uint256){
+        return listingPrice;
+    }
+
+    function updateListingPrice(uint _listingPrice) public payable{
+        require(msg.sender == marketplaceOwner);
+        listingPrice = _listingPrice;
+    }
+ 
+    
     
     }

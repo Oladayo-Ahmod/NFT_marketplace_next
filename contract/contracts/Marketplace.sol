@@ -8,7 +8,7 @@ import "hardhat/console.sol";
 
 contract Marketplace is ERC721URIStorage {
     using Counters for Counters.Counter;
-    Counters.Counter private _itemId;
+    Counters.Counter private _tokenId;
     Counters.Counter private _itemSold;
     address payable marketplaceOwner;
     uint256 listingPrice = 0.05 ether;
@@ -31,9 +31,16 @@ contract Marketplace is ERC721URIStorage {
         return listingPrice;
     }
 
+    // update listing price
     function updateListingPrice(uint _listingPrice) public payable{
         require(msg.sender == marketplaceOwner);
         listingPrice = _listingPrice;
+    }
+
+    // create and mint token
+    function createToken(string memory itemURI, uint256 price) public payable returns(uint256){
+        _tokenId.increment();
+        itemURI = _tokenId.current();
     }
  
     

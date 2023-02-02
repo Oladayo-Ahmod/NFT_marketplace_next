@@ -7,10 +7,13 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "hardhat/console.sol";
 
 contract Marketplace is ERC721URIStorage {
-    address payable owner;
+    using Counters for Counters.Counter;
+    Counters.Counter private _itemId;
+    Counters.Counter private _itemSold;
+    address payable marketplaceOwner;
 
     constructor() ERC721("Ahmad Token","AMT"){
-        owner = payable(msg.sender);
+        marketplaceOwner = payable(msg.sender);
     }
     
     }

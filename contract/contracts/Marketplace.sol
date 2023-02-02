@@ -46,7 +46,20 @@ contract Marketplace is ERC721URIStorage {
         return newTokenId;
 
     }
- 
+    
+    // create marketitem
+    function createItem(uint256 tokenId,uint256 price) private {
+        require(msg.value == listingPrice, "not a listed price");
+        require(price > 0 ,"Price must be at least 1 WEI");
+        MarketItemId[tokenId] = MarketItem(
+          tokenId,
+          payable(msg.sender),
+          payable(address(this)),
+          price,
+          false
+        );
+        
+    }
     
     
     }

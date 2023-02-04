@@ -68,8 +68,14 @@ contract Marketplace is ERC721URIStorage {
     // create item sale
     function createSale(uint256 tokenId) public payable {
         uint price = MarketItemId[tokenId].price;
-        address seller = MarketItem[tokenId].seller;
-        
-    }
+        address seller = MarketItemId[tokenId].seller;
+        require(msg.value == price,'price must be equal to the listed price');
+        MarketItemId[tokenId].sold = true;
+        MarketItemId[tokenId].seller = payable(address(0));
+        MarketItemId[tokenId].owner = payable(msg.sender);
+        _transfer(address(this),msg.sender,tokenId); // transfer ownership
+        _itemSold.increment();
+        // payable(address(this)).transfer(listingPrice); // transfer listing price to the marketplace owner
+        payable(seller).transfer(msg.value); // transfer value to the item seller
     
     }

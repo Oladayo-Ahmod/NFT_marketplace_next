@@ -94,12 +94,20 @@ contract Marketplace is ERC721URIStorage {
     }
 
     // fetch all unsold items
-    function allUnsoldItems() public payable{
+    function allUnsoldItems() public view returns(MarketItem[] memory){
          uint totalItem = _tokenId.current();
          uint unsoldItems = totalItem - _itemSold.current();
          uint currentIndex = 0;
-         
-
+         MarketItem[] memory items = new MarketItem[](unsoldItems);
+         for (uint i = 0; i < totalItem; i++) { 
+            if (MarketItemId[i +1].owner == address(this)) {
+                uint currentId = i +1; // try with zero later
+                MarketItem storage currentItem = MarketItem[currentIndex];
+                items[currentIndex] = currentItem;
+                currentIndex += 1;
+            }
+         }
+        return items;
     }
 
 }

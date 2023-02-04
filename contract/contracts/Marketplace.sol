@@ -79,3 +79,17 @@ contract Marketplace is ERC721URIStorage {
         payable(seller).transfer(msg.value); // transfer value to the item seller
     
     }
+
+    // resell a purchased item
+    function resellItem(uint256 tokenId, uint256 price) public payable {
+        require(msg.value == listingPrice,'value is not equal to the listing price');
+        require(price > 0, 'price should be at least 1 WEI');
+        require(msg.sender == MarketItemId[tokenId].owner, 'you are not the authorized of this item');
+        MarketItemId[tokenId].seller = payable(address(this));
+        MarketItemId[tokenId].owner = payable(msg.sender);
+        MarketItemId[tokenId].sold = false;
+        MarketItemId[tokenId].price = price;
+        _transfer(msg.sender,address(this),tokenId); // transfer ownership to the contract address
+    }
+
+}

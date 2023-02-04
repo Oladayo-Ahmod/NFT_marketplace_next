@@ -93,4 +93,13 @@ contract Marketplace is ERC721URIStorage {
         _itemSold.decrement();
     }
 
+    // fetch all unsold items
+    function allUnsoldItems() public payable{
+         uint totalItem = _tokenId.current();
+         uint unsoldItems = totalItem - _itemSold.current();
+         uint currentIndex = 0;
+         
+
+    }
+
 }

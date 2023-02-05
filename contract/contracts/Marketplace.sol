@@ -102,12 +102,28 @@ contract Marketplace is ERC721URIStorage {
          for (uint i = 0; i < totalItem; i++) { 
             if (MarketItemId[i +1].owner == address(this)) {
                 uint currentId = i +1; // try with zero later
-                MarketItem storage currentItem = MarketItemId[currentIndex];
+                MarketItem storage currentItem = MarketItemId[currentId];
                 items[currentIndex] = currentItem;
                 currentIndex += 1;
             }
          }
         return items;
+    }
+
+    // fetch all items purchased by a user
+    function fetchMyItems() public view returns(MarketItem[] memory){
+        uint totalItems = _tokenId.current();
+        uint totalPurchased = 0;
+
+        for (uint i = 0; i < totalItems; i++) {
+            if (MarketItemId[i + 1].owner == msg.sender) {
+                totalPurchased += 1;
+            }
+        }
+
+        MarketItem[] memory items = new MarketItem[](totalPurchased);
+        
+
     }
 
 }

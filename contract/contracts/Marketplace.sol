@@ -102,7 +102,7 @@ contract Marketplace is ERC721URIStorage {
          for (uint i = 0; i < totalItem; i++) { 
             if (MarketItemId[i +1].owner == address(this)) {
                 uint currentId = i +1; // try with zero later
-                MarketItem storage currentItem = MarketItem[currentIndex];
+                MarketItem storage currentItem = MarketItemId[currentIndex];
                 items[currentIndex] = currentItem;
                 currentIndex += 1;
             }

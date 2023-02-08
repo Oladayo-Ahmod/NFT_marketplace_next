@@ -114,7 +114,8 @@ contract Marketplace is ERC721URIStorage {
     function fetchMyItems() public view returns(MarketItem[] memory){
         uint totalItems = _tokenId.current();
         uint totalPurchased = 0;
-
+        uint currentIndex = 0;
+        
         for (uint i = 0; i < totalItems; i++) {
             if (MarketItemId[i + 1].owner == msg.sender) {
                 totalPurchased += 1;
@@ -122,7 +123,17 @@ contract Marketplace is ERC721URIStorage {
         }
 
         MarketItem[] memory items = new MarketItem[](totalPurchased);
-        
+        for (uint i = 0; i < totalItems; i++) {
+            if (MarketItemId[i + 1].owner == msg.sender) {
+                uint currentId = i + 1;
+                MarketItem storage currentItems = MarketItemId[currentId];
+                items[currentIndex] = currentItems;
+                currentIndex += 1;
+
+            }
+        }
+        return items;
+
 
     }
 

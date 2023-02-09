@@ -1,9 +1,10 @@
-const ethers = require('ethers')
+const {ethers, network} = require('hardhat')
 const {assert,expect} = require('chai')
 describe("NFT Marketplace", function (){
+    let provider, deploy
     beforeEach(async ()=>{
-        const provider = new ethers.ContractFactory("Marketplace")
-        const deploy = await provider.deploy()
+        provider = await ethers.getContractFactory("Marketplace")
+        deploy = await provider.deploy()
 
     })
 

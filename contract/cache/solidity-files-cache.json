@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\xampp\\htdocs\\blockchain_projects\\nft_marketplace\\contract\\contracts\\Marketplace.sol": {
-      "lastModificationDate": 1675556727874,
-      "contentHash": "04b719eb3e9c4fac1cc055c73353fd87",
+      "lastModificationDate": 1675888422282,
+      "contentHash": "1a45574b2b1593c297dc85a240e7384b",
       "sourceName": "contracts/Marketplace.sol",
       "solcConfig": {
         "version": "0.8.4",

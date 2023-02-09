@@ -21,6 +21,11 @@ describe("NFT Marketplace", function (){
         const name = await marketplace.name()
         assert.equal(name,"Ahmad Token")
     })
+    it("creates token", async ()=>{
+        const listingPrice = await marketplace.getListingPrice()
+        const createToken = await marketplace.createToken("https://token.com",listingPrice.toString())
+        console.log(createToken);
+    })
 
     describe("pricing", function (){
         it("has a correct listing price", async ()=>{
@@ -33,7 +38,7 @@ describe("NFT Marketplace", function (){
             await marketplace.connect(marketplace.address)
             await marketplace.updateListingPrice(updatedPrice)
             const afterPriceUpdate = await marketplace.getListingPrice()
-            assert.equal(afterPriceUpdate,updatedPrice)
+            assert.equal(afterPriceUpdate.toString(),updatedPrice)
         })
     })
    

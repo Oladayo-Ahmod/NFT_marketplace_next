@@ -14,6 +14,15 @@ contract Marketplace is ERC721URIStorage {
     uint256 listingPrice = 0.05 ether;
     
     mapping(uint256 => MarketItem) MarketItemId;
+
+     event MarketItemCreated (
+      uint256 indexed tokenId,
+      address seller,
+      address owner,
+      uint256 price,
+      bool sold
+    );
+    
     struct MarketItem {
       uint256 tokenId;
       address payable seller;
@@ -62,6 +71,14 @@ contract Marketplace is ERC721URIStorage {
         );
 
         _transfer(msg.sender,address(this),tokenId);
+
+         emit MarketItemCreated(
+        tokenId,
+        msg.sender,
+        address(this),
+        price,
+        false
+      );
 
     }
     

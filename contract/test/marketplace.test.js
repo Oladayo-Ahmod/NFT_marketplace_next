@@ -16,4 +16,9 @@ describe("NFT Marketplace", function (){
         assert.notEqual(address,null)
 
     })
+    it("has a valid constructor", async ()=>{
+        const name = await deploy.name()
+        console.log(name,'name');
+        assert.equal(name,"Ahmad Token")
+    })
 })

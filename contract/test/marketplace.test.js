@@ -23,7 +23,8 @@ describe("NFT Marketplace", function (){
     })
     it("creates token", async ()=>{
         const listingPrice = await marketplace.getListingPrice()
-        const createToken = await marketplace.createToken("https://token.com",listingPrice.toString())
+        const itemPrice = ethers.utils.parseEther('1')
+        const createToken = await marketplace.createToken("https://token.com",itemPrice,{value :listingPrice.toString()})
         console.log(createToken);
     })
 

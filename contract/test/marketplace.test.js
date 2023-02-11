@@ -52,6 +52,16 @@ describe("NFT Marketplace", function (){
             const results = await tx.wait()
             assert.equal(results.events[1].args.sold,true)
         })
+        it("item resales", async ()=>{
+            const listingPrice = await marketplace.getListingPrice()
+            const itemPrice = ethers.utils.parseEther('1')
+            const [, buyerAccount] = new ethers.getSigners()
+            const account = marketplace.connect(buyerAccount)
+            await account.createToken("https://token.com",itemPrice,{value :listingPrice.toString()})
+            const tx = await account.createSale(1,{value :itemPrice})
+            const result = await tx.wait()
+            console.log(result.events);
+        })
     })
    
 

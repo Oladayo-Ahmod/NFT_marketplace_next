@@ -125,7 +125,7 @@ contract Marketplace is ERC721URIStorage {
         MarketItemId[tokenId].price = price;
         _transfer(msg.sender,address(this),tokenId); // transfer ownership to the contract address
         _itemSold.decrement();
-        emit ItemResold(tokenId,msg.sender,address(this),price,true);
+        emit ItemResold(tokenId,msg.sender,address(this),price,false);
     }
 
     // fetch all unsold items

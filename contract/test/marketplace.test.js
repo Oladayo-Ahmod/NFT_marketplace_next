@@ -1,4 +1,4 @@
-const {ethers, network} = require('hardhat')
+const {ethers, network,logs} = require('hardhat')
 const {assert,expect} = require('chai')
 describe("NFT Marketplace", function (){
     let provider, marketplace
@@ -25,6 +25,7 @@ describe("NFT Marketplace", function (){
         const listingPrice = await marketplace.getListingPrice()
         const itemPrice = ethers.utils.parseEther('1')
         await marketplace.createToken("https://token.com",itemPrice,{value :listingPrice.toString()})
+       
       
     })
 
@@ -47,8 +48,9 @@ describe("NFT Marketplace", function (){
             const listingPrice = await marketplace.getListingPrice()
             const itemPrice = ethers.utils.parseEther('1')
             await marketplace.createToken("https://token.com",itemPrice,{value :listingPrice.toString()})
-            const sale = await marketplace.createSale(1,{value :itemPrice})
-            console.log(sale);
+            const tx = await marketplace.createSale(1,{value :itemPrice})
+            const results = await tx.wait()
+            assert.equal(results.events[1].args.sold,true)
         })
     })
    

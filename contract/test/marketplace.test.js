@@ -62,7 +62,19 @@ describe("NFT Marketplace", function (){
             const newItemPrice = ethers.utils.parseEther('2')
             const resell = await account.resellItem(1,newItemPrice,{value : listingPrice.toString()})
             const result = await resell.wait()
-            console.log(result.events);
+            assert.equal(result.events[1].args.sold,false)
+        })
+        it("all unsold items", async ()=>{
+            const listingPrice = await marketplace.getListingPrice()
+            const itemPrice = ethers.utils.parseEther('1')
+            const [, firstBuyer,secondBuyer,thirdBuyer] = await ethers.getSigners()
+            const account1 = marketplace.connect(firstBuyer)
+            await account1.createToken("https://token1.com",itemPrice,{value :listingPrice.toString()}) // create item
+            const account2 = marketplace.connect(secondBuyer)
+            await account2.createToken("https://token2.com",itemPrice,{value :listingPrice.toString()}) // create item
+            await marketplace.connect(thirdBuyer).createSale(1,{value :itemPrice}) // sell one of the created item
+            const items = await account2.allUnsoldItems()
+            console.log(items);
         })
     })
    

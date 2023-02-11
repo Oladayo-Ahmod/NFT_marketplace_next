@@ -109,7 +109,7 @@ contract Marketplace is ERC721URIStorage {
         _itemSold.increment();
         // payable(address(this)).transfer(listingPrice); // transfer listing price to the marketplace owner
         payable(seller).transfer(msg.value); // transfer value to the item seller
-        emit ItemSold(tokenId,msg.sender,address(this),price,true);
+        emit ItemSold(tokenId,address(0),msg.sender,price,true);
 
     
     }

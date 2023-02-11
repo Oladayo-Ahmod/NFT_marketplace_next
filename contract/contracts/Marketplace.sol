@@ -22,7 +22,22 @@ contract Marketplace is ERC721URIStorage {
       uint256 price,
       bool sold
     );
-    
+
+    event ItemSold(
+        uint256 indexed tokenId,
+        address seller,
+        address owner,
+        uint256 price,
+        bool sold
+    );
+    event ItemResold(
+        uint256 indexed tokenId,
+        address seller,
+        address owner,
+        uint256 price,
+        bool sold
+    );
+
     struct MarketItem {
       uint256 tokenId;
       address payable seller;
@@ -94,6 +109,8 @@ contract Marketplace is ERC721URIStorage {
         _itemSold.increment();
         // payable(address(this)).transfer(listingPrice); // transfer listing price to the marketplace owner
         payable(seller).transfer(msg.value); // transfer value to the item seller
+        emit ItemSold(tokenId,msg.sender,address(this),price,true);
+
     
     }
 
@@ -108,6 +125,7 @@ contract Marketplace is ERC721URIStorage {
         MarketItemId[tokenId].price = price;
         _transfer(msg.sender,address(this),tokenId); // transfer ownership to the contract address
         _itemSold.decrement();
+        emit ItemResold(tokenId,msg.sender,address(this),price,true);
     }
 
     // fetch all unsold items

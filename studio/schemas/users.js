@@ -30,9 +30,15 @@ export const users = {
                     }]
                 }
             ]
+        },
+        {
+            name : 'image',
+            title : 'image',
+            type : 'image',
+
         }
     ],
     preview: {
-        select: {title: 'NFT Image', media: 'image'},
+        select: {title: 'image', media: 'image'},
     },
 }

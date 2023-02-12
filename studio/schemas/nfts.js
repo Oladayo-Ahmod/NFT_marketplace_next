@@ -1,4 +1,4 @@
-export const NFTS = {
+export const nfts = {
     name : 'nfts',
     title : 'NFTs',
     type : 'document',

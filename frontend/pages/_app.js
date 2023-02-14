@@ -7,6 +7,8 @@ import 'slick-carousel/slick/slick-theme.css'
 import '@/styles/vendor/nice-select.css'
 import '@/styles/vendor/odometer.css'
 import '@/styles/style.css'
+import TransactionContext from '../context/TransactionContext'
+
 
 
 import { AppProps } from 'next/app'

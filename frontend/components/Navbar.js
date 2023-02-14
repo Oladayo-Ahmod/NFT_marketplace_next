@@ -7,8 +7,8 @@ const Navbar =()=>{
             <div className="header-inner">
                 <div className="header-left">
                     <div className="logo-thumbnail logo-custom-css">
-                        <a className="logo-light" href="index.html"><Image src="/images/logo/logo-white.png" fill alt="nft-logo" /></a>
-                        <a className="logo-dark" href="index.html"><Image src="/images/logo/logo-dark.png" fill alt="nft-logo" /></a>
+                        <a className="logo-light" href="index.html"><Image src="/images/logo/logo-white.png" width={100} height={100} alt="nft-logo" /></a>
+                        <a className="logo-dark" href="index.html"><Image src="/images/logo/logo-dark.png" width={100} height={100} alt="nft-logo" /></a>
                     </div>
                     <div className="mainmenu-wrapper">
                         <nav id="sideNav" className="mainmenu-nav d-none d-xl-block">

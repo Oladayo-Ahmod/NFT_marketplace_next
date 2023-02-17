@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import '@/styles/vendor/nice-select.css'
 import '@/styles/vendor/odometer.css'
 import '@/styles/style.css'
-import TransactionContext from '../context/TransactionContext'
+import TransactionProviderr from '../context/TransactionContext.js'
 
 
 
@@ -15,8 +15,8 @@ import { AppProps } from 'next/app'
 import Layout from '../components/layouts/index'
 export default function MyApp({ Component, pageProps }) {
   return (
-      <Layout>
+    <TransactionProviderr>
         <Component {...pageProps} />
-      </Layout>
+    </TransactionProviderr>
   )
 }

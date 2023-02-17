@@ -1,14 +1,42 @@
-import { Context,createContext } from "react"
-export const transactionContext = createContext()
+import Footer from "@/components/footer"
+import Navbar from "@/components/Navbar"
+import { Context,createContext, useState } from "react"
 
 
-let connector = window?.ethereum
+export const TransactionContext = createContext()
 
+let connector
+if(typeof window !== undefined){
+    connector = window.ethereum
+}
+
+
+ const TransactionProviderr =({children})=>{
+const [account,setAccount] = useState()
 const connectWallet = async()=>{
     if (connector) {
-        const account = await connector.request({method : 'eth_requestAccount'}) 
+        const accounts = await connector.request({method : 'eth_requestAccount'}) 
+        setAccount(accounts[0])
     }
     else{
         alert('please install metamask')
     }
 }
+
+return (
+    <TransactionContext.Provider
+        value={
+           {
+            connectWallet,
+            account
+        }
+        }
+        >
+            <Navbar />
+            {children}
+            <Footer />
+    </TransactionContext.Provider>
+)
+    }
+
+    export default TransactionProviderr

@@ -171,7 +171,7 @@ const Navbar =()=>{
                                         <ul className="product-list">
                                             <li className="single-product-list">
                                                 <div className="thumbnail">
-                                                    <a href="product-details.html"><Image src="/images/portfolio/portfolio-07.jpg" fill alt="Nft Product Images" /></a>
+                                                    <a href="product-details.html"><Image src="/images/portfolio/portfolio-07.jpg" width={50} height={50} alt="Nft Product Images" /></a>
                                                 </div>
                                                 <div className="content">
                                                     <h6 className="title"><a href="product-details.html">Balance</a></h6>
@@ -181,7 +181,7 @@ const Navbar =()=>{
                                             </li>
                                             <li className="single-product-list">
                                                 <div className="thumbnail">
-                                                    <a href="product-details.html"><Image src="/images/portfolio/portfolio-01.jpg" fill alt="Nft Product Images" /></a>
+                                                    <a href="product-details.html"><Image src="/images/portfolio/portfolio-01.jpg" width={50} height={50} alt="Nft Product Images" /></a>
                                                 </div>
                                                 <div className="content">
                                                     <h6 className="title"><a href="product-details.html">Balance</a></h6>
@@ -218,12 +218,12 @@ const Navbar =()=>{
                         <ul>
                             <li>
                                 <a href="javascript: void(0);" data-theme="light" className="setColor light">
-                                    <Image className="sun-image" src="/images/icons/sun-01.svg" alt="Sun images" fill/>
+                                    <Image className="sun-image" src="/images/icons/sun-01.svg" alt="Sun images" width={50} height={50}/>
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript: void(0);" data-theme="dark" className="setColor dark">
-                                    <Image className="Victor Image" src="/images/icons/vector.svg" alt="Vector Images" fill/>
+                                    <Image className="Victor Image" src="/images/icons/vector.svg" alt="Vector Images" width={50} height={50}/>
                                 </a>
                             </li>
                         </ul>

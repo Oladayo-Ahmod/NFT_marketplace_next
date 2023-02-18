@@ -12,28 +12,28 @@ var setting = {
     cssEase: 'linear',
     adaptiveHeight: true,
     responsive: [{
-            breakpoint: 1124,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-            }
-        },
-        {
-            breakpoint: 868,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-            }
-        },
-        {
-            breakpoint: 576,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true,
-                arrows: true,
-            }
+        breakpoint: 1124,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
         }
+    },
+    {
+        breakpoint: 868,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+        }
+    },
+    {
+        breakpoint: 576,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: true,
+        }
+    }
     ]
 }
 

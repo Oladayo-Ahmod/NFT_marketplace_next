@@ -5,6 +5,8 @@ import Banner from '../components/banner'
 import Service from '../components/service'
 import NewestItem from '../components/newestItem'
 import TopCollection from '@/components/topCollection'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/footer'
 
 
 
@@ -20,10 +22,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <Navbar />
       <Banner />
       <NewestItem />
       <Service />
       <TopCollection />
+      <Footer />
       </main>
       
     </>

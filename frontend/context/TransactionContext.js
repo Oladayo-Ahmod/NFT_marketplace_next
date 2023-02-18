@@ -1,21 +1,21 @@
-import Footer from "@/components/footer"
-import Navbar from "@/components/Navbar"
-import { Context,createContext, useState } from "react"
+import React, { Context,createContext, useState } from "react"
 
 
-export const TransactionContext = createContext()
+const TransactionContext = React.createContext()
 
 let connector
-if(typeof window !== undefined){
+if(typeof window !== 'undefined'){
     connector = window.ethereum
 }
 
 
- const TransactionProviderr =({children})=>{
+const TransactionProviderr =({children})=>{
 const [account,setAccount] = useState()
-const connectWallet = async()=>{
-    if (connector) {
-        const accounts = await connector.request({method : 'eth_requestAccount'}) 
+const test = 'hello'
+const connectWallet = async function(metamask = connector){
+    console.log('confirm');
+    if (metamask) {
+        const accounts = await metamask.request({method : 'eth_requestAccount'}) 
         setAccount(accounts[0])
     }
     else{
@@ -28,15 +28,17 @@ return (
         value={
            {
             connectWallet,
-            account
+            account,
+            test
         }
         }
         >
-            <Navbar />
             {children}
-            <Footer />
     </TransactionContext.Provider>
 )
     }
 
-    export default TransactionProviderr
+    module.exports = {
+        TransactionContext,
+        TransactionProviderr
+    }

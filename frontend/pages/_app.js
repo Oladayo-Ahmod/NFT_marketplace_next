@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import '@/styles/vendor/nice-select.css'
 import '@/styles/vendor/odometer.css'
 import '@/styles/style.css'
-import TransactionProviderr from '../context/TransactionContext.js'
+import {TransactionProviderr} from '../context/TransactionContext.js'
 
 
 

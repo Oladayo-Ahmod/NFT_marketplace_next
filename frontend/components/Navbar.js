@@ -1,12 +1,15 @@
 
 import Image from "next/image"
 import { TransactionContext } from "../context/TransactionContext"
-import React from "react";
+import React, { useEffect } from "react";
 
 const Navbar =()=>{
-    
- const {connectWallet}= React.useContext(TransactionContext)
-//  console.log(connectWallet);
+    const {connectWallet,account}= React.useContext(TransactionContext)
+    useEffect(()=>{
+        console.log(localStorage.getItem('account'));
+    },[account])
+
+
     return (
         <div>
             <header className="rn-header haeder-default header--sticky">
@@ -148,7 +151,9 @@ const Navbar =()=>{
 
                     <div className="setting-option header-btn rbt-site-header" id="rbt-site-header">
                         <div className="icon-box">
-                            <a id="connectbtn" onClick={connectWallet} className="btn btn-primary-alta btn-small" href="#">connect wallet</a>
+                            <a id="connectbtn" onClick={connectWallet} className="btn btn-primary-alta btn-small" href="#">
+                               {account ? `${account.slice(0,6)}...${account.slice(account.length -4)}` : 'connect wallet'}
+                                </a>
                         </div>
                     </div>
 

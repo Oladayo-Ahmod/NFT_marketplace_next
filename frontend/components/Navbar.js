@@ -2,14 +2,11 @@
 import Image from "next/image"
 import { TransactionContext } from "../context/TransactionContext"
 import React, { useEffect } from "react";
+import {ethers} from 'ethers'
 
 const Navbar =()=>{
-    const {connectWallet,account}= React.useContext(TransactionContext)
-    useEffect(()=>{
-        console.log(localStorage.getItem('account'));
-    },[account])
-
-
+    const {connectWallet,account,CreateNft}= React.useContext(TransactionContext)
+    // console.log(ethers);
     return (
         <div>
             <header className="rn-header haeder-default header--sticky">
@@ -153,6 +150,9 @@ const Navbar =()=>{
                         <div className="icon-box">
                             <a id="connectbtn" onClick={connectWallet} className="btn btn-primary-alta btn-small" href="#">
                                {account ? `${account.slice(0,6)}...${account.slice(account.length -4)}` : 'connect wallet'}
+                                </a>
+                                <a id="connectbtn" onClick={CreateNft} className="btn btn-primary-alta btn-small" href="#">
+                               {account ? `${account.slice(0,6)}...${account.slice(account.length -4)}` : 'check'}
                                 </a>
                         </div>
                     </div>

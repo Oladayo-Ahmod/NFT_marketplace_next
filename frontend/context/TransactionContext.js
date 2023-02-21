@@ -1,6 +1,6 @@
 import React, { Context,createContext, useEffect, useState } from "react"
-
-
+import {abi,address} from '../constants/index'
+import {ethers} from 'ethers'
 
 const TransactionContext = React.createContext()
 
@@ -11,33 +11,40 @@ if(typeof window !== 'undefined'){
 
 
 const TransactionProviderr =({children})=>{
-const [account,setAccount] = useState()
+    const [fileUrl,setFileUrl] = useState()
+    const [formInput,setFormInput] = useState()
+    const [account,setAccount] = useState()
 
-const connectWallet = async function(metamask = connector){
-    if (metamask) {
-        const accounts = await connector.request({method : 'eth_requestAccounts'}) 
-        console.log(accounts);
-        setAccount(accounts[0])
+    const connectWallet = async function(metamask = connector){
+        if (metamask) {
+            const accounts = await connector.request({method : 'eth_requestAccounts'})
+            setAccount(accounts[0])
+        }
+        else{
+            console.log('please install metamask')
+        }
     }
-    else{
-        console.log('please install metamask')
+
+    const CreateNft = async function(metamask = connector){
+        const provider = new ethers.providers.Web3Provider(metamask);
+        const signer = provider.getSigner()
+        const contract = new ethers.Contract(abi,signer)
     }
+
+    return (
+        <TransactionContext.Provider
+            value={ 
+            {
+                connectWallet,
+                account,
+                CreateNft
+            }
+            }
+            >
+                {children}
+        </TransactionContext.Provider>
+    )
 }
-
-// const createNft = 
-return (
-    <TransactionContext.Provider
-        value={
-           {
-            connectWallet,
-            account,
-        }
-        }
-        >
-            {children}
-    </TransactionContext.Provider>
-)
-    }
 
     module.exports = {
         TransactionContext,

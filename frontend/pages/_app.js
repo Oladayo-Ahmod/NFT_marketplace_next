@@ -1,6 +1,7 @@
 // import '@/styles/globals.css'
 // import '@/styles/plugins/feature.css'
 // import '@/styles/plugins/jquery-ui.min.css'
+
 import 'bootstrap/dist/css/bootstrap.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'

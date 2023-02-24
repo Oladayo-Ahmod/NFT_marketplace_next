@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/footer'
+import Create from '../components/create-nft'
 const CreateNFT =()=>{
     return (
         <>
@@ -12,7 +13,7 @@ const CreateNFT =()=>{
         </Head>
         <main>
             <Navbar />
-            <h1>Create</h1> 
+            <Create />
             <Footer />
         </main>
            

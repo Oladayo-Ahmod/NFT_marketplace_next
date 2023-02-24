@@ -1,4 +1,8 @@
 import Image from 'next/image'
+import { useContext } from 'react'
+import { TransactionContext } from "../context/TransactionContext"
+
+const {setFormData} = useContext(TransactionContext)
 const Create =()=>{
     return (
         <>
@@ -38,7 +42,7 @@ const Create =()=>{
 
                         <div className="brows-file-wrapper">
                             {/* <!-- actual upload which is hidden --> */}
-                            <input name="createinputfile" id="createinputfile" type="file" className="inputfile" />
+                            <input name="createinputfile" id="createinputfile" type="file" className="inputfile" onChange={e => setFormData({...FormData, file : e.target.files[0]  })} />
                             <Image id="createfileImage" src="/images/portfolio/portfolio-05.jpg" alt="" width={50} height={50} />
                             {/* <!-- our custom upload button --> */}
                             <label for="createinputfile" title="No File Choosen">
@@ -65,7 +69,7 @@ const Create =()=>{
                             <div className="col-md-12">
                                 <div className="input-box pb--20">
                                     <label for="name" className="form-label">Product Name</label>
-                                    <input id="name" placeholder="e. g. `Digital Awesome Game`" />
+                                    <input id="name" placeholder="e. g. `Digital Awesome Game`" onChange={e => setFormData({...FormData, name : e.target.files[0]  })} />
                                 </div>
                             </div>
 

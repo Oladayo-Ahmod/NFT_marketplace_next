@@ -34,7 +34,10 @@ const TransactionProviderr =({children})=>{
             console.log('please install metamask')
         }
     }
-
+    useEffect(()=>{
+        console.log(formData)
+    },[formData])
+    
     useEffect(()=>{
         connectWallet(connector)
     },[account])
@@ -69,7 +72,7 @@ const TransactionProviderr =({children})=>{
     }
 
     const saveNftCreated =()=>{
-        
+
     }
 
     return (
@@ -78,7 +81,8 @@ const TransactionProviderr =({children})=>{
             {
                 connectWallet,
                 account,
-                CreateNft
+                CreateNft,
+                setFormData
             }
             }
             >

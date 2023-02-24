@@ -21,7 +21,7 @@ const TransactionProviderr =({children})=>{
             size: '',
             royalty : '',
             properties : '',
-            price
+            price : '',
         })
     const [account,setAccount] = useState()
 
@@ -35,15 +35,12 @@ const TransactionProviderr =({children})=>{
             console.log('please install metamask')
         }
     }
-    useEffect(()=>{
-        console.log(formData)
-    },[formData])
 
     useEffect(()=>{
         connectWallet(connector)
     },[account])
 
-    const CreateNft = async function(metamask = connector){
+    const CreateNft = async function(){
         try{
             const provider = new ethers.providers.Web3Provider(connector);
             const signer = provider.getSigner()
@@ -53,7 +50,8 @@ const TransactionProviderr =({children})=>{
             const listingPrice = await contract.getListingPrice()
             const transaction = await contract.createToken(url, price, { value: listingPrice })
             await transaction.wait()
-            saveNftCreated()
+            // saveNftCreated()
+            console.log(formData);
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -83,7 +81,8 @@ const TransactionProviderr =({children})=>{
                 connectWallet,
                 account,
                 CreateNft,
-                setFormData
+                setFormData,
+                formData
             }
             }
             >

@@ -148,12 +148,10 @@ const Navbar =()=>{
 
                     <div className="setting-option header-btn rbt-site-header" id="rbt-site-header">
                         <div className="icon-box">
-                            <a id="connectbtn" onClick={connectWallet} className="btn btn-primary-alta btn-small" href="#">
+                            <button id="connectbtn" onClick={connectWallet} className="btn btn-primary-alta btn-small" href="#">
                                {account ? `${account.slice(0,6)}...${account.slice(account.length -4)}` : 'connect wallet'}
-                                </a>
-                                <a id="connectbtn" onClick={CreateNft} className="btn btn-primary-alta btn-small" href="#">
-                               {account ? `${account.slice(0,6)}...${account.slice(account.length -4)}` : 'connect wallet'}
-                                </a>
+                                </button>
+                              
                         </div>
                     </div>
 

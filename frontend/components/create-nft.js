@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
 
 const Create =()=>{
-const {setFormData} = useContext(TransactionContext)
+const {setFormData,CreateNft,formData} = useContext(TransactionContext)
 
     return (
         <>
@@ -43,7 +43,7 @@ const {setFormData} = useContext(TransactionContext)
 
                         <div className="brows-file-wrapper">
                             {/* <!-- actual upload which is hidden --> */}
-                            <input name="createinputfile" id="createinputfile" type="file" className="inputfile" onChange={e => setFormData({...FormData, file : e.target.files[0]  })} />
+                            <input name="createinputfile" id="createinputfile" type="file" className="inputfile" onChange={e => setFormData({...formData, file : e.target.files[0]  })} />
                             <Image id="createfileImage" src="/images/portfolio/portfolio-05.jpg" alt="" width={50} height={50} />
                             {/* <!-- our custom upload button --> */}
                             <label for="createinputfile" title="No File Choosen">
@@ -70,49 +70,49 @@ const {setFormData} = useContext(TransactionContext)
                             <div className="col-md-12">
                                 <div className="input-box pb--20">
                                     <label for="name" className="form-label">Product Name</label>
-                                    <input id="name" placeholder="e. g. `Digital Awesome Game`" onChange={e => setFormData({...FormData, name : e.target.value  })} />
+                                    <input id="name" placeholder="e. g. `Digital Awesome Game`" onChange={e => setFormData({...formData, name : e.target.value  })} />
                                 </div>
                             </div>
 
                             <div className="col-md-12">
                                 <div className="input-box pb--20">
                                     <label for="Discription" className="form-label">Description</label>
-                                    <textarea onChange={e => setFormData({...FormData, description : e.target.value  })} id="Discription" rows="3" placeholder="e. g. “After purchasing the product you can get item...”"></textarea>
+                                    <textarea onChange={e => setFormData({...formData, description : e.target.value  })} id="Discription" rows="3" placeholder="e. g. “After purchasing the product you can get item...”"></textarea>
                                 </div>
                             </div>
 
                             <div className="col-md-4">
                                 <div className="input-box pb--20">
                                     <label for="dollerValue" className="form-label">Item Price</label>
-                                    <input id="dollerValue" placeholder="e. g. `20ETH`" onChange={e => setFormData({...FormData, price : e.target.value  })} />
+                                    <input id="dollerValue" placeholder="e. g. `20ETH`" onChange={e => setFormData({...formData, price : e.target.value  })} />
                                 </div>
                             </div>
 
                             <div className="col-md-4">
                                 <div className="input-box pb--20">
                                     <label for="Size" className="form-label">Size</label>
-                                    <input id="Size" placeholder="e. g. `Size`" onChange={e => setFormData({...FormData, size : e.target.value  })} />
+                                    <input id="Size" placeholder="e. g. `Size`" onChange={e => setFormData({...formData, size : e.target.value  })} />
                                 </div>
                             </div>
 
                             <div className="col-md-4">
                                 <div className="input-box pb--20">
                                     <label for="Propertie" className="form-label">Properties</label>
-                                    <input id="Propertie" placeholder="e. g. `Propertie`" onChange={e => setFormData({...FormData, properties : e.target.value  })} />
+                                    <input id="Propertie" placeholder="e. g. `Propertie`" onChange={e => setFormData({...formData, properties : e.target.value  })} />
                                 </div>
                             </div>
 
                             <div className="col-md-12">
                                 <div className="input-box pb--20">
                                     <label for="Royality" className="form-label">Royality</label>
-                                    <input id="Royality" placeholder="e. g. `20%`" onChange={e => setFormData({...FormData, royalty : e.target.value  })}/>
+                                    <input id="Royality" placeholder="e. g. `20%`" onChange={e => setFormData({...formData, royalty : e.target.value  })}/>
                                 </div>
                             </div>
 
 
                             <div className="col-md-12 col-xl-8 mt_lg--15 mt_md--15 mt_sm--15">
                                 <div className="input-box">
-                                    <button className="btn btn-primary btn-large w-100">Submit Item</button>
+                                    <button className="btn btn-primary btn-large w-100" type='button' onClick={CreateNft}>Submit Item</button>
                                 </div>
                             </div>
 

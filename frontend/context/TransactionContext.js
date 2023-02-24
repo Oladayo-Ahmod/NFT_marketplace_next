@@ -20,7 +20,8 @@ const TransactionProviderr =({children})=>{
             description : '',
             size: '',
             royalty : '',
-            properties : ''
+            properties : '',
+            price
         })
     const [account,setAccount] = useState()
 
@@ -37,7 +38,7 @@ const TransactionProviderr =({children})=>{
     useEffect(()=>{
         console.log(formData)
     },[formData])
-    
+
     useEffect(()=>{
         connectWallet(connector)
     },[account])

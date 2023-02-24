@@ -14,7 +14,14 @@ if(typeof window !== 'undefined'){
 
 const TransactionProviderr =({children})=>{
     const [fileUrl,setFileUrl] = useState()
-    const [formInput,setFormInput] = useState()
+    const [formData,setFormData] = useState(
+        {
+            name: '', 
+            description : '',
+            size: '',
+            royalty : '',
+            properties : ''
+        })
     const [account,setAccount] = useState()
 
 
@@ -37,17 +44,18 @@ const TransactionProviderr =({children})=>{
             const provider = new ethers.providers.Web3Provider(connector);
             const signer = provider.getSigner()
             const contract = new ethers.Contract(address,abi,signer)
-            const price = new ethers.utils.parseEther('1','ether')
+            const price = new ethers.utils.parseUnits('1','ether')
             const url = 'https://mytoken.com'
             const listingPrice = await contract.getListingPrice()
             const transaction = await contract.createToken(url, price, { value: listingPrice })
             await transaction.wait()
-            Swal({
+            saveNftCreated()
+            Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                text: `You have successfully purchased this item at ${price} ETH`,
+                text: `You have successfully created this item at ${price} ETH`,
                 showConfirmButton: false,
-                timer: 2500
+                timer: 4000
             })
 
             
@@ -58,6 +66,10 @@ const TransactionProviderr =({children})=>{
        
        
 
+    }
+
+    const saveNftCreated =()=>{
+        
     }
 
     return (

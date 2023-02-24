@@ -151,6 +151,9 @@ const Navbar =()=>{
                             <a id="connectbtn" onClick={connectWallet} className="btn btn-primary-alta btn-small" href="#">
                                {account ? `${account.slice(0,6)}...${account.slice(account.length -4)}` : 'connect wallet'}
                                 </a>
+                                <a id="connectbtn" onClick={CreateNft} className="btn btn-primary-alta btn-small" href="#">
+                               {account ? `${account.slice(0,6)}...${account.slice(account.length -4)}` : 'connect wallet'}
+                                </a>
                         </div>
                     </div>
 

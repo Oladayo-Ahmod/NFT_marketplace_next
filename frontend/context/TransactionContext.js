@@ -45,13 +45,16 @@ const TransactionProviderr =({children})=>{
             const provider = new ethers.providers.Web3Provider(connector);
             const signer = provider.getSigner()
             const contract = new ethers.Contract(address,abi,signer)
-            const price = new ethers.utils.parseUnits('1','ether')
+            const NFTprice = new ethers.utils.parseUnits('1','ether')
             const url = 'https://mytoken.com'
             const listingPrice = await contract.getListingPrice()
-            const transaction = await contract.createToken(url, price, { value: listingPrice })
-            await transaction.wait()
-            // saveNftCreated()
-            console.log(formData);
+            const transaction = await contract.createToken(url, NFTprice, { value: listingPrice })
+            const wait = await transaction.wait()
+            const tokenId = wait.events[1].args.tokenId.toNumber() 
+            // console.log(wait.events[1].args.tokenId.toNumber())
+            const {name,description,size,royalty,properties,price} = formData
+            saveNftCreated(tokenId,name,description,size,royalty,properties,price)
+            // console.log(formData);
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -70,8 +73,9 @@ const TransactionProviderr =({children})=>{
 
     }
 
-    const saveNftCreated =()=>{
-
+    const saveNftCreated =(tokenId, ...others)=>{
+        console.log('token',tokenId);
+        console.log('others',others);
     }
 
     return (

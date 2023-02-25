@@ -22,6 +22,7 @@ const TransactionProviderr =({children})=>{
             royalty : '',
             properties : '',
             price : '',
+            file :''
         })
     const [account,setAccount] = useState()
 
@@ -42,18 +43,17 @@ const TransactionProviderr =({children})=>{
 
     const CreateNft = async function(){
         try{
+            const {name,description,size,royalty,properties,price,file} = formData
             const provider = new ethers.providers.Web3Provider(connector);
             const signer = provider.getSigner()
             const contract = new ethers.Contract(address,abi,signer)
-            const NFTprice = new ethers.utils.parseUnits('1','ether')
+            const NFTprice = new ethers.utils.parseUnits(price,'ether')
             const url = 'https://mytoken.com'
             const listingPrice = await contract.getListingPrice()
             const transaction = await contract.createToken(url, NFTprice, { value: listingPrice })
             const wait = await transaction.wait()
-            const tokenId = wait.events[1].args.tokenId.toNumber() 
-            // console.log(wait.events[1].args.tokenId.toNumber())
-            const {name,description,size,royalty,properties,price} = formData
-            saveNftCreated(tokenId,name,description,size,royalty,properties,price)
+            const tokenId = wait.events[1].args.tokenId.toNumber()
+            saveNftCreated(tokenId,name,description,size,royalty,properties,price,file,transaction.hash,address,account)
             // console.log(formData);
             Swal.fire({
                 position: 'top-end',
@@ -75,7 +75,15 @@ const TransactionProviderr =({children})=>{
 
     const saveNftCreated =(tokenId, ...others)=>{
         console.log('token',tokenId);
-        console.log('others',others);
+        console.log('others',others[1]);
+    }
+
+    const AllUnsoldNfts = async()=>{
+        const provider = new ethers.providers.Web3Provider(connector)
+        const signer = provider.getSigner()
+        const contract = new ethers.Contract(address,abi,signer)
+        const NFTS = await contract.allUnsoldItems()
+        console.log(NFTS);
     }
 
     return (

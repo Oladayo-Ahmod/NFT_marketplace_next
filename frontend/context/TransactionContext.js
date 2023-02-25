@@ -4,6 +4,7 @@ import {ethers} from 'ethers'
 import Swal from "sweetalert2"
 
 
+
 const TransactionContext = React.createContext()
 
 let connector
@@ -74,6 +75,22 @@ const TransactionProviderr =({children})=>{
     }
 
     const saveNftCreated =(tokenId, ...others)=>{
+        const txDoc = {
+            _type : 'nfts',
+            _id : others[8],
+            seller : others[10],
+            owner : others[9],
+            Timestamp : new Date(Date.now()).toISOString(),
+            TxHash : others[8],
+            price : parseFloat(others[6]),
+            sold : false,
+            image : others[7],
+            size : others[3],
+            description : others[2],
+            royalty : others[4],
+            tokenId : tokenId,
+            properties : others[5]
+        }
         console.log('token',tokenId);
         console.log('others',others[1]);
     }
@@ -94,7 +111,8 @@ const TransactionProviderr =({children})=>{
                 account,
                 CreateNft,
                 setFormData,
-                formData
+                formData,
+                AllUnsoldNfts
             }
             }
             >

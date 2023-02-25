@@ -37,6 +37,26 @@ export const nfts = {
             name : 'image',
             title : 'NFT Image',
             type : 'image'
+        },
+        {
+            name : 'size',
+            title : 'NFT Size',
+            type : 'number'
+        },
+        {
+            name : 'royalty',
+            title : 'NFT Royalty',
+            type : 'string'
+        },
+        {
+            name : 'properties',
+            title : 'NFT Properties',
+            type : 'string'
+        },
+        {
+            name : 'tokenId',
+            title : 'Token ID',
+            type : 'number'
         }
     ],
     preview: {

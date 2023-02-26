@@ -125,7 +125,7 @@ const NewestItem =()=>{
 
                 {/* <!-- start single product --> */}
 
-                <div  className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
+                {/* <div  className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-02.jpg" alt="NFT_portfolio"  width={339} height={339}/></a>
@@ -167,12 +167,12 @@ const NewestItem =()=>{
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
      
                 {/* <!-- end single product --> */}
 
                 {/* <!-- start single product --> */}
-                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
+                {/* <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-03.jpg" alt="NFT_portfolio"  width={500} height={339} /></a>
@@ -214,11 +214,11 @@ const NewestItem =()=>{
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* <!-- end single product --> */}
 
                 {/* <!-- start single product --> */}
-                <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
+                {/* <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                     <div className="product-style-one no-overlay">
                         <div className="card-thumbnail">
                             <a href="product-details.html"><Image src="/images/portfolio/portfolio-04.jpg" width={339} height={339}  alt="NFT_portfolio" /></a>
@@ -260,7 +260,7 @@ const NewestItem =()=>{
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* <!-- end single product --> */}
 
                 {/* <!-- start single product --> */}

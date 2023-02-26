@@ -68,7 +68,7 @@ const TransactionProviderr =({children})=>{
             const transaction = await contract.createToken(url, NFTprice, { value: listingPrice })
             const wait = await transaction.wait()
             const tokenId = wait.events[1].args.tokenId.toNumber()
-            saveNftCreated(tokenId,name,description,size,royalty,properties,price,file,transaction.hash,address,account)
+            // saveNftCreated(tokenId,name,description,size,royalty,properties,price,file,transaction.hash,address,account)
             // console.log(formData);
             Swal.fire({
                 position: 'top-end',

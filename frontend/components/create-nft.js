@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
 
 const Create =()=>{
-const {setFormData,CreateNft,formData,AllUnsoldNFTs,disability} = useContext(TransactionContext)
+const {setFormData,CreateNft,formData,AllUnsoldNfts,disability} = useContext(TransactionContext)
 // console.log(AllUnsoldNFTs);
     return (
         <>
@@ -13,6 +13,7 @@ const {setFormData,CreateNft,formData,AllUnsoldNFTs,disability} = useContext(Tra
             <div className="row align-items-center">
                 <div className="col-lg-6 col-md-6 col-12">
                     <h5 className="title text-center text-md-start" >Create a New File</h5>
+                    <button onClick={AllUnsoldNfts}>test</button>
                 </div>
                 <div className="col-lg-6 col-md-6 col-12">
                     <ul className="breadcrumb-list">

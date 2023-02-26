@@ -40,7 +40,9 @@ const TransactionProviderr =({children})=>{
         }
     }
 
-    
+    useEffect(()=>{
+        AllUnsoldNfts()
+    },[nftData])
     useEffect(()=>{
         connectWallet(connector)
     },[account])

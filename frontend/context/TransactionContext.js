@@ -2,6 +2,7 @@ import React, { Context,createContext, useEffect, useState } from "react"
 import {abi,address} from '../constants/index'
 import {ethers} from 'ethers'
 import Swal from "sweetalert2"
+import {client} from '../constants/sanity.js'
 
 
 
@@ -41,6 +42,19 @@ const TransactionProviderr =({children})=>{
     useEffect(()=>{
         connectWallet(connector)
     },[account])
+    useEffect(()=>{
+        if(!account) return ;
+         (async ()=>{
+             const userDoc = {
+                 _type : 'users',
+                 _id : account,
+                 userName : 'a user',
+                 address : account
+             }
+             console.log('yeah');
+             await client.createIfNotExists(userDoc)
+         })()
+     },[account])
 
     const CreateNft = async function(){
         try{
@@ -74,25 +88,37 @@ const TransactionProviderr =({children})=>{
 
     }
 
-    const saveNftCreated =(tokenId, ...others)=>{
+    const saveNftCreated =async(tokenId, ...others)=>{
         const txDoc = {
             _type : 'nfts',
-            _id : others[8],
-            seller : others[10],
-            owner : others[9],
+            _id :'7d3jmmyd',
+            // seller : others[10],
+            // owner : others[9],
             Timestamp : new Date(Date.now()).toISOString(),
-            TxHash : others[8],
+            // TxHash : others[8],
             price : parseFloat(others[6]),
             sold : false,
-            image : others[7],
-            size : others[3],
-            description : others[2],
-            royalty : others[4],
-            tokenId : tokenId,
-            properties : others[5]
+        //     image : others[7],
+        //     size : others[3],
+        //     description : others[2],
+        //     royalty : others[4],
+        //     tokenId : tokenId,
+        //     properties : others[5]
         }
-        console.log('token',tokenId);
-        console.log('others',others[1]);
+        
+        await client.createIfNotExists(txDoc)
+        // await client
+        // .patch(others[10])
+        // .setIfMissing({nfts : []})
+        // .insert('after','nfts[-1]',[
+        //     {
+        //         _key : others[8],
+        //         _ref : others[8]
+        //         // _hash : 'reference'
+        //     }
+        // ])
+        // .commit()
+
     }
 
     const AllUnsoldNfts = async()=>{

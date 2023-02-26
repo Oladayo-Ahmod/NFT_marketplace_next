@@ -129,12 +129,24 @@ const TransactionProviderr =({children})=>{
             const contract = new ethers.Contract(address,abi,signer)
             const NFTS = await contract.allUnsoldItems()
             console.log(NFTS);
+            // await Promise.all(NFTS.map(async i =>{
+            //     const tokenURI = await contract.tokenURI(i.tokenId)
+            //     let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
+            //     let item = {
+            //         price,
+            //         tokenId: i.tokenId.toNumber(),
+            //         seller: i.seller,
+            //         owner: i.owner,
+            //         tokenURI
+            //       }
+            //       return item
+            // }))
+
         }
-        catch (error){
+
+        catch(error){
             console.log(error);
         }
-        
-    }
 
     return (
         <TransactionContext.Provider

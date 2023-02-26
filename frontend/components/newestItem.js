@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { useEffect } from 'react'
+import { useEffect,useContext } from 'react'
+import { TransactionContext } from "../context/TransactionContext"
 
 
 const NewestItem =()=>{
@@ -10,6 +11,8 @@ const NewestItem =()=>{
         require('bootstrap/dist/js/bootstrap.bundle')
     },[])
 
+    const {AllUnsoldNfts} = useContext(TransactionContext)
+    console.log(AllUnsoldNfts);
     var setting = {
         infinite: true,
         slidesToShow: 3,
@@ -66,6 +69,7 @@ const NewestItem =()=>{
             <div className="row mb--50 align-items-center">
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12">
                     <h3 className="title mb--0">Newest Items</h3>
+                    <button onClick={AllUnsoldNfts}>test</button>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
                     <div className="view-more-btn text-start text-sm-end">

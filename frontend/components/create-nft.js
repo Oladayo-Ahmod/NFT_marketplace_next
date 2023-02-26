@@ -3,8 +3,8 @@ import { useContext } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
 
 const Create =()=>{
-const {setFormData,CreateNft,formData,AllUnsoldNFTs} = useContext(TransactionContext)
-
+const {setFormData,CreateNft,formData,AllUnsoldNFTs,disability} = useContext(TransactionContext)
+// console.log(AllUnsoldNFTs);
     return (
         <>
                
@@ -12,13 +12,13 @@ const {setFormData,CreateNft,formData,AllUnsoldNFTs} = useContext(TransactionCon
         <div className="container">
             <div className="row align-items-center">
                 <div className="col-lg-6 col-md-6 col-12">
-                    <h5 className="title text-center text-md-start">Create a New File</h5>
+                    <h5 className="title text-center text-md-start" >Create a New File</h5>
                 </div>
                 <div className="col-lg-6 col-md-6 col-12">
                     <ul className="breadcrumb-list">
                         <li className="item"><a href="index.html">Home</a></li>
                         <li className="separator"><i className="feather-chevron-right"></i></li>
-                        <li className="item current">Crete a New File</li>
+                        <li className="item current">Create a New File</li>
                     </ul>
                 </div>
             </div>
@@ -84,7 +84,7 @@ const {setFormData,CreateNft,formData,AllUnsoldNFTs} = useContext(TransactionCon
                             <div className="col-md-4">
                                 <div className="input-box pb--20">
                                     <label for="dollerValue" className="form-label">Item Price</label>
-                                    <input id="dollerValue" placeholder="e. g. `20ETH`" onChange={e => setFormData({...formData, price : e.target.value  })} />
+                                    <input id="dollerValue" required placeholder="e. g. `20ETH`" onChange={e => setFormData({...formData, price : e.target.value  })} />
                                 </div>
                             </div>
 
@@ -112,7 +112,7 @@ const {setFormData,CreateNft,formData,AllUnsoldNFTs} = useContext(TransactionCon
 
                             <div className="col-md-12 col-xl-8 mt_lg--15 mt_md--15 mt_sm--15">
                                 <div className="input-box">
-                                    <button className="btn btn-primary btn-large w-100" type='button' onClick={CreateNft}>Submit Item</button>
+                                    <button className="btn btn-primary btn-large w-100" disabled={disability} type='button' onClick={CreateNft} >Submit Item</button>
                                 </div>
                             </div>
 

@@ -15,7 +15,7 @@ if(typeof window !== 'undefined'){
 
 
 const TransactionProviderr =({children})=>{
-    const [fileUrl,setFileUrl] = useState()
+    const [disability,setDisability] = useState(false)
     const [formData,setFormData] = useState(
         {
             name: '', 
@@ -51,13 +51,13 @@ const TransactionProviderr =({children})=>{
                  userName : 'a user',
                  address : account
              }
-             console.log('yeah');
              await client.createIfNotExists(userDoc)
          })()
      },[account])
 
     const CreateNft = async function(){
         try{
+            setDisability(true)
             const {name,description,size,royalty,properties,price,file} = formData
             const provider = new ethers.providers.Web3Provider(connector);
             const signer = provider.getSigner()
@@ -77,6 +77,7 @@ const TransactionProviderr =({children})=>{
                 showConfirmButton: false,
                 timer: 4000
             })
+            setDisability(false)
 
             
         }
@@ -92,18 +93,18 @@ const TransactionProviderr =({children})=>{
         const txDoc = {
             _type : 'nfts',
             _id :'7d3jmmyd',
-            // seller : others[10],
-            // owner : others[9],
+            seller : others[10],
+            owner : others[9],
             Timestamp : new Date(Date.now()).toISOString(),
-            // TxHash : others[8],
+            TxHash : others[8],
             price : parseFloat(others[6]),
             sold : false,
-        //     image : others[7],
-        //     size : others[3],
-        //     description : others[2],
-        //     royalty : others[4],
-        //     tokenId : tokenId,
-        //     properties : others[5]
+            image : others[7],
+            size : others[3],
+            description : others[2],
+            royalty : others[4],
+            tokenId : tokenId,
+            properties : others[5]
         }
         
         await client.createIfNotExists(txDoc)
@@ -122,11 +123,17 @@ const TransactionProviderr =({children})=>{
     }
 
     const AllUnsoldNfts = async()=>{
-        const provider = new ethers.providers.Web3Provider(connector)
-        const signer = provider.getSigner()
-        const contract = new ethers.Contract(address,abi,signer)
-        const NFTS = await contract.allUnsoldItems()
-        console.log(NFTS);
+        try{
+            const provider = new ethers.providers.Web3Provider(connector)
+            const signer = provider.getSigner()
+            const contract = new ethers.Contract(address,abi,signer)
+            const NFTS = await contract.allUnsoldItems()
+            console.log(NFTS);
+        }
+        catch (error){
+            console.log(error);
+        }
+        
     }
 
     return (
@@ -138,7 +145,9 @@ const TransactionProviderr =({children})=>{
                 CreateNft,
                 setFormData,
                 formData,
-                AllUnsoldNfts
+                AllUnsoldNfts,
+                disability,
+                setDisability
             }
             }
             >

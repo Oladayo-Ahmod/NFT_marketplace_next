@@ -27,6 +27,7 @@ const TransactionProviderr =({children})=>{
             file :''
         })
     const [account,setAccount] = useState()
+    const [nftData,setNftData] = useState()
 
 
     const connectWallet = async function(metamask = connector){
@@ -39,6 +40,7 @@ const TransactionProviderr =({children})=>{
         }
     }
 
+    
     useEffect(()=>{
         connectWallet(connector)
     },[account])
@@ -128,26 +130,25 @@ const TransactionProviderr =({children})=>{
             const signer = provider.getSigner()
             const contract = new ethers.Contract(address,abi,signer)
             const NFTS = await contract.allUnsoldItems()
-            console.log(NFTS);
-            // await Promise.all(NFTS.map(async i =>{
-            //     const tokenURI = await contract.tokenURI(i.tokenId)
-            //     let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
-            //     let item = {
-            //         price,
-            //         tokenId: i.tokenId.toNumber(),
-            //         seller: i.seller,
-            //         owner: i.owner,
-            //         tokenURI
-            //       }
-            //       return item
-            // }))
-
+            const data = await Promise.all(NFTS.map(async i =>{
+                const tokenURI = await contract.tokenURI(i.tokenId)
+                let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
+                let item = {
+                    price,
+                    tokenId: i.tokenId.toNumber(),
+                    seller: i.seller,
+                    owner: i.owner,
+                    tokenURI
+                  }
+                  return item
+            }))
+            setNftData(data)
         }
 
         catch(error){
             console.log(error);
         }
-
+    }
     return (
         <TransactionContext.Provider
             value={ 
@@ -155,11 +156,10 @@ const TransactionProviderr =({children})=>{
                 connectWallet,
                 account,
                 CreateNft,
-                setFormData,
                 formData,
                 AllUnsoldNfts,
                 disability,
-                setDisability
+                nftData
             }
             }
             >

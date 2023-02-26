@@ -11,8 +11,7 @@ const NewestItem =()=>{
         require('bootstrap/dist/js/bootstrap.bundle')
     },[])
 
-    const {AllUnsoldNfts} = useContext(TransactionContext)
-    console.log(AllUnsoldNfts);
+    const {AllUnsoldNfts,nftData} = useContext(TransactionContext)
     var setting = {
         infinite: true,
         slidesToShow: 3,

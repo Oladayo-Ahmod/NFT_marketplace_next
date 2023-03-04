@@ -40,11 +40,11 @@ const TransactionProviderr =({children})=>{
         }
     }
 
-    const testPinata = pinata.testAuthentication().then((result)=>{
-        console.log(result);
-    }).catch((error)=>{
-        console.log(error);
-    })
+    // const testPinata = pinata.testAuthentication().then((result)=>{
+    //     console.log(result);
+    // }).catch((error)=>{
+    //     console.log(error);
+    // })
 
     const connectWallet = async function(metamask = connector){
         if (metamask) {
@@ -79,18 +79,18 @@ const TransactionProviderr =({children})=>{
         try{
             setDisability(true)
             const {name,description,size,royalty,properties,price,file} = formData
+            const metaDataUrl = await uploadMetaData()
             const provider = new ethers.providers.Web3Provider(connector);
             const signer = provider.getSigner()
             const contract = new ethers.Contract(address,abi,signer)
             const NFTprice = new ethers.utils.parseUnits(price,'ether')
-            const url = 'https://mytoken.com'
             const listingPrice = await contract.getListingPrice()
-            const transaction = await contract.createToken(url, NFTprice, { value: listingPrice })
+            const transaction = await contract.createToken(metaDataUrl, NFTprice, { value: listingPrice })
             const wait = await transaction.wait()
             const tokenId = wait.events[1].args.tokenId.toNumber()
             
             // await client.createIfNotExists(txDoc)
-            saveNftCreated(tokenId,name,description,size,royalty,properties,price,file,transaction.hash,address,account)
+            // saveNftCreated(tokenId,name,description,size,royalty,properties,price,file,transaction.hash,address,account)
             // saveNftCreated(tokenId)
             // console.log(formData);
             Swal.fire({
@@ -126,9 +126,10 @@ const TransactionProviderr =({children})=>{
             price,
             file:nftUrl
         }
-
+        
         try {
-            
+            const response = await pinata.uploadJSONToIPFS(nftJSON)
+            return response.pinataUrl
         } catch (error) {
             console.log(error);
         }
@@ -210,7 +211,6 @@ const TransactionProviderr =({children})=>{
                 disability,
                 nftData,
                 setFormData,
-                testPinata,
                 fileWatcher
             }
             }

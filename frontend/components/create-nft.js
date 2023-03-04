@@ -5,6 +5,7 @@ import { TransactionContext } from "../context/TransactionContext"
 const Create =()=>{
 const {setFormData,CreateNft,formData,disability,fileWatcher} = useContext(TransactionContext)
 const [fileUrl,setFileUrl] = useState()
+// console.log(fileWatcher,'h');
     return (
         <>
                
@@ -43,7 +44,7 @@ const [fileUrl,setFileUrl] = useState()
 
                         <div className="brows-file-wrapper">
                             {/* <!-- actual upload which is hidden --> */}
-                            <input name="createinputfile" id="createinputfile" type="file" className="inputfile" onChange={e => setFormData({...formData, file : e.target.files[0]  })} />
+                            <input name="createinputfile" id="createinputfile" type="file" className="inputfile" onChange={e=>fileWatcher(e)} />
                             <Image id="createfileImage" src="/images/portfolio/portfolio-05.jpg" alt="" width={50} height={50} />
                             {/* <!-- our custom upload button --> */}
                             <label for="createinputfile" title="No File Choosen">
@@ -98,7 +99,7 @@ const [fileUrl,setFileUrl] = useState()
                             <div className="col-md-4">
                                 <div className="input-box pb--20">
                                     <label for="Propertie" className="form-label">Properties</label>
-                                    <input id="Propertie" placeholder="e. g. `Propertie`" onChange={fileWatcher} />
+                                    <input id="Propertie" placeholder="e. g. `Propertie`" onChange={e => setFormData({...formData, size : e.target.value  })} />
                                 </div>
                             </div>
 

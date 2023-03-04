@@ -1,9 +1,10 @@
 import Image from 'next/image'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
 
 const Create =()=>{
 const {setFormData,CreateNft,formData,disability} = useContext(TransactionContext)
+const [fileUrl,setFileUrl] = useState()
     return (
         <>
                

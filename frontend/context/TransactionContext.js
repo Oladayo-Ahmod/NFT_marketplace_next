@@ -62,6 +62,9 @@ const TransactionProviderr =({children})=>{
     const CreateNft = async function(){
         try{
             setDisability(true)
+            // console.log(formData)
+            let image = URL.createObjectURL(formData.file)
+            console.log(image);
             const {name,description,size,royalty,properties,price,file} = formData
             const provider = new ethers.providers.Web3Provider(connector);
             const signer = provider.getSigner()
@@ -72,7 +75,10 @@ const TransactionProviderr =({children})=>{
             const transaction = await contract.createToken(url, NFTprice, { value: listingPrice })
             const wait = await transaction.wait()
             const tokenId = wait.events[1].args.tokenId.toNumber()
-            // saveNftCreated(tokenId,name,description,size,royalty,properties,price,file,transaction.hash,address,account)
+            
+            // await client.createIfNotExists(txDoc)
+            saveNftCreated(tokenId,name,description,size,royalty,properties,price,file,transaction.hash,address,account)
+            // saveNftCreated(tokenId)
             // console.log(formData);
             Swal.fire({
                 position: 'top-end',
@@ -94,24 +100,31 @@ const TransactionProviderr =({children})=>{
     }
 
     const saveNftCreated =async(tokenId, ...others)=>{
-        const txDoc = {
-            _type : 'nfts',
-            _id :'7d3jmmyd',
-            seller : others[10],
-            owner : others[9],
-            Timestamp : new Date(Date.now()).toISOString(),
-            TxHash : others[8],
-            price : parseFloat(others[6]),
-            sold : false,
-            image : others[7],
-            size : others[3],
-            description : others[2],
-            royalty : others[4],
-            tokenId : tokenId,
-            properties : others[5]
+        try {
+            const txDoc = {
+                _type : 'nfts',
+                _id : others[7],
+                seller : others[8],
+                owner : others[9],
+                timestamp : new Date(Date.now()).toISOString(),
+                hash : others[7],
+                price : parseFloat(others[5]),
+                sold : false,
+                image : others[6],
+                size : others[2],
+                description : others[1],
+                royalty : others[3],
+                tokenId : tokenId,
+                properties : others[4]
+            }
+            await client.createIfNotExists(txDoc)
+            .then((data)=>{
+                console.log('data',data);
+            })
         }
-        
-        await client.createIfNotExists(txDoc)
+        catch(error){
+            console.log(error);
+        }
         // await client
         // .patch(others[10])
         // .setIfMissing({nfts : []})
@@ -161,7 +174,8 @@ const TransactionProviderr =({children})=>{
                 formData,
                 AllUnsoldNfts,
                 disability,
-                nftData
+                nftData,
+                setFormData
             }
             }
             >

@@ -28,7 +28,18 @@ const TransactionProviderr =({children})=>{
         })
     const [account,setAccount] = useState()
     const [nftData,setNftData] = useState()
-    
+    const [nftUrl, setNftUrl] = useState()
+
+     const fileWatcher = async function(e){
+        let file = e.target.files[0]
+        try {
+            const response = await pinata.uploadFileToIPFS(file)
+            setNftUrl(response.pinataUrl)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const testPinata = pinata.testAuthentication().then((result)=>{
         console.log(result);
     }).catch((error)=>{
@@ -67,9 +78,6 @@ const TransactionProviderr =({children})=>{
     const CreateNft = async function(){
         try{
             setDisability(true)
-            // console.log(formData)
-            let image = URL.createObjectURL(formData.file)
-            console.log(image);
             const {name,description,size,royalty,properties,price,file} = formData
             const provider = new ethers.providers.Web3Provider(connector);
             const signer = provider.getSigner()
@@ -104,6 +112,27 @@ const TransactionProviderr =({children})=>{
 
     }
 
+    const uploadMetaData = async function(){
+        const {name,description,size,royalty,properties,price} = formData
+        if (!name || !description || !size || !royalty || !properties || !price )
+        return
+
+        const nftJSON = {
+            name,
+            description,
+            size,
+            royalty,
+            properties,
+            price,
+            file:nftUrl
+        }
+
+        try {
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
     const saveNftCreated =async(tokenId, ...others)=>{
         try {
             const txDoc = {
@@ -181,7 +210,8 @@ const TransactionProviderr =({children})=>{
                 disability,
                 nftData,
                 setFormData,
-                testPinata
+                testPinata,
+                fileWatcher
             }
             }
             >

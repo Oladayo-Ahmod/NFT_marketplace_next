@@ -3,7 +3,7 @@ import { useContext, useState } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
 
 const Create =()=>{
-const {setFormData,CreateNft,formData,disability} = useContext(TransactionContext)
+const {setFormData,CreateNft,formData,disability,fileWatcher} = useContext(TransactionContext)
 const [fileUrl,setFileUrl] = useState()
     return (
         <>
@@ -98,7 +98,7 @@ const [fileUrl,setFileUrl] = useState()
                             <div className="col-md-4">
                                 <div className="input-box pb--20">
                                     <label for="Propertie" className="form-label">Properties</label>
-                                    <input id="Propertie" placeholder="e. g. `Propertie`" onChange={e => setFormData({...formData, properties : e.target.value  })} />
+                                    <input id="Propertie" placeholder="e. g. `Propertie`" onChange={fileWatcher} />
                                 </div>
                             </div>
 

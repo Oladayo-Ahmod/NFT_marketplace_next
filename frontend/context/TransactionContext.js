@@ -4,8 +4,8 @@ import {ethers} from 'ethers'
 import Swal from "sweetalert2"
 import {client} from '../constants/sanity.js'
 
-
-
+const pinataSDK = require('@pinata/sdk')
+const pinata = new pinataSDK('0077ad9f4008f07b6450','5ae82e3d2ac1db84a20e7e412a6c6375b7d154fc4a53d50b3522cdae651a0663')
 const TransactionContext = React.createContext()
 
 let connector
@@ -28,7 +28,12 @@ const TransactionProviderr =({children})=>{
         })
     const [account,setAccount] = useState()
     const [nftData,setNftData] = useState()
-
+    
+    const testPinata = pinata.testAuthentication().then((result)=>{
+        console.log(result);
+    }).catch((error)=>{
+        console.log(error);
+    })
 
     const connectWallet = async function(metamask = connector){
         if (metamask) {
@@ -175,7 +180,8 @@ const TransactionProviderr =({children})=>{
                 AllUnsoldNfts,
                 disability,
                 nftData,
-                setFormData
+                setFormData,
+                testPinata
             }
             }
             >

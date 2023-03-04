@@ -6,7 +6,6 @@ import {ethers} from 'ethers'
 
 const Navbar =()=>{
     const {connectWallet,account,CreateNft}= React.useContext(TransactionContext)
-    // console.log(ethers);
     return (
         <div>
             <header className="rn-header haeder-default header--sticky">

@@ -84,6 +84,7 @@ const TransactionProviderr =({children})=>{
             setDisability(true)
             const {name,description,size,royalty,properties,price,file} = formData
             const metaDataUrl = await uploadMetaData()
+            console.log(metaDataUrl);
             const provider = new ethers.providers.Web3Provider(connector);
             const signer = provider.getSigner()
             const contract = new ethers.Contract(address,abi,signer)
@@ -138,8 +139,8 @@ const TransactionProviderr =({children})=>{
             // const stringify = JSON.stringify(nftJSON)
             // console.log(nftJSON);
             const response = await uploadJSONToIPFS(nftJSON)
-            console.log(response);
-            // return response.pinataUrl
+            // console.log(response);
+            return response.pinataURL
         } catch (error) {
             console.log(error);
         }
@@ -192,13 +193,16 @@ const TransactionProviderr =({children})=>{
             const NFTS = await contract.allUnsoldItems()
             const data = await Promise.all(NFTS.map(async i =>{
                 const tokenURI = await contract.tokenURI(i.tokenId)
+                let meta = await axios.get(tokenURI);
+                meta = meta.data;
                 let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
                 let item = {
                     price,
                     tokenId: i.tokenId.toNumber(),
                     seller: i.seller,
                     owner: i.owner,
-                    tokenURI
+                    image: meta.image,
+                    name: meta.name,
                   }
                   return item
             }))

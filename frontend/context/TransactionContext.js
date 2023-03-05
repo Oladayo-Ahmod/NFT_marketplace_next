@@ -4,10 +4,8 @@ import {ethers} from 'ethers'
 import Swal from "sweetalert2"
 import {client} from '../constants/sanity.js'
 import {uploadJSONToIPFS,uploadFileToIPFS} from '../constants/pinata.js'
+const axios = require('axios');
 
-
-const pinataSDK = require('@pinata/sdk')
-const pinata = new pinataSDK('0077ad9f4008f07b6450','5ae82e3d2ac1db84a20e7e412a6c6375b7d154fc4a53d50b3522cdae651a0663')
 const TransactionContext = React.createContext()
 
 let connector
@@ -201,7 +199,7 @@ const TransactionProviderr =({children})=>{
                     tokenId: i.tokenId.toNumber(),
                     seller: i.seller,
                     owner: i.owner,
-                    image: meta.image,
+                    image: meta.file.pinataURL,
                     name: meta.name,
                   }
                   return item

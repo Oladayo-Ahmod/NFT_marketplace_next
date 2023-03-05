@@ -86,7 +86,7 @@ const NewestItem =()=>{
                             <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                             <div className="product-style-one no-overlay">
                                 <div className="card-thumbnail">
-                                    <a href="product-details.html"><Image src="/images/portfolio/portfolio-01.jpg" width={339} height={339} alt="NFT_portfolio" /></a>
+                                    <a href="product-details.html"><Image loader={()=>nft.image} src={nft.image} width={339} height={339} alt="NFT_portfolio" /></a>
                                 </div>
                                 <div className="product-share-wrapper">
                                     <div className="profile-share">

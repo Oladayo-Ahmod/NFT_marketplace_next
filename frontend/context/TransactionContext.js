@@ -3,6 +3,8 @@ import {abi,address} from '../constants/index'
 import {ethers} from 'ethers'
 import Swal from "sweetalert2"
 import {client} from '../constants/sanity.js'
+import {uploadJSONToIPFS,uploadFileToIPFS} from '../constants/pinata.js'
+
 
 const pinataSDK = require('@pinata/sdk')
 const pinata = new pinataSDK('0077ad9f4008f07b6450','5ae82e3d2ac1db84a20e7e412a6c6375b7d154fc4a53d50b3522cdae651a0663')
@@ -29,12 +31,14 @@ const TransactionProviderr =({children})=>{
     const [account,setAccount] = useState()
     const [nftData,setNftData] = useState()
     const [nftUrl, setNftUrl] = useState()
+    const [tokenId,setTokenId] = useState()
 
      const fileWatcher = async function(e){
         let file = e.target.files[0]
         try {
-            const response = await pinata.uploadFileToIPFS(file)
-            setNftUrl(response.pinataUrl)
+            const response = await uploadFileToIPFS(file)
+            setNftUrl(response)
+            console.log(response);
         } catch (error) {
             console.log(error);
         }
@@ -88,7 +92,7 @@ const TransactionProviderr =({children})=>{
             const transaction = await contract.createToken(metaDataUrl, NFTprice, { value: listingPrice })
             const wait = await transaction.wait()
             const tokenId = wait.events[1].args.tokenId.toNumber()
-            
+            // setTokenId(tokenId)
             // await client.createIfNotExists(txDoc)
             // saveNftCreated(tokenId,name,description,size,royalty,properties,price,file,transaction.hash,address,account)
             // saveNftCreated(tokenId)
@@ -105,6 +109,7 @@ const TransactionProviderr =({children})=>{
             
         }
         catch(error){
+            setDisability(false)
             console.log(error)
         }
        
@@ -114,8 +119,8 @@ const TransactionProviderr =({children})=>{
 
     const uploadMetaData = async function(){
         const {name,description,size,royalty,properties,price} = formData
-        if (!name || !description || !size || !royalty || !properties || !price )
-        return
+        // if (!name || !description || !size || !royalty || !properties || !price )
+        // return
 
         const nftJSON = {
             name,
@@ -124,12 +129,17 @@ const TransactionProviderr =({children})=>{
             royalty,
             properties,
             price,
+            // tokenId,
             file:nftUrl
         }
+
         
         try {
-            const response = await pinata.uploadJSONToIPFS(nftJSON)
-            return response.pinataUrl
+            // const stringify = JSON.stringify(nftJSON)
+            // console.log(nftJSON);
+            const response = await uploadJSONToIPFS(nftJSON)
+            console.log(response);
+            // return response.pinataUrl
         } catch (error) {
             console.log(error);
         }
@@ -211,7 +221,8 @@ const TransactionProviderr =({children})=>{
                 disability,
                 nftData,
                 setFormData,
-                fileWatcher
+                fileWatcher,
+                uploadMetaData
             }
             }
             >

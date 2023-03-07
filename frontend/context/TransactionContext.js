@@ -222,7 +222,7 @@ const TransactionProviderr =({children})=>{
             const parsedPrice = new ethers.utils.parseEther(price)
             const contract = new ethers.Contract(address,abi,signer)
             const purchase = await contract.createSale(tokenId,{value :parsedPrice})
-            await purchase.wait()
+            // await purchase.wait()
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',

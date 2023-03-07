@@ -100,7 +100,15 @@ const TransactionProviderr =({children})=>{
                 timer: 4000
             })
             setDisability(false)
-            setFormData('')
+            setFormData( {
+                name: '', 
+                description : '',
+                size: '',
+                royalty : '',
+                properties : '',
+                price : '',
+                file :''
+            })
             setMessage('Listing Item...')
 
             
@@ -222,7 +230,8 @@ const TransactionProviderr =({children})=>{
                 nftData,
                 setFormData,
                 fileWatcher,
-                uploadMetaData
+                uploadMetaData,
+                message
             }
             }
             >

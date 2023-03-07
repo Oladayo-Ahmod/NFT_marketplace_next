@@ -3,7 +3,7 @@ import { useContext, useState } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
 
 const Create =()=>{
-const {setFormData,CreateNft,formData,disability,fileWatcher} = useContext(TransactionContext)
+const {setFormData,CreateNft,formData,disability,fileWatcher,message} = useContext(TransactionContext)
 const [fileUrl,setFileUrl] = useState()
 // console.log(fileWatcher,'h');
     return (
@@ -113,7 +113,7 @@ const [fileUrl,setFileUrl] = useState()
 
                             <div className="col-md-12 col-xl-8 mt_lg--15 mt_md--15 mt_sm--15">
                                 <div className="input-box">
-                                    <button className="btn btn-primary btn-large w-100" disabled={disability} type='button' onClick={CreateNft} >Submit Item</button>
+                                    <button className="btn btn-primary btn-large w-100" disabled={disability} type='button' onClick={CreateNft} >{message}</button>
                                 </div>
                             </div>
 

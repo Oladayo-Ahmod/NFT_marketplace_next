@@ -29,7 +29,6 @@ const TransactionProviderr =({children})=>{
     const [account,setAccount] = useState()
     const [nftData,setNftData] = useState()
     const [nftUrl, setNftUrl] = useState()
-    const [tokenId,setTokenId] = useState()
     const [message,setMessage] = useState('Submit Item')
 
      const fileWatcher = async function(e){
@@ -88,11 +87,6 @@ const TransactionProviderr =({children})=>{
             const transaction = await contract.createToken(metaDataUrl, NFTprice, { value: listingPrice })
             const wait = await transaction.wait()
             const tokenId = wait.events[1].args.tokenId.toNumber()
-            // setTokenId(tokenId)
-            // await client.createIfNotExists(txDoc)
-            // saveNftCreated(tokenId,name,description,size,royalty,properties,price,file,transaction.hash,address,account)
-            // saveNftCreated(tokenId)
-            // console.log(formData);
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -234,7 +228,7 @@ const TransactionProviderr =({children})=>{
                 setFormData,
                 fileWatcher,
                 uploadMetaData,
-                message
+                message,
             }
             }
             >

@@ -30,23 +30,19 @@ const TransactionProviderr =({children})=>{
     const [nftData,setNftData] = useState()
     const [nftUrl, setNftUrl] = useState()
     const [tokenId,setTokenId] = useState()
+    const [message,setMessage] = useState('Submit Item')
 
      const fileWatcher = async function(e){
         let file = e.target.files[0]
         try {
             const response = await uploadFileToIPFS(file)
             setNftUrl(response)
-            console.log(response);
+            // console.log(response);
         } catch (error) {
             console.log(error);
         }
     }
 
-    // const testPinata = pinata.testAuthentication().then((result)=>{
-    //     console.log(result);
-    // }).catch((error)=>{
-    //     console.log(error);
-    // })
 
     const connectWallet = async function(metamask = connector){
         if (metamask) {
@@ -59,6 +55,7 @@ const TransactionProviderr =({children})=>{
     }
 
     useEffect(()=>{
+        // console.log(testSecret);
         AllUnsoldNfts()
     },[nftData])
     useEffect(()=>{
@@ -82,7 +79,6 @@ const TransactionProviderr =({children})=>{
             setDisability(true)
             const {name,description,size,royalty,properties,price,file} = formData
             const metaDataUrl = await uploadMetaData()
-            console.log(metaDataUrl);
             const provider = new ethers.providers.Web3Provider(connector);
             const signer = provider.getSigner()
             const contract = new ethers.Contract(address,abi,signer)
@@ -104,6 +100,8 @@ const TransactionProviderr =({children})=>{
                 timer: 4000
             })
             setDisability(false)
+            setFormData('')
+            setMessage('Listing Item...')
 
             
         }

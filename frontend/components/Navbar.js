@@ -3,8 +3,10 @@ import Image from "next/image"
 import { TransactionContext } from "../context/TransactionContext"
 import React, { useEffect } from "react";
 import {ethers} from 'ethers'
+import { useRouter } from "next/router";
 
 const Navbar =()=>{
+    const router = useRouter()
     const {connectWallet,account,CreateNft}= React.useContext(TransactionContext)
     return (
         <div>
@@ -27,7 +29,7 @@ const Navbar =()=>{
                                        
                                     </ul>
                                 </li>
-                                <li><a href="about.html">About</a>
+                                <li><a href='/create-nft'>About</a>
                                 </li>
                                 <li className="has-droupdown has-menu-child-item">
                                     <a href="#">Explore</a>

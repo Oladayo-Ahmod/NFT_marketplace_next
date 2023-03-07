@@ -12,7 +12,7 @@ const NewestItem =()=>{
     },[])
 
     const {AllUnsoldNfts,nftData} = useContext(TransactionContext)
-    console.log(nftData);
+    // console.log(nftData);
     var setting = {
         infinite: true,
         slidesToShow: 3,

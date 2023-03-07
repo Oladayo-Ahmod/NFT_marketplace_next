@@ -1,6 +1,7 @@
-require('dotenv').config();
+// require('dotenv').config();
 const key ='0077ad9f4008f07b6450';
 const secret = '5ae82e3d2ac1db84a20e7e412a6c6375b7d154fc4a53d50b3522cdae651a0663';
+// export const testSecret = process.env.PINATA_SECRET
 
 const axios = require('axios');
 const FormData = require('form-data');

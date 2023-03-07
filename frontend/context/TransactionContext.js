@@ -223,6 +223,13 @@ const TransactionProviderr =({children})=>{
             const contract = new ethers.Contract(address,abi,signer)
             const purchase = await contract.createSale(tokenId,{value :parsedPrice})
             await purchase.wait()
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                text: `You have successfully purchased this item at ${price} ETH`,
+                showConfirmButton: false,
+                timer: 4000
+            })
 
 
         } catch (error) {
@@ -244,6 +251,7 @@ const TransactionProviderr =({children})=>{
                 fileWatcher,
                 uploadMetaData,
                 message,
+                buyNft
             }
             }
             >

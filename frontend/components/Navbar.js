@@ -22,12 +22,8 @@ const Navbar =()=>{
                         <nav id="sideNav" className="mainmenu-nav d-none d-xl-block">
                             {/* <!-- Start Mainmanu Nav --> */}
                             <ul className="mainmenu">
-                                <li className="has-droupdown has-menu-child-item">
-                                    <a href="index.html">Home</a>
-                                    <ul className="submenu">
-                                        <li><a href="index.html">Home page - 01 <i className="feather-home"></i></a></li>
-                                       
-                                    </ul>
+                                <li>
+                                    <a href="/">Home</a>
                                 </li>
                                 <li><a href='/create-nft'>Create NFTs</a>
                                 </li>

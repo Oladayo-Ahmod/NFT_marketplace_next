@@ -77,6 +77,7 @@ const TransactionProviderr =({children})=>{
     const CreateNft = async function(){
         try{
             setDisability(true)
+            setMessage('Listing Item...')
             const {name,description,size,royalty,properties,price,file} = formData
             const metaDataUrl = await uploadMetaData()
             const provider = new ethers.providers.Web3Provider(connector);
@@ -100,7 +101,7 @@ const TransactionProviderr =({children})=>{
                 timer: 4000
             })
             setDisability(false)
-            setFormData( {
+            setFormData({
                 name: '', 
                 description : '',
                 size: '',
@@ -109,12 +110,14 @@ const TransactionProviderr =({children})=>{
                 price : '',
                 file :''
             })
-            setMessage('Listing Item...')
+            setMessage('Submit Item')
+
 
             
         }
         catch(error){
             setDisability(false)
+            setMessage('Submit Item')
             console.log(error)
         }
        

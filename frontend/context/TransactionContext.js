@@ -214,6 +214,21 @@ const TransactionProviderr =({children})=>{
             console.log(error);
         }
     }
+
+    const buyNft = async (tokenId,price)=>{
+        try {
+            const provider = new ethers.providers.Web3Provider(connector)
+            const signer = provider.getSigner()
+            const parsedPrice = new ethers.utils.parseEther(price)
+            const contract = new ethers.Contract(address,abi,signer)
+            const purchase = await contract.createSale(tokenId,{value :parsedPrice})
+            await purchase.wait()
+
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return (
         <TransactionContext.Provider
             value={ 

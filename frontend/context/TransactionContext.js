@@ -60,18 +60,6 @@ const TransactionProviderr =({children})=>{
     useEffect(()=>{
         connectWallet(connector)
     },[account])
-    useEffect(()=>{
-        if(!account) return ;
-         (async ()=>{
-             const userDoc = {
-                 _type : 'users',
-                 _id : account,
-                 userName : 'a user',
-                 address : account
-             }
-             await client.createIfNotExists(userDoc)
-         })()
-     },[account])
 
     const CreateNft = async function(){
         try{

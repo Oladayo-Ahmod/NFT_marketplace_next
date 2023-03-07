@@ -5,52 +5,9 @@ import 'slick-carousel/slick/slick-theme.css'
 import { useEffect,useContext } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
 
-
-const NewestItem =()=>{
-    useEffect(()=>{
-        require('bootstrap/dist/js/bootstrap.bundle')
-    },[])
-
-    const {AllUnsoldNfts,nftData,buyNft,account} = useContext(TransactionContext)
-    // console.log(account);
-    // console.log(nftData);
-    var setting = {
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        dots: false,
-        arrows: true,
-        cssEase: 'linear',
-        adaptiveHeight: true,
-        responsive: [{
-                breakpoint: 1124,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 868,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dots: true,
-                    arrows: true,
-                }
-            }
-        ]
-    }
-   
+const myNfts =()=>{
     return (
-              
-    <div className="rn-new-items rn-section-gapTop">
+        <div className="rn-new-items rn-section-gapTop">
         <div className="container">
             <div className="row mb--50 align-items-center">
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12">
@@ -105,18 +62,12 @@ const NewestItem =()=>{
                                 <div className="bid-react-area">
                                     <div className="last-bid">{nft.price}ETH</div>
                                     <div className="react-area">
-                                        {
-                                           parseFloat(nft.seller) == parseFloat(account) ? 
-                                            <button className='btn btn-danger btn-md' disabled>
-                                            owned
-                                          </button>
-                                            :
-                                            <button className='btn btn-primary btn-md' onClick={()=>buyNft(nft.tokenId,nft.price)}>
-                                            Buy
-                                          </button>
-                                        //   console.log();
-                                        }
-                                     
+                                        {/* <svg viewBox="0 0 17 16" fill="none" width="16" height="16" className="sc-bdnxRM sc-hKFxyN kBvkOu">
+                                            <path d="M8.2112 14L12.1056 9.69231L14.1853 7.39185C15.2497 6.21455 15.3683 4.46116 14.4723 3.15121V3.15121C13.3207 1.46757 10.9637 1.15351 9.41139 2.47685L8.2112 3.5L6.95566 2.42966C5.40738 1.10976 3.06841 1.3603 1.83482 2.97819V2.97819C0.777858 4.36443 0.885104 6.31329 2.08779 7.57518L8.2112 14Z" stroke="currentColor" stroke-width="2"></path>
+                                        </svg> */}
+                                      <button className='btn btn-primary btn-md' onClick={()=>buyNft(nft.tokenId,nft.price)}>
+                                        Buy
+                                      </button>
                                     </div>
                                 </div>
                             </div>
@@ -138,9 +89,7 @@ const NewestItem =()=>{
             </div>
         </div>
     </div>
-
-        
     )
 }
 
-export default NewestItem
+export default myNfts

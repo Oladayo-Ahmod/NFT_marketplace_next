@@ -103,17 +103,19 @@ const NewestItem =()=>{
                                 <a href="product-details.html"><span className="product-name">{nft.description}</span></a>
                                 {/* <span className="latest-bid">Highest bid 1/20</span> */}
                                 <div className="bid-react-area">
-                                    <div className="last-bid">{nft.price}ETH</div>
+                                    <div className="last-bid">{nft.price}ETH {account}</div>
                                     <div className="react-area">
                                         {
-                                           parseFloat(nft.seller) == parseFloat(account) ? 
+                                            Number(account) == Number(nft.seller)  || account == nft.owner ? 
                                             <button className='btn btn-danger btn-md' disabled>
                                             owned
                                           </button>
                                             :
-                                            <button className='btn btn-primary btn-md' onClick={()=>buyNft(nft.tokenId,nft.price)}>
-                                            Buy
-                                          </button>
+                                            account
+                                            //   {nft.seller}
+                                        //     <button className='btn btn-primary btn-md' onClick={()=>buyNft(nft.tokenId,nft.price)}>
+                                        //     Buy
+                                        //   </button>
                                         //   console.log();
                                         }
                                      

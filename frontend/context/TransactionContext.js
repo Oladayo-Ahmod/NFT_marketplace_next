@@ -30,6 +30,10 @@ const TransactionProviderr =({children})=>{
     const [nftData,setNftData] = useState()
     const [nftUrl, setNftUrl] = useState()
     const [message,setMessage] = useState('Submit Item')
+    const [btnState,setBtnState] = useState({
+        class:'btn btn-primary',
+        action : 'buy'
+    })
 
      const fileWatcher = async function(e){
         let file = e.target.files[0]
@@ -196,6 +200,7 @@ const TransactionProviderr =({children})=>{
                   return item
             }))
             setNftData(data)
+            
         }
 
         catch(error){

@@ -50,8 +50,9 @@ const NftDetails =()=>{
                                     <div class="rn-pd-thumbnail">
                                         <Image width={421} height={421}  src="/images/portfolio/portfolio-01.jpg" alt="Nft_Profile" />
                                     </div>
+                                    <button style={{width:'100%'}} class='btn btn-primary my-2'>Buy</button>
                                 </div>
-                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                {/* <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <div class="rn-pd-thumbnail">
                                         <Image  src="/images/portfolio/lg/portfolio-02.jpg" width={421} height={421} alt="Nft_Profile" />
                                     </div>
@@ -60,7 +61,7 @@ const NftDetails =()=>{
                                     <div class="rn-pd-thumbnail">
                                         <Image  src="/images/portfolio/lg/portfolio-03.jpg" width={421} height={421} alt="Nft_Profile" />
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
 
                         </div>

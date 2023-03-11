@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/footer'
-import NftDetails from '../components/details'
+import NftDetails from '../../components/details'
+import {useRouter} from 'next/router'
+
 const NFTDetails =()=>{
+    // console.log(tokenId);
     return (
         <>
          <Head>
@@ -13,6 +16,7 @@ const NFTDetails =()=>{
         </Head>
         <main>
             <Navbar />
+            {/* <h1>{router.query}</h1> */}
             <NftDetails />
             <Footer />
         </main>

@@ -1,6 +1,10 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router';
 
 const NftDetails =()=>{
+    const router = useRouter()
+    const {tokenId} = router.query;
+    console.log(tokenId,'tokenId');
     return (
         <>
         <div className="rn-breadcrumb-inner ptb--30">
@@ -27,24 +31,6 @@ const NftDetails =()=>{
                 <div class="col-lg-7 col-md-12 col-sm-12">
                     <div class="product-tab-wrapper rbt-sticky-top-adjust">
                         <div class="pd-tab-inner">
-                            {/* <div class="nav rn-pd-nav rn-pd-rt-content nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                                    <span class="rn-pd-sm-thumbnail">
-                                        <Image  src="/images/portfolio/sm/portfolio-01.jpg" alt="Nft_Profile" />
-                                    </span>
-                                </button>
-                                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                                    <span class="rn-pd-sm-thumbnail">
-                                        <Image  src="/images/portfolio/sm/portfolio-02.jpg" alt="Nft_Profile" />
-                                    </span>
-                                </button>
-                                <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
-                                    <span class="rn-pd-sm-thumbnail">
-                                        <Image  src="/images/portfolio/sm/portfolio-03.jpg" alt="Nft_Profile" />
-                                    </span>
-                                </button>
-                            </div> */}
-
                             <div class="tab-content rn-pd-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                     <div class="rn-pd-thumbnail">
@@ -52,16 +38,6 @@ const NftDetails =()=>{
                                     </div>
                                     <button style={{width:'100%'}} class='btn btn-primary my-2'>Buy</button>
                                 </div>
-                                {/* <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                    <div class="rn-pd-thumbnail">
-                                        <Image  src="/images/portfolio/lg/portfolio-02.jpg" width={421} height={421} alt="Nft_Profile" />
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                                    <div class="rn-pd-thumbnail">
-                                        <Image  src="/images/portfolio/lg/portfolio-03.jpg" width={421} height={421} alt="Nft_Profile" />
-                                    </div>
-                                </div> */}
                             </div>
 
                         </div>

@@ -208,6 +208,7 @@ const TransactionProviderr =({children})=>{
         }
     }
 
+    // buy nft 
     const buyNft = async (tokenId,price)=>{
         try {
             const provider = new ethers.providers.Web3Provider(connector)
@@ -229,6 +230,38 @@ const TransactionProviderr =({children})=>{
             console.log(error);
         }
     }
+
+    // fetch a single nft
+    const getNft =async (tokenId)=>{
+        try{
+            const provider = new ethers.providers.Web3Provider(connector)
+            const signer = provider.getSigner()
+            const contract = new ethers.Contract(address,abi,signer)
+            const NFTS = await contract.getItemById(tokenId)
+            const data = await Promise(NFTS.map(async i =>{
+                const tokenURI = await contract.tokenURI(i.tokenId)
+                let meta = await axios.get(tokenURI);
+                meta = meta.data;
+                let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
+                let item = {
+                    price,
+                    tokenId: i.tokenId.toNumber(),
+                    seller: i.seller,
+                    owner: i.owner,
+                    image: meta.file.pinataURL,
+                    name: meta.name,
+                  }
+                  return item
+            }))
+            setNftData(data)
+            
+        }
+
+        catch(error){
+            console.log(error);
+        }
+    } 
+
     return (
         <TransactionContext.Provider
             value={ 
@@ -244,7 +277,8 @@ const TransactionProviderr =({children})=>{
                 fileWatcher,
                 uploadMetaData,
                 message,
-                buyNft
+                buyNft,
+                getNft
             }
             }
             >

@@ -1,10 +1,15 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router';
+import { useContext,useEffect } from 'react';
+import { TransactionContext } from "../context/TransactionContext"
 
 const NftDetails =()=>{
+    const {getNft,nftData} = useContext(TransactionContext)
+    useEffect(()=>{
+        getNft
+    },[nftData])
     const router = useRouter()
     const {tokenId} = router.query;
-    console.log(tokenId,'tokenId');
     return (
         <>
         <div className="rn-breadcrumb-inner ptb--30">

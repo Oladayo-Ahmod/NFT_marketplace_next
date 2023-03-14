@@ -4,12 +4,16 @@ import { useContext,useEffect } from 'react';
 import { TransactionContext } from "../context/TransactionContext"
 
 const NftDetails =()=>{
-    const {getNft,nftData} = useContext(TransactionContext)
-    useEffect(()=>{
-        getNft
-    },[nftData])
+    const {getNft,nftData,singleData} = useContext(TransactionContext)
+    // console.log();
     const router = useRouter()
     const {tokenId} = router.query;
+    // const check = getNft(tokenId)
+    // useEffect(()=>{
+    //    console.log(singleData)
+    // },[singleData])
+
+    // console.log(check);
     return (
         <>
         <div className="rn-breadcrumb-inner ptb--30">
@@ -17,6 +21,7 @@ const NftDetails =()=>{
                 <div className="row align-items-center">
                     <div className="col-lg-6 col-md-6 col-12">
                         <h5 className="title text-center text-md-start">Product Details</h5>
+                        {/* <button onClick={getNft(tokenId)}></button> */}
                     </div>
                     <div className="col-lg-6 col-md-6 col-12">
                         <ul className="breadcrumb-list">

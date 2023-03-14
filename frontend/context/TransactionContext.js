@@ -253,7 +253,7 @@ const TransactionProviderr =({children})=>{
                   }
                   return item
             }))
-            setNftData(data)
+            // setNftData(data)
             
         }
 

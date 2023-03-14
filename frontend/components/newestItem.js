@@ -13,7 +13,7 @@ const NewestItem =()=>{
 
     const {AllUnsoldNfts,nftData,buyNft,account} = useContext(TransactionContext)
     // console.log(account);
-    // console.log(nftData);
+    // console.log(AllUnsoldNfts);
     var setting = {
         infinite: true,
         slidesToShow: 3,
@@ -72,15 +72,10 @@ const NewestItem =()=>{
                             <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                             <div className="product-style-one no-overlay">
                                 <div className="card-thumbnail">
-                                    <a href="product-details.html"><Image loader={()=>nft.image} src={nft.image} width={339} height={339} alt="NFT_portfolio" /></a>
+                                    <a  href={`/nft-details/${nft.tokenId}`}><Image loader={()=>nft.image} src={nft.image} width={339} height={339} alt="NFT_portfolio" /></a>
                                 </div>
                                 <div className="product-share-wrapper">
-                                    {/* <div className="profile-share">
-                                        <a href="author.html" className="avatar" ><Image src="/images/client/client-1.png"  width={26} height={26} alt="Nft_Profile" /></a>
-                                        <a href="author.html" className="avatar"><Image src="/images/client/client-2.png"  width={26} height={26} alt="Nft_Profile" /></a>
-                                        <a href="author.html" className="avatar" ><Image src="/images/client/client-3.png"  width={26} height={26} alt="Nft_Profile" /></a>
-                                        <a className="more-author-text" href="#">9+ Place Bit.</a>
-                                    </div> */}
+                                   
                                     <div className="share-btn share-btn-activation dropdown">
                                         <button className="icon" aria-expanded="false">
                                             <svg viewBox="0 0 14 4" fill="none" width="16" height="16" className="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -89,21 +84,14 @@ const NewestItem =()=>{
                                         </button>
         
         
-                                        {/* <div className="share-btn-setting dropdown-menu dropdown-menu-end d-none">
-                                            <button type="button" className="btn-setting-text share-text">
-                                                Share
-                                            </button>
-                                            <button type="button" className="btn-setting-text report-text">
-                                                Report
-                                            </button>
-                                        </div> */}
+                                     
         
                                     </div>
                                 </div>
-                                <a href="product-details.html"><span className="product-name">{nft.description}</span></a>
+                                <a href={`/nft-details/${nft.tokenId}`}><span className="product-name">{nft.description}</span></a>
                                 {/* <span className="latest-bid">Highest bid 1/20</span> */}
                                 <div className="bid-react-area">
-                                    <div className="last-bid">{nft.price}ETH {account}</div>
+                                    <div className="last-bid">{nft.price}ETH</div>
                                     <div className="react-area">
                                         {
                                             Number(account) == Number(nft.seller)  || account == nft.owner ? 
@@ -111,12 +99,10 @@ const NewestItem =()=>{
                                             owned
                                           </button>
                                             :
-                                            account
-                                            //   {nft.seller}
-                                        //     <button className='btn btn-primary btn-md' onClick={()=>buyNft(nft.tokenId,nft.price)}>
-                                        //     Buy
-                                        //   </button>
-                                        //   console.log();
+                                            <button className='btn btn-primary btn-md' disabled>
+                                            Buy
+                                          </button>
+                                           
                                         }
                                      
                                     </div>

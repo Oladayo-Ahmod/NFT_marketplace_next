@@ -8,6 +8,7 @@ const NftDetails =()=>{
     // console.log();
     const router = useRouter()
     const {tokenId} = router.query;
+    // console.log(tokenId.toBig)
     // const check = getNft(tokenId)
     // useEffect(()=>{
     //    console.log(singleData)
@@ -21,7 +22,7 @@ const NftDetails =()=>{
                 <div className="row align-items-center">
                     <div className="col-lg-6 col-md-6 col-12">
                         <h5 className="title text-center text-md-start">Product Details</h5>
-                        {/* <button onClick={getNft(tokenId)}></button> */}
+                        {/* <button onClick={getNft(1)}></button> */}
                     </div>
                     <div className="col-lg-6 col-md-6 col-12">
                         <ul className="breadcrumb-list">

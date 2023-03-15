@@ -5,18 +5,48 @@ import 'slick-carousel/slick/slick-theme.css'
 import { useEffect,useContext } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
 
-const myNfts =()=>{
+const MyNfts =()=>{
+    const {nftData} = useContext(TransactionContext)
+    var setting = {
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        cssEase: 'linear',
+        adaptiveHeight: true,
+        responsive: [{
+                breakpoint: 1124,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 868,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: true,
+                }
+            }
+        ]
+    }
     return (
-        <div className="rn-new-items rn-section-gapTop">
+        <>
+             <div className="rn-new-items rn-section-gapTop">
         <div className="container">
             <div className="row mb--50 align-items-center">
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <h3 className="title mb--0">Newest Items</h3>
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
-                    <div className="view-more-btn text-start text-sm-end">
-                        <a className="btn-transparent" href="#">VIEW ALL<i data-feather="arrow-right"></i></a>
-                    </div>
+                    <h3 className="title mb--0">My Purchased Items</h3>
                 </div>
             </div>
             <div className="row g-5">
@@ -89,7 +119,8 @@ const myNfts =()=>{
             </div>
         </div>
     </div>
+        </>
     )
 }
 
-export default myNfts
+export default MyNfts

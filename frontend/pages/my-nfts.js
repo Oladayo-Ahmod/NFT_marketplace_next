@@ -1,24 +1,23 @@
-import Head from 'next/head'
+import MyNfts from "../components/my-nfts"
 import Navbar from '@/components/Navbar'
-import Footer from '@/components/footer'
-import Create from '../components/create-nft'
-const CreateNFT =()=>{
+import Footer from '@/components/Footer'
+import Head from "next/head"
+const My_Nfts=()=>{
     return (
-        <>
+       <>
          <Head>
-            <title>NFT Marketplace | Create NFT</title>
+            <title>NFT Marketplace | My NFTs</title>
             <meta name="description" content="An awesome nft marketplace" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
             <Navbar />
-            <Create />
+            <MyNfts />
             <Footer />
         </main>
-           
-        </>
+       </> 
     )
 }
 
-export default CreateNFT
+export default My_Nfts

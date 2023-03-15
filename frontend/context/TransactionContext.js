@@ -188,7 +188,7 @@ const TransactionProviderr =({children})=>{
                 let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
                 let item = {
                     price,
-                    tokenId: i.tokenId.toNumber(),
+                    tokenId: i.tokenId,
                     seller: i.seller,
                     owner: i.owner,
                     image: meta.file.pinataURL,

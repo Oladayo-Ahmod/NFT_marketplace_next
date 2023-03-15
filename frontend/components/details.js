@@ -7,6 +7,7 @@ const NftDetails =()=>{
     const {getNft,nftData,singleData} = useContext(TransactionContext)
     const router = useRouter()
     const {tokenId} = router.query;
+    // const check = nftData.
     // useEffect(()=>{
     //     getNft()
     // })

@@ -5,9 +5,11 @@ import { TransactionContext } from "../context/TransactionContext"
 
 const NftDetails =()=>{
     const {getNft,nftData,singleData} = useContext(TransactionContext)
-    // console.log();
     const router = useRouter()
     const {tokenId} = router.query;
+    // useEffect(()=>{
+    //     getNft()
+    // })
     // console.log(tokenId.toBig)
     // const check = getNft(tokenId)
     // useEffect(()=>{

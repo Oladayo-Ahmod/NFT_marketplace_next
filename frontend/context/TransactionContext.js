@@ -261,7 +261,7 @@ const TransactionProviderr =({children})=>{
     } 
 
     // resell purchased nft by user
-    const resellNfts = async (tokenId,price)=>{
+    const resellNft = async (tokenId,price)=>{
         try{
             const provider = new ethers.providers.Web3Provider(connector)
             const signer = provider.getSigner()
@@ -328,7 +328,8 @@ const TransactionProviderr =({children})=>{
                 buyNft,
                 getNft,
                 singleData,
-                resellNfts
+                resellNft,
+                userNfts
             }
             }
             >

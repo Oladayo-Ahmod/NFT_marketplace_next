@@ -213,7 +213,7 @@ const TransactionProviderr =({children})=>{
             const parsedPrice = new ethers.utils.parseEther(price)
             const contract = new ethers.Contract(address,abi,signer)
             const purchase = await contract.createSale(tokenId,{value :parsedPrice})
-            // await purchase.wait()
+            await purchase.wait()
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -242,7 +242,7 @@ const TransactionProviderr =({children})=>{
                 let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
                 let item = {
                     price,
-                    tokenId: i.tokenId.toNumber(),
+                    tokenId: i.tokenId,
                     seller: i.seller,
                     owner: i.owner,
                     image: meta.file.pinataURL,
@@ -260,6 +260,26 @@ const TransactionProviderr =({children})=>{
         }
     } 
 
+    const resellNfts = async (tokenId,price)=>{
+        try{
+            const provider = new ethers.providers.Web3Provider(connector)
+            const signer = provider.getSigner()
+            const contract = new ethers.Contract(address,abi,signer)
+            const NFTprice = new ethers.utils.parseUnits(price,'ether')
+            await contract.resellItem(tokenId,NFTprice)
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                text: `You have successfully relisted this item at ${price} ETH`,
+                showConfirmButton: false,
+                timer: 4000
+            })
+
+        }
+        catch(error){
+            console.log(error);
+        }
+    }
     return (
         <TransactionContext.Provider
             value={ 

@@ -260,6 +260,7 @@ const TransactionProviderr =({children})=>{
         }
     } 
 
+    // resell purchased nft by user
     const resellNfts = async (tokenId,price)=>{
         try{
             const provider = new ethers.providers.Web3Provider(connector)
@@ -280,6 +281,35 @@ const TransactionProviderr =({children})=>{
             console.log(error);
         }
     }
+
+    // all nfts purchased by a user
+    const userNfts=async()=>{
+        try {
+            const provider = new ethers.providers.Web3Provider(connector)
+            const signer = provider.getSigner()
+            const contract = new ethers.Contract(address,abi,signer)
+            const NFTS = await contract.fetchMyItems()
+            const data = await Promise.all(NFTS.map(async i =>{
+                const tokenURI = await contract.tokenURI(i.tokenId)
+                let meta = await axios.get(tokenURI);
+                meta = meta.data;
+                let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
+                let item = {
+                    price,
+                    tokenId: i.tokenId,
+                    seller: i.seller,
+                    owner: i.owner,
+                    image: meta.file.pinataURL,
+                    name: meta.name,
+                  }
+                  return item
+            }))
+            setNftData(data)
+        } catch (error) {
+            console.log(error);
+        }
+    } 
+
     return (
         <TransactionContext.Provider
             value={ 

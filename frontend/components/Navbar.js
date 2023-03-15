@@ -29,6 +29,7 @@ const Navbar =()=>{
                                 </li>
                           
                                 <li><a href="/my-nfts">My NFTs</a></li>
+                                <li><a href="/my-collection">My Collections</a></li>
                             </ul>
                             {/* <!-- End Mainmanu Nav --> */}
                         </nav>

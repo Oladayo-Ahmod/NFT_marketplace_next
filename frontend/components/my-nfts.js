@@ -6,7 +6,7 @@ import { useEffect,useContext } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
 
 const MyNfts =()=>{
-    const {nftData} = useContext(TransactionContext)
+    const {nftData,resellNfts} = useContext(TransactionContext)
     var setting = {
         infinite: true,
         slidesToShow: 3,

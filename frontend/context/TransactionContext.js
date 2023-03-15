@@ -297,7 +297,8 @@ const TransactionProviderr =({children})=>{
                 message,
                 buyNft,
                 getNft,
-                singleData
+                singleData,
+                resellNfts
             }
             }
             >

@@ -356,7 +356,8 @@ const TransactionProviderr =({children})=>{
                 getNft,
                 singleData,
                 resellNft,
-                userNfts
+                userNfts,
+                userListedNfts
             }
             }
             >

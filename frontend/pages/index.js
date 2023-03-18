@@ -7,8 +7,8 @@ import NewestItem from '../components/newestItem'
 import TopCollection from '@/components/topCollection'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/footer'
-
-
+import { useContext, useEffect } from 'react'
+import { TransactionContext } from "../context/TransactionContext"
 
 const inter = Inter({ subsets: ['latin'] })
 

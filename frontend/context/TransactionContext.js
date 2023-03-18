@@ -54,10 +54,10 @@ const TransactionProviderr =({children})=>{
         }
     }
 
-    useEffect(()=>{
-        // console.log(testSecret);
-        AllUnsoldNfts()
-    },[nftData])
+    // useEffect(()=>{
+    //     // console.log(testSecret);
+    //     AllUnsoldNfts()
+    // },[nftData])
     useEffect(()=>{
         connectWallet(connector)
     },[account])
@@ -74,7 +74,7 @@ const TransactionProviderr =({children})=>{
             const NFTprice = new ethers.utils.parseUnits(price,'ether')
             const listingPrice = await contract.getListingPrice()
             const transaction = await contract.createToken(metaDataUrl, NFTprice, { value: listingPrice })
-            const wait = await transaction.wait()
+             await transaction.wait()
             const tokenId = wait.events[1].args.tokenId.toNumber()
             Swal.fire({
                 position: 'top-end',
@@ -183,6 +183,7 @@ const TransactionProviderr =({children})=>{
             const NFTS = await contract.allUnsoldItems()
             const data = await Promise.all(NFTS.map(async i =>{
                 const tokenURI = await contract.tokenURI(i.tokenId)
+                // console.log(tokenURI);
                 let meta = await axios.get(tokenURI);
                 meta = meta.data;
                 let price = ethers.utils.formatUnits(i.price.toString(), 'ether')

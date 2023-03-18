@@ -185,6 +185,7 @@ const TransactionProviderr =({children})=>{
                 const tokenURI = await contract.tokenURI(i.tokenId)
                 // console.log(tokenURI);
                 let meta = await axios.get(tokenURI);
+                // console.log(meta);
                 meta = meta.data;
                 let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
                 let item = {
@@ -197,6 +198,7 @@ const TransactionProviderr =({children})=>{
                   }
                   return item
             }))
+            console.log('datas',data);
             setNftData(data)
             
         }
@@ -305,7 +307,7 @@ const TransactionProviderr =({children})=>{
                   }
                   return item
             }))
-            setNftData(data)
+            // setNftData(data)
         } catch (error) {
             console.log(error);
         }
@@ -333,7 +335,7 @@ const TransactionProviderr =({children})=>{
                   }
                   return item
             }))
-            setNftData(data)
+            // setNftData(data)
         } catch (error) {
             console.log(error);
         }

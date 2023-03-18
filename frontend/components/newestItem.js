@@ -61,7 +61,6 @@ const NewestItem =()=>{
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
                     <div className="view-more-btn text-start text-sm-end">
                         <a className="btn-transparent" href="#">VIEW ALL<i data-feather="arrow-right"></i></a>
-                        <button onClick={AllUnsoldNfts}>test</button>
                     </div>
                 </div>
             </div>

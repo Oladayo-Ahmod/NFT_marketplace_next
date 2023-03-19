@@ -14,11 +14,10 @@ const NewestItem =()=>{
     if(typeof window !== 'undefined'){
         connector = window.ethereum
     }
-    const {AllUnsoldNfts,nftData,buyNft,account} = useContext(TransactionContext)
+    const {nftData,buyNft,account} = useContext(TransactionContext)
     const [nft,setNft] = useState('')
     useEffect(()=>{
         const AllUnsoldNfts = async()=>{
-            try{
                 const provider = new ethers.providers.Web3Provider(connector)
                 const signer = provider.getSigner()
                 const contract = new ethers.Contract(address,abi,signer)
@@ -47,11 +46,8 @@ const NewestItem =()=>{
                 // console.log('datas',data);
                 setNft(data)
                 
-            }
     
-            catch(error){
-                console.log(error);
-            }
+
         };
         AllUnsoldNfts()
         console.log('nft',nft)

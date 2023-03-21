@@ -14,6 +14,9 @@ const NewestItem =()=>{
     if(typeof window !== 'undefined'){
         connector = window.ethereum
     }
+    else{
+        // alert('Please, install metamask')
+    }
     const {nftData,buyNft,account} = useContext(TransactionContext)
     const [nft,setNft] = useState('')
     useEffect(()=>{
@@ -50,7 +53,7 @@ const NewestItem =()=>{
 
         };
         AllUnsoldNfts()
-        console.log('nft',nft)
+        // console.log('nft',nft)
     },[nft])
     useEffect(()=>{
         require('bootstrap/dist/js/bootstrap.bundle')

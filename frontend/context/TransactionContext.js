@@ -73,9 +73,9 @@ const TransactionProviderr =({children})=>{
             const contract = new ethers.Contract(address,abi,signer)
             const NFTprice = new ethers.utils.parseUnits(price,'ether')
             const listingPrice = await contract.getListingPrice()
-            await contract.createToken(metaDataUrl, NFTprice, { value: listingPrice })
-            //  await transaction.wait()
-            const tokenId = wait.events[1].args.tokenId.toNumber()
+            const transaction = await contract.createToken(metaDataUrl, NFTprice, { value: listingPrice })
+            await transaction.wait()
+            // const tokenId = wait.events[1].args.tokenId.toNumber()
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -93,7 +93,7 @@ const TransactionProviderr =({children})=>{
                 price : '',
                 file :''
             })
-            setMessage('Submit Item')
+            setMessage('successfully listed!')
 
 
             

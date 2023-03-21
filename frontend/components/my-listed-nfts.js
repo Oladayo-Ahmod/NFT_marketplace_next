@@ -2,10 +2,17 @@ import Image from 'next/image'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import {abi,address} from '../constants/index'
+import {ethers} from 'ethers'
+const axios = require('axios');
 import { useEffect,useContext } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
 
 const MyListedNFTs =()=>{
+    let connector
+    if(typeof window !== 'undefined'){
+        connector = window.ethereum
+    }
     const {nftData,userListedNfts} = useContext(TransactionContext)
     // console.log(nftData);
     useEffect(()=>{

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { useEffect,useContext } from 'react'
+import { useEffect,useContext ,useState} from 'react'
 import { TransactionContext } from "../context/TransactionContext"
 import {abi,address} from '../constants/index'
 import {ethers} from 'ethers'
@@ -10,10 +10,48 @@ const axios = require('axios');
 
 
 const MyNfts =()=>{
+    let connector
+    if(typeof window !== 'undefined'){
+        connector = window.ethereum
+    }
     const {nftData,resellNft,userNfts,userNftData} = useContext(TransactionContext)
+    const [test,setTest] = useState()
     useEffect(()=>{
         userNfts()
+        // console.log(userNftData);
     },[userNftData])
+    useEffect(()=>{
+            // all nfts purchased by a user
+    const userNftss=async()=>{
+        try {
+            const provider = new ethers.providers.Web3Provider(connector)
+            const signer = provider.getSigner()
+            const contract = new ethers.Contract(address,abi,signer)
+            const NFTS = await contract.fetchMyItems()
+            const data = await Promise.all(NFTS.map(async i =>{
+                const tokenURI = await contract.tokenURI(i.tokenId)
+                let meta = await axios.get(tokenURI);
+                meta = meta.data;
+                let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
+                let item = {
+                    price,
+                    tokenId: i.tokenId.toNumber(),
+                    seller: i.seller,
+                    owner: i.owner,
+                    image: meta.file.pinataURL,
+                    name: meta.name,
+                  }
+                  return item
+            }))
+            setTest(data)
+            // setNftData(data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    userNftss()
+    // console.log('test',test); 
+    },[])
     var setting = {
         infinite: true,
         slidesToShow: 3,
@@ -61,8 +99,8 @@ const MyNfts =()=>{
                 {/* <!-- start single product --> */}
                 <Slider {...setting}>
                     {
-                        userNftData?
-                        userNftData.map((nft,i)=>(
+                        test?
+                        test.map((nft,i)=>(
                             <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                             <div className="product-style-one no-overlay">
                                 <div className="card-thumbnail">
@@ -82,7 +120,7 @@ const MyNfts =()=>{
                                 <div className="bid-react-area">
                                     <div className="last-bid">{nft.price}ETH</div>
                                     <div className="react-area">
-                                      <button className='btn btn-success btn-md' onClick={()=>resellNft(nft.tokenId,nft.price)}>
+                                      <button className='btn btn-success btn-md' onClick={()=>resellNft(1,nft.price)}>
                                         Resell
                                       </button>
                                     </div>

@@ -233,7 +233,8 @@ const TransactionProviderr =({children})=>{
             const signer = provider.getSigner()
             const contract = new ethers.Contract(address,abi,signer)
             const NFTprice = new ethers.utils.parseUnits(price,'ether')
-            await contract.resellItem(tokenId,NFTprice)
+            const transaction = await contract.resellItem(tokenId,NFTprice)
+            transaction.wait()
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -262,7 +263,7 @@ const TransactionProviderr =({children})=>{
                 let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
                 let item = {
                     price,
-                    tokenId: i.tokenId,
+                    tokenId: i.tokenId.toNumber(),
                     seller: i.seller,
                     owner: i.owner,
                     image: meta.file.pinataURL,
@@ -277,33 +278,6 @@ const TransactionProviderr =({children})=>{
         }
     } 
 
-    // fetch all nfts created by
-    const userListedNfts=async()=>{
-        try {
-            const provider = new ethers.providers.Web3Provider(connector)
-            const signer = provider.getSigner()
-            const contract = new ethers.Contract(address,abi,signer)
-            const NFTS = await contract.fetchMyListedItems()
-            const data = await Promise.all(NFTS.map(async i =>{
-                const tokenURI = await contract.tokenURI(i.tokenId)
-                let meta = await axios.get(tokenURI);
-                meta = meta.data;
-                let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
-                let item = {
-                    price,
-                    tokenId: i.tokenId,
-                    seller: i.seller,
-                    owner: i.owner,
-                    image: meta.file.pinataURL,
-                    name: meta.name,
-                  }
-                  return item
-            }))
-            // setNftData(data)
-        } catch (error) {
-            console.log(error);
-        }
-    }
     return (
         <TransactionContext.Provider
             value={ 
@@ -323,7 +297,6 @@ const TransactionProviderr =({children})=>{
                 singleData,
                 resellNft,
                 userNfts,
-                userListedNfts,
                 userNftData
             }
             }

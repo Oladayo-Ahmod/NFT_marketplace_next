@@ -11,10 +11,8 @@ const axios = require('axios');
 
 const MyNfts =()=>{
     const {nftData,resellNft,userNfts,userNftData} = useContext(TransactionContext)
-    // console.log(nftData);
     useEffect(()=>{
         userNfts()
-        // console.log(test)
     },[userNftData])
     var setting = {
         infinite: true,

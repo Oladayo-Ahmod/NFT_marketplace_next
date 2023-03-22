@@ -42,12 +42,13 @@ const MyListedNFTs =()=>{
                   return item
             }))
             setNftDat(data)
-            console.log(data);
+            // console.log(data);
         } catch (error) {
             console.log(error);
         }
-        userListedNfts()
     }
+    userListedNfts()
+
     },[nftDat])
 
     var setting = {

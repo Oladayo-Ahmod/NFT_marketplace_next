@@ -14,9 +14,7 @@ const NewestItem =()=>{
     if(typeof window !== 'undefined'){
         connector = window.ethereum
     }
-    else{
-        // alert('Please, install metamask')
-    }
+
     const {nftData,buyNft,account} = useContext(TransactionContext)
     const [nft,setNft] = useState('')
     useEffect(()=>{

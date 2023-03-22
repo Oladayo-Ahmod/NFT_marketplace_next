@@ -233,7 +233,8 @@ const TransactionProviderr =({children})=>{
             const signer = provider.getSigner()
             const contract = new ethers.Contract(address,abi,signer)
             const NFTprice = new ethers.utils.parseUnits(price,'ether')
-            const transaction = await contract.resellItem(tokenId,NFTprice)
+            const listingPrice = await contract.getListingPrice()
+            const transaction = await contract.resellItem(tokenId,NFTprice,{value : listingPrice})
             transaction.wait()
             Swal.fire({
                 position: 'top-end',

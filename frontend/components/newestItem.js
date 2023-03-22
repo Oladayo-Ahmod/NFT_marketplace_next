@@ -23,6 +23,7 @@ const NewestItem =()=>{
                 const signer = provider.getSigner()
                 const contract = new ethers.Contract(address,abi,signer)
                 const NFTS = await contract.allUnsoldItems()
+                console.log(NFTS);
                 const data = await Promise.all(NFTS.map(async i =>{
                     const tokenURI = await contract.tokenURI(i.tokenId)
                     // console.log(tokenURI);

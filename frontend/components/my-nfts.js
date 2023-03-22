@@ -4,13 +4,18 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { useEffect,useContext } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
+import {abi,address} from '../constants/index'
+import {ethers} from 'ethers'
+const axios = require('axios');
+
 
 const MyNfts =()=>{
-    const {nftData,resellNft,userNfts} = useContext(TransactionContext)
+    const {nftData,resellNft,userNfts,userNftData} = useContext(TransactionContext)
     // console.log(nftData);
     useEffect(()=>{
         userNfts()
-    },[])
+        // console.log(test)
+    },[userNftData])
     var setting = {
         infinite: true,
         slidesToShow: 3,
@@ -58,8 +63,8 @@ const MyNfts =()=>{
                 {/* <!-- start single product --> */}
                 <Slider {...setting}>
                     {
-                        nftData?
-                        nftData.map((nft,i)=>(
+                        userNftData?
+                        userNftData.map((nft,i)=>(
                             <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                             <div className="product-style-one no-overlay">
                                 <div className="card-thumbnail">

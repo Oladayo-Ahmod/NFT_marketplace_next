@@ -31,6 +31,7 @@ const TransactionProviderr =({children})=>{
     const [nftUrl, setNftUrl] = useState()
     const [message,setMessage] = useState('Submit Item')
     const [singleData,setSingleData] = useState()
+    const [userNftData, setUserNftData] = useState('')
 
      const fileWatcher = async function(e){
         let file = e.target.files[0]
@@ -269,6 +270,7 @@ const TransactionProviderr =({children})=>{
                   }
                   return item
             }))
+            setUserNftData(data)
             // setNftData(data)
         } catch (error) {
             console.log(error);
@@ -321,7 +323,8 @@ const TransactionProviderr =({children})=>{
                 singleData,
                 resellNft,
                 userNfts,
-                userListedNfts
+                userListedNfts,
+                userNftData
             }
             }
             >

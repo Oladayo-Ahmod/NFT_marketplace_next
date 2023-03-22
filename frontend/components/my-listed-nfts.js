@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import {abi,address} from '../constants/index'
 import {ethers} from 'ethers'
 const axios = require('axios');
-import { useEffect,useContext } from 'react'
+import { useEffect,useContext, useState } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
 
 const MyListedNFTs =()=>{
@@ -13,11 +13,43 @@ const MyListedNFTs =()=>{
     if(typeof window !== 'undefined'){
         connector = window.ethereum
     }
-    const {nftData,userListedNfts} = useContext(TransactionContext)
-    // console.log(nftData);
+
+    const [nftDat,setNftDat] = useState('')
+
     useEffect(()=>{
+        // log
+          // fetch all nfts created by
+    const userListedNfts=async()=>{
+        try {
+            const provider = new ethers.providers.Web3Provider(connector)
+            const signer = provider.getSigner()
+            const contract = new ethers.Contract(address,abi,signer)
+            const NFTS = await contract.fetchMyListedItems()
+            const data = await Promise.all(NFTS.map(async i =>{
+                const tokenURI = await contract.tokenURI(i.tokenId)
+                let meta = await axios.get(tokenURI);
+                meta = meta.data;
+                console.log('som',meta);
+                let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
+                let item = {
+                    price,
+                    tokenId: i.tokenId,
+                    seller: i.seller,
+                    owner: i.owner,
+                    image: meta.file.pinataURL,
+                    name: meta.name,
+                  }
+                  return item
+            }))
+            setNftDat(data)
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
         userListedNfts()
-    },[])
+    }
+    },[nftDat])
+
     var setting = {
         infinite: true,
         slidesToShow: 3,
@@ -65,8 +97,8 @@ const MyListedNFTs =()=>{
                 {/* <!-- start single product --> */}
                 <Slider {...setting}>
                     {
-                        nftData?
-                        nftData.map((nft,i)=>(
+                        nftDat?
+                        nftDat.map((nft,i)=>(
                             <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                             <div className="product-style-one no-overlay">
                                 <div className="card-thumbnail">

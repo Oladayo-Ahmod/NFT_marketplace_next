@@ -53,11 +53,6 @@ const TransactionProviderr =({children})=>{
             console.log('please install metamask')
         }
     }
-
-    // useEffect(()=>{
-    //     // console.log(testSecret);
-    //     AllUnsoldNfts()
-    // },[nftData])
     useEffect(()=>{
         connectWallet(connector)
     },[account])
@@ -173,39 +168,6 @@ const TransactionProviderr =({children})=>{
         // ])
         // .commit()
 
-    }
-
-    const AllUnsoldNfts = async()=>{
-        try{
-            const provider = new ethers.providers.Web3Provider(connector)
-            const signer = provider.getSigner()
-            const contract = new ethers.Contract(address,abi,signer)
-            const NFTS = await contract.allUnsoldItems()
-            const data = await Promise.all(NFTS.map(async i =>{
-                const tokenURI = await contract.tokenURI(i.tokenId)
-                // console.log(tokenURI);
-                let meta = await axios.get(tokenURI);
-                // console.log(meta);
-                meta = meta.data;
-                let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
-                let item = {
-                    price,
-                    tokenId: i.tokenId,
-                    seller: i.seller,
-                    owner: i.owner,
-                    image: meta.file.pinataURL,
-                    name: meta.name,
-                  }
-                  return item
-            }))
-            console.log('datas',data);
-            setNftData(data)
-            
-        }
-
-        catch(error){
-            console.log(error);
-        }
     }
 
     // buy nft 
@@ -348,7 +310,6 @@ const TransactionProviderr =({children})=>{
                 account,
                 CreateNft,
                 formData,
-                AllUnsoldNfts,
                 disability,
                 nftData,
                 setFormData,

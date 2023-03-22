@@ -9,7 +9,10 @@ const NftDetails =()=>{
     const {tokenId} = router.query;
     // const check = nftData.
     useEffect(()=>{
-        // getNft(1)
+        getNft(tokenId)
+        // const check = singleData.map(i=> console.log(i))
+        // console.log(singleData);
+        // console.log(singleData[ot])
     })
     // console.log(tokenId.toBig)
     // const check = getNft(tokenId)

@@ -200,24 +200,20 @@ const TransactionProviderr =({children})=>{
             const provider = new ethers.providers.Web3Provider(connector)
             const signer = provider.getSigner()
             const contract = new ethers.Contract(address,abi,signer)
+            const tokenURI = await contract.tokenURI(tokenId);
             const NFTS = await contract.getItemById(tokenId)
-            const data = await Promise(NFTS.map(async i =>{
-                const tokenURI = await contract.tokenURI(i.tokenId)
-                let meta = await axios.get(tokenURI);
-                meta = meta.data;
-                let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
-                let item = {
-                    price,
-                    tokenId: i.tokenId,
-                    seller: i.seller,
-                    owner: i.owner,
-                    image: meta.file.pinataURL,
-                    name: meta.name,
-                  }
-                  return item
-            }))
-            setSingleData(data)
-            // setNftData(data)
+            let meta = await axios.get(tokenURI);
+            meta = meta.data;
+            let item = {
+                price : meta.price,
+                tokenId,
+                seller: NFTS.seller,
+                owner: NFTS.owner,
+                image: meta.file.pinataURL,
+                name: meta.name,
+            }
+
+            setSingleData(item)
             
         }
 

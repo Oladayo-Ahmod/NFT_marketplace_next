@@ -141,7 +141,7 @@ const NewestItem =()=>{
                                             owned
                                           </button>
                                             :
-                                            <button className='btn btn-primary btn-md' disabled>
+                                            <button className='btn btn-primary btn-md' onClick={()=>buyNft(nft.tokenId,nft.price)}>
                                             Buy
                                           </button>
                                            

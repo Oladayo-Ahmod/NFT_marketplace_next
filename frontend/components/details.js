@@ -4,23 +4,15 @@ import { useContext,useEffect } from 'react';
 import { TransactionContext } from "../context/TransactionContext"
 
 const NftDetails =()=>{
-    const {getNft,nftData,singleData} = useContext(TransactionContext)
+    const {getNft,singleData,buyNft,account} = useContext(TransactionContext)
     const router = useRouter()
     const {tokenId} = router.query;
-    // const check = nftData.
+
     useEffect(()=>{
         getNft(tokenId)
-        // const check = singleData.map(i=> console.log(i))
         // console.log(singleData);
-        // console.log(singleData[ot])
-    })
-    // console.log(tokenId.toBig)
-    // const check = getNft(tokenId)
-    // useEffect(()=>{
-    //    console.log(singleData)
-    // },[singleData])
+    },[singleData])
 
-    // console.log(check);
     return (
         <>
         <div className="rn-breadcrumb-inner ptb--30">
@@ -51,9 +43,19 @@ const NftDetails =()=>{
                             <div class="tab-content rn-pd-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                     <div class="rn-pd-thumbnail">
-                                        <Image width={421} height={421}  src="/images/portfolio/portfolio-01.jpg" alt="Nft_Profile" />
+                                        <Image width={421} height={421}  loader={()=>singleData.image} src={singleData.image}alt="Nft_Profile" />
                                     </div>
-                                    <button style={{width:'100%'}} class='btn btn-primary my-2'>Buy</button>
+                                    {
+                                            Number(account) == Number(singleData.seller)  || account == singleData.owner ? 
+                                            <button className='btn btn-danger btn-md' disabled>
+                                            owned
+                                          </button>
+                                            :
+                                            <button style={{width:'100%'}} class='btn btn-primary my-2' onClick={()=>buyNft(singleData.tokenId,singleData.price)}>
+                                            Buy
+                                          </button>
+                                           
+                                        }
                                 </div>
                             </div>
 
@@ -65,7 +67,7 @@ const NftDetails =()=>{
                 <div class="col-lg-5 col-md-12 col-sm-12 mt_md--50 mt_sm--60">
                     <div class="rn-pd-content-area">
                         <div class="pd-title-area">
-                            <h4 class="title">The Amazing Game</h4>
+                            <h4 class="title">{singleData.name}</h4>
                             <div class="pd-react-area">
                                 <div class="heart-count">
                                     <i data-feather="heart"></i>
@@ -92,7 +94,7 @@ const NftDetails =()=>{
                                 </div>
                             </div>
                         </div>
-                        <span class="bid">Height bid <span class="price">0.11wETH</span></span>
+                        <span class="bid">Height bid <span class="price">{singleData.price }ETH</span></span>
                         <h6 class="title-name">
                             #description
                         </h6>

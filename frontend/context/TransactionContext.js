@@ -205,6 +205,10 @@ const TransactionProviderr =({children})=>{
             let meta = await axios.get(tokenURI);
             meta = meta.data;
             let item = {
+                description : meta.description,
+                size : meta.size,
+                royalty : meta.royalty,
+                properties : meta.properties,
                 price : meta.price,
                 tokenId,
                 seller: NFTS.seller,

@@ -48,7 +48,7 @@ const NftDetails =()=>{
                                     {
                                             Number(account) == Number(singleData.seller)  || account == singleData.owner ? 
                                             <button className='btn btn-danger btn-md' disabled>
-                                            owned
+                                            Owned by you
                                           </button>
                                             :
                                             <button style={{width:'100%'}} class='btn btn-primary my-2' onClick={()=>buyNft(singleData.tokenId,singleData.price)}>
@@ -96,40 +96,14 @@ const NftDetails =()=>{
                         </div>
                         <span class="bid">Height bid <span class="price">{singleData.price }ETH</span></span>
                         <h6 class="title-name">
-                            #description
+                           {singleData.description}
                         </h6>
                         <div class="catagory-collection">
                             <div class="catagory">
-                                <span>Catagory <span class="color-body">
-                                        10% royalties</span></span>
-                                <div class="top-seller-inner-one">
-                                    <div class="top-seller-wrapper">
-                                        <div class="thumbnail">
-                                            <a href="#"><Image width={42} height={42} src="/images/client/client-1.png" alt="Nft_Profile" /></a>
-                                        </div>
-                                        <div class="top-seller-content">
-                                            <a href="#">
-                                                <h6 class="name">Brodband</h6>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <span>Royalties <span class="color-body">
+                                        {singleData.royalty} royalties</span></span>
                             </div>
-                            <div class="collection">
-                                <span>Collections</span>
-                                <div class="top-seller-inner-one">
-                                    <div class="top-seller-wrapper">
-                                        <div class="thumbnail">
-                                            <a href="#"><Image  width={42} height={42} src="/images/client/client-2.png" alt="Nft_Profile" /></a>
-                                        </div>
-                                        <div class="top-seller-content">
-                                            <a href="#">
-                                                <h6 class="name">Brodband</h6>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                         {/* <a class="btn btn-primary-alta" href="#">Unlockable content included</a> */}
                         <div class="rn-bid-details">
@@ -137,6 +111,7 @@ const NftDetails =()=>{
                                 <nav class="tab-button-one">
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                         <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true">Details</button>
+                                        <small></small>
                                     </div>
                                 </nav>
                                 <div class="tab-content rn-bid-content" id="nav-tabContent">
@@ -246,7 +221,9 @@ const NftDetails =()=>{
                                                     </div>
                                                     <div class="top-seller-content">
                                                         <a href="#">
-                                                            <h6 class="name">Brodband</h6>
+                                                            <h6 class="name">
+                                                            {singleData.owner ? `${singleData.owner.slice(0,6)}...${singleData.owner.slice(singleData.owner.length -4)}` : ''}
+                                                            </h6>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -259,23 +236,16 @@ const NftDetails =()=>{
                                                 <div class="property-wrapper">
                                                     {/* <!-- single property --> */}
                                                     <div class="pd-property-inner">
-                                                        <span class="color-body type">HYPE TYPE</span>
-                                                        <span class="color-white value">CALM AF (STILL)</span>
+                                                        <span class="color-body type">SIZE</span>
+                                                        <span class="color-white value">{singleData.size}</span>
                                                     </div>
                                                     {/* <!-- single property End -->
                                                     <!-- single property --> */}
                                                     <div class="pd-property-inner">
-                                                        <span class="color-body type">BASTARDNESS</span>
-                                                        <span class="color-white value">C00LIO BASTARD</span>
+                                                        <span class="color-body type">PROPERTIES</span>
+                                                        <span class="color-white value">{singleData.properties}</span>
                                                     </div>
-                                                    {/* <!-- single property End -->
-                                                    <!-- single property --> */}
-                                                    <div class="pd-property-inner">
-                                                        <span class="color-body type">TYPE</span>
-                                                        <span class="color-white value">APE</span>
-                                                    </div>
-                                                    {/* <!-- single property End -->
-                                                    <!-- single property --> */}
+                                          
                                                     
                                                     {/* <!-- single property End --> */}
                                                 </div>

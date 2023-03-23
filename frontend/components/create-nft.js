@@ -44,7 +44,7 @@ const [fileUrl,setFileUrl] = useState()
 
                         <div className="brows-file-wrapper">
                             {/* <!-- actual upload which is hidden --> */}
-                            <input name="createinputfile" id="createinputfile" type="file" className="inputfile" onChange={e=>fileWatcher(e)} />
+                            <input name="createinputfile" id="createinputfile" type="file" className="inputfile" onChange={e=>fileWatcher(e)} required/>
                             <Image id="createfileImage" src="/images/portfolio/portfolio-05.jpg" alt="" width={50} height={50} />
                             {/* <!-- our custom upload button --> */}
                             <label for="createinputfile" title="No File Choosen">

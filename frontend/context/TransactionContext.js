@@ -63,37 +63,49 @@ const TransactionProviderr =({children})=>{
 
     const CreateNft = async function(){
         try{
-            setDisability(true)
-            setMessage('Listing Item...')
             const {name,description,size,royalty,properties,price,file} = formData
-            const metaDataUrl = await uploadMetaData()
-            const provider = new ethers.providers.Web3Provider(connector);
-            const signer = provider.getSigner()
-            const contract = new ethers.Contract(address,abi,signer)
-            const NFTprice = new ethers.utils.parseUnits(price,'ether')
-            const listingPrice = await contract.getListingPrice()
-            const transaction = await contract.createToken(metaDataUrl, NFTprice, { value: listingPrice })
-            await transaction.wait()
-            // const tokenId = wait.events[1].args.tokenId.toNumber()
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                text: `You have successfully created this item at ${price} ETH`,
-                showConfirmButton: false,
-                timer: 4000
-            })
-            setDisability(false)
-            setFormData({
-                name: '', 
-                description : '',
-                size: '',
-                royalty : '',
-                properties : '',
-                price : '',
-                file :''
-            })
-            setMessage('successfully listed!')
-
+            if (file && price) {
+                setDisability(true)
+                setMessage('Listing Item...')
+                const metaDataUrl = await uploadMetaData()
+                const provider = new ethers.providers.Web3Provider(connector);
+                const signer = provider.getSigner()
+                const contract = new ethers.Contract(address,abi,signer)
+                const NFTprice = new ethers.utils.parseUnits(price,'ether')
+                const listingPrice = await contract.getListingPrice()
+                const transaction = await contract.createToken(metaDataUrl, NFTprice, { value: listingPrice })
+                await transaction.wait()
+                // const tokenId = wait.events[1].args.tokenId.toNumber()
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    text: `You have successfully created this item at ${price} ETH`,
+                    showConfirmButton: false,
+                    timer: 4000
+                })
+                setDisability(false)
+                setFormData({
+                    name: '', 
+                    description : '',
+                    size: '',
+                    royalty : '',
+                    properties : '',
+                    price : '',
+                    file :''
+                })
+                setMessage('successfully listed!')
+    
+            }
+            else{
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'warning',
+                    text: `Please upload a valid NFT image`,
+                    showConfirmButton: true,
+                    timer: 4000
+                })
+            }
+            
 
             
         }

@@ -1,20 +1,24 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router';
-import { useContext,useEffect } from 'react';
+import { useContext,useEffect, useState } from 'react';
 import { TransactionContext } from "../context/TransactionContext"
 
 const NftDetails =()=>{
-    const {getNft,singleData,buyNft,account} = useContext(TransactionContext)
+    const {buyNft,getNft,singleData,account} = useContext(TransactionContext)
     const router = useRouter()
     const {tokenId} = router.query;
 
     useEffect(()=>{
-        getNft(tokenId)
-        // console.log(singleData);
-    },[singleData])
+    getNft(tokenId)
+    })
 
+    
     return (
+        
         <>
+        {singleData ? (
+            // <h1>jee</h1>
+            <div>
         <div className="rn-breadcrumb-inner ptb--30">
             <div className="container">
                 <div className="row align-items-center">
@@ -213,7 +217,7 @@ const NftDetails =()=>{
                                             <div class="top-seller-inner-one">
                                 
                                                 <h6 class="name-title">
-                                                    Owner
+                                                    Owner's Address
                                                 </h6>
                                                 <div class="top-seller-wrapper">
                                                     <div class="thumbnail">
@@ -265,6 +269,10 @@ const NftDetails =()=>{
             </div>
         </div>
     </div>
+    </div>
+     )
+     : <h1>Loading ....</h1> 
+     }
         </>
     )
 }

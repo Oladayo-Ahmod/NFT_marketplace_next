@@ -64,7 +64,7 @@ const TransactionProviderr =({children})=>{
     const CreateNft = async function(){
         try{
             const {name,description,size,royalty,properties,price,file} = formData
-            if (file && price) {
+            if (nftUrl && price) {
                 setDisability(true)
                 setMessage('Listing Item...')
                 const metaDataUrl = await uploadMetaData()

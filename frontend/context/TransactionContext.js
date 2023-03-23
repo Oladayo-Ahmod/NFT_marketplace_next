@@ -1,4 +1,5 @@
 import React, { Context,createContext, useEffect, useState } from "react"
+import { useRouter } from "next/router"
 import {abi,address} from '../constants/index'
 import {ethers} from 'ethers'
 import Swal from "sweetalert2"
@@ -32,6 +33,8 @@ const TransactionProviderr =({children})=>{
     const [message,setMessage] = useState('Submit Item')
     const [singleData,setSingleData] = useState()
     const [userNftData, setUserNftData] = useState('')
+    const {push} = useRouter()
+
 
      const fileWatcher = async function(e){
         let file = e.target.files[0]
@@ -187,6 +190,8 @@ const TransactionProviderr =({children})=>{
                 showConfirmButton: false,
                 timer: 4000
             })
+            push('/my-nfts')
+
 
 
         } catch (error) {

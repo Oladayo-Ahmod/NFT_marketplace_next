@@ -1,5 +1,6 @@
 
 import Image from "next/image"
+import Link from "next/link";
 import { TransactionContext } from "../context/TransactionContext"
 import React, { useEffect } from "react";
 import {ethers} from 'ethers'
@@ -15,21 +16,21 @@ const Navbar =()=>{
             <div className="header-inner">
                 <div className="header-left">
                     <div className="logo-thumbnail logo-custom-css">
-                        <a className="logo-light" href="index.html"><Image src="/images/logo/logo-white.png" width={100} height={100} alt="nft-logo" /></a>
-                        <a className="logo-dark" href="index.html"><Image src="/images/logo/logo-dark.png" width={100} height={100} alt="nft-logo" /></a>
+                        <Link className="logo-light" href="index.html"><Image src="/images/logo/logo-white.png" width={100} height={100} alt="nft-logo" /></Link>
+                        <Link className="logo-dark" href="index.html"><Image src="/images/logo/logo-dark.png" width={100} height={100} alt="nft-logo" /></Link>
                     </div>
                     <div className="mainmenu-wrapper">
                         <nav id="sideNav" className="mainmenu-nav d-none d-xl-block">
                             {/* <!-- Start Mainmanu Nav --> */}
                             <ul className="mainmenu">
                                 <li>
-                                    <a href="/">Home</a>
+                                    <Link href="/">Home</Link>
                                 </li>
-                                <li><a href='/create-nft'>Create NFTs</a>
+                                <li><Link href='/create-nft'>Create NFTs</Link>
                                 </li>
                           
-                                <li><a href="/my-nfts">My NFTs</a></li>
-                                <li><a href="/my-collection">My Collections</a></li>
+                                <li><Link href="/my-nfts">My NFTs</Link></li>
+                                <li><Link href="/my-collection">My Collections</Link></li>
                             </ul>
                             {/* <!-- End Mainmanu Nav --> */}
                         </nav>
@@ -67,37 +68,37 @@ const Navbar =()=>{
 
                     <div className="setting-option rn-icon-list notification-badge">
                         <div className="icon-box">
-                            <a href="activity.html"><i className="feather-bell"></i><span className="badge">6</span></a>
+                            <Link href="activity.html"><i className="feather-bell"></i><span className="badge">6</span></Link>
                         </div>
                     </div>
 
                     <div className="header_admin" id="header_admin">
                         <div className="setting-option rn-icon-list user-account">
                             <div className="icon-box">
-                                <a href="author.html"><Image src="/images/icons/boy-avater.png" fill alt="Images" /></a>
+                                <Link href="author.html"><Image src="/images/icons/boy-avater.png" fill alt="Images" /></Link>
                                 <div className="rn-dropdown">
                                     <div className="rn-inner-top">
-                                        <h4 className="title"><a href="product-details.html">Christopher William</a></h4>
-                                        <span><a href="#">Set Display Name</a></span>
+                                        <h4 className="title"><Link href="product-details.html">Christopher William</Link></h4>
+                                        <span><Link href="#">Set Display Name</Link></span>
                                     </div>
                                     <div className="rn-product-inner">
                                         <ul className="product-list">
                                             <li className="single-product-list">
                                                 <div className="thumbnail">
-                                                    <a href="product-details.html"><Image src="/images/portfolio/portfolio-07.jpg" width={50} height={50} alt="Nft Product Images" /></a>
+                                                    <Link href="product-details.html"><Image src="/images/portfolio/portfolio-07.jpg" width={50} height={50} alt="Nft Product Images" /></Link>
                                                 </div>
                                                 <div className="content">
-                                                    <h6 className="title"><a href="product-details.html">Balance</a></h6>
+                                                    <h6 className="title"><Link href="product-details.html">Balance</Link></h6>
                                                     <span className="price">25 ETH</span>
                                                 </div>
                                                 <div className="button"></div>
                                             </li>
                                             <li className="single-product-list">
                                                 <div className="thumbnail">
-                                                    <a href="product-details.html"><Image src="/images/portfolio/portfolio-01.jpg" width={50} height={50} alt="Nft Product Images" /></a>
+                                                    <Link href="product-details.html"><Image src="/images/portfolio/portfolio-01.jpg" width={50} height={50} alt="Nft Product Images" /></Link>
                                                 </div>
                                                 <div className="content">
-                                                    <h6 className="title"><a href="product-details.html">Balance</a></h6>
+                                                    <h6 className="title"><Link href="product-details.html">Balance</Link></h6>
                                                     <span className="price">25 ETH</span>
                                                 </div>
                                                 <div className="button"></div>
@@ -105,13 +106,13 @@ const Navbar =()=>{
                                         </ul>
                                     </div>
                                     <div className="add-fund-button mt--20 pb--20">
-                                        <a className="btn btn-primary-alta w-100" href="connect.html">Add Your More Funds</a>
+                                        <Link className="btn btn-primary-alta w-100" href="connect.html">Add Your More Funds</Link>
                                     </div>
                                     <ul className="list-inner">
-                                        <li><a href="author.html">My Profile</a></li>
-                                        <li><a href="edit-profile.html">Edit Profile</a></li>
-                                        <li><a href="connect.html">Manage funds</a></li>
-                                        <li><a href="login.html">Sign Out</a></li>
+                                        <li><Link href="author.html">My Profile</Link></li>
+                                        <li><Link href="edit-profile.html">Edit Profile</Link></li>
+                                        <li><Link href="connect.html">Manage funds</Link></li>
+                                        <li><Link href="login.html">Sign Out</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -130,14 +131,14 @@ const Navbar =()=>{
                     <div id="my_switcher" className="my_switcher setting-option">
                         <ul>
                             <li>
-                                <a href="javascript: void(0);" data-theme="light" className="setColor light">
+                                <Link href="javascript: void(0);" data-theme="light" className="setColor light">
                                     <Image className="sun-image" src="/images/icons/sun-01.svg" alt="Sun images" width={50} height={50}/>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="javascript: void(0);" data-theme="dark" className="setColor dark">
+                                <Link href="javascript: void(0);" data-theme="dark" className="setColor dark">
                                     <Image className="Victor Image" src="/images/icons/vector.svg" alt="Vector Images" width={50} height={50}/>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

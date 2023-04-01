@@ -2,6 +2,3 @@ contract/node_modules
 frontend/node_modules
 studio/node_modules
 /node_modules
-/artifacts
-/cache
-.env

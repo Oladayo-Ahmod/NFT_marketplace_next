@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import {abi,address} from '../constants/index'
 import {ethers} from 'ethers'
 import Swal from "sweetalert2"
-import {client} from '../constants/sanity.js'
+// import {client} from '../constants/sanity.js'
 import {uploadJSONToIPFS,uploadFileToIPFS} from '../constants/pinata.js'
 const axios = require('axios');
 
@@ -146,45 +146,7 @@ const TransactionProviderr =({children})=>{
             console.log(error);
         }
     }
-    const saveNftCreated =async(tokenId, ...others)=>{
-        try {
-            const txDoc = {
-                _type : 'nfts',
-                _id : others[7],
-                seller : others[8],
-                owner : others[9],
-                timestamp : new Date(Date.now()).toISOString(),
-                hash : others[7],
-                price : parseFloat(others[5]),
-                sold : false,
-                image : others[6],
-                size : others[2],
-                description : others[1],
-                royalty : others[3],
-                tokenId : tokenId,
-                properties : others[4]
-            }
-            await client.createIfNotExists(txDoc)
-            .then((data)=>{
-                console.log('data',data);
-            })
-        }
-        catch(error){
-            console.log(error);
-        }
-        // await client
-        // .patch(others[10])
-        // .setIfMissing({nfts : []})
-        // .insert('after','nfts[-1]',[
-        //     {
-        //         _key : others[8],
-        //         _ref : others[8]
-        //         // _hash : 'reference'
-        //     }
-        // ])
-        // .commit()
-
-    }
+  
 
     // buy nft 
     const buyNft = async (tokenId,price)=>{

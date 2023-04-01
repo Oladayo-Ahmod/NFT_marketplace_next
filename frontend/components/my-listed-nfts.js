@@ -50,7 +50,8 @@ const MyListedNFTs =()=>{
     }
     userListedNfts()
 
-    },[nftDat])
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     var setting = {
         infinite: true,

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Slider from 'react-slick'
+import Link from 'next/link'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { useEffect,useContext } from 'react'
@@ -13,7 +14,8 @@ const MyNfts =()=>{
     const {resellNft,userNfts,userNftData} = useContext(TransactionContext)
     useEffect(()=>{
         userNfts()
-    },[userNftData])
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
     var setting = {
         infinite: true,
         slidesToShow: 3,
@@ -63,7 +65,7 @@ const MyNfts =()=>{
                     {
                         userNftData?
                         userNftData.map((nft,i)=>(
-                            <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
+                            <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3" key={nft.tokenId}>
                             <div className="product-style-one no-overlay">
                                 <div className="card-thumbnail">
                                     <Link href="product-details.html"><Image loader={()=>nft.image} src={nft.image} width={339} height={339} alt="NFT_portfolio" /></Link>

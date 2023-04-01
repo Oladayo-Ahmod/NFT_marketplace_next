@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext,useEffect, useState } from 'react';
 import { TransactionContext } from "../context/TransactionContext"
@@ -28,7 +29,7 @@ const NftDetails =()=>{
                     </div>
                     <div className="col-lg-6 col-md-6 col-12">
                         <ul className="breadcrumb-list">
-                            <li className="item"><a href="index.html">Home</a></li>
+                            <li className="item"><Link href="index.html">Home</Link></li>
                             <li className="separator"><i className="feather-chevron-right"></i></li>
                             <li className="item current">Product Details</li>
                         </ul>
@@ -109,7 +110,7 @@ const NftDetails =()=>{
                             </div>
                            
                         </div>
-                        {/* <a class="btn btn-primary-alta" href="#">Unlockable content included</a> */}
+                        {/* <Link class="btn btn-primary-alta" href="#">Unlockable content included</Link> */}
                         <div class="rn-bid-details">
                             <div class="tab-wrapper-one">
                                 <nav class="tab-button-one">
@@ -124,10 +125,10 @@ const NftDetails =()=>{
                                         <div class="top-seller-inner-one">
                                             <div class="top-seller-wrapper">
                                                 <div class="thumbnail">
-                                                    <a href="#"><Image  width={42} height={42} src="/images/client/client-3.png" alt="Nft_Profile" /></a>
+                                                    <Link href="#"><Image  width={42} height={42} src="/images/client/client-3.png" alt="Nft_Profile" /></Link>
                                                 </div>
                                                 <div class="top-seller-content">
-                                                    <span>0.11wETH by <a href="#">Allen Waltker</a></span>
+                                                    <span>0.11wETH by <Link href="#">Allen Waltker</Link></span>
                                                     <span class="count-number">
                                                         1 hours ago
                                                     </span>
@@ -139,10 +140,10 @@ const NftDetails =()=>{
                                         <div class="top-seller-inner-one">
                                             <div class="top-seller-wrapper">
                                                 <div class="thumbnail">
-                                                    <a href="#"><Image  width={42} height={42} src="/images/client/client-4.png" alt="Nft_Profile" /></a>
+                                                    <Link href="#"><Image  width={42} height={42} src="/images/client/client-4.png" alt="Nft_Profile" /></Link>
                                                 </div>
                                                 <div class="top-seller-content">
-                                                    <span>0.09wETH by <a href="#">Joe Biden</a></span>
+                                                    <span>0.09wETH by <Link href="#">Joe Biden</Link></span>
                                                     <span class="count-number">
                                                         1.30 hours ago
                                                     </span>
@@ -154,10 +155,10 @@ const NftDetails =()=>{
                                         <div class="top-seller-inner-one">
                                             <div class="top-seller-wrapper">
                                                 <div class="thumbnail">
-                                                    <a href="#"><Image  width={42} height={42} src="/images/client/client-5.png" alt="Nft_Profile" /></a>
+                                                    <Link href="#"><Image  width={42} height={42} src="/images/client/client-5.png" alt="Nft_Profile" /></Link>
                                                 </div>
                                                 <div class="top-seller-content">
-                                                    <span>0.07wETH by <a href="#">Sonial mridha</a></span>
+                                                    <span>0.07wETH by <Link href="#">Sonial mridha</Link></span>
                                                     <span class="count-number">
                                                         1.35 hours ago
                                                     </span>
@@ -169,10 +170,10 @@ const NftDetails =()=>{
                                         <div class="top-seller-inner-one">
                                             <div class="top-seller-wrapper">
                                                 <div class="thumbnail">
-                                                    <a href="#"><Image  width={42} height={42} src="/images/client/client-6.png" alt="Nft_Profile" /></a>
+                                                    <Link href="#"><Image  width={42} height={42} src="/images/client/client-6.png" alt="Nft_Profile" /></Link>
                                                 </div>
                                                 <div class="top-seller-content">
-                                                    <span>0.07wETH by <a href="#">Tribute Dhusra</a></span>
+                                                    <span>0.07wETH by <Link href="#">Tribute Dhusra</Link></span>
                                                     <span class="count-number">
                                                         1.55 hours ago
                                                     </span>
@@ -184,10 +185,10 @@ const NftDetails =()=>{
                                         <div class="top-seller-inner-one">
                                             <div class="top-seller-wrapper">
                                                 <div class="thumbnail">
-                                                    <a href="#"><Image  width={42} height={42} src="/images/client/client-7.png" alt="Nft_Profile" /></a>
+                                                    <Link href="#"><Image  width={42} height={42} src="/images/client/client-7.png" alt="Nft_Profile" /></Link>
                                                 </div>
                                                 <div class="top-seller-content">
-                                                    <span>0.07wETH by <a href="#">Sonia Sobnom</a></span>
+                                                    <span>0.07wETH by <Link href="#">Sonia Sobnom</Link></span>
                                                     <span class="count-number">
                                                         2 hours ago
                                                     </span>
@@ -199,10 +200,10 @@ const NftDetails =()=>{
                                         <div class="top-seller-inner-one">
                                             <div class="top-seller-wrapper">
                                                 <div class="thumbnail">
-                                                    <a href="#"><Image  width={42} height={42} src="/images/client/client-8.png" alt="Nft_Profile" /></a>
+                                                    <Link href="#"><Image  width={42} height={42} src="/images/client/client-8.png" alt="Nft_Profile" /></Link>
                                                 </div>
                                                 <div class="top-seller-content">
-                                                    <span>0.02wETH by <a href="#">Sadia Rummon</a></span>
+                                                    <span>0.02wETH by <Link href="#">Sadia Rummon</Link></span>
                                                     <span class="count-number">
                                                         2.5 hours ago
                                                     </span>
@@ -221,14 +222,14 @@ const NftDetails =()=>{
                                                 </h6>
                                                 <div class="top-seller-wrapper">
                                                     <div class="thumbnail">
-                                                        <a href="#"><Image  width={42} height={42} src="/images/client/client-1.png" alt="Nft_Profile" /></a>
+                                                        <Link href="#"><Image  width={42} height={42} src="/images/client/client-1.png" alt="Nft_Profile" /></Link>
                                                     </div>
                                                     <div class="top-seller-content">
-                                                        <a href="#">
+                                                        <Link href="#">
                                                             <h6 class="name">
                                                             {singleData.owner ? `${singleData.owner.slice(0,6)}...${singleData.owner.slice(singleData.owner.length -4)}` : ''}
                                                             </h6>
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>

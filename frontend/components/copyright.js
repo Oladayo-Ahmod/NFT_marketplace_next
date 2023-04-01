@@ -1,3 +1,4 @@
+import Link from "next/link"
 const CopyRight =()=>{
     return (
         <>
@@ -8,19 +9,19 @@ const CopyRight =()=>{
                             <div className="copyright-left">
                                 <span>©2023 NFT MARKETPLACE, Inc. All rights reserved.</span>
                                 <ul className="privacy">
-                                    <li><a href="terms-condition.html">Terms</a></li>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                    <li><Link href="terms-condition.html">Terms</Link></li>
+                                    <li><Link href="privacy-policy.html">Privacy Policy</Link></li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-lg-6 col-md-12 col-sm-12">
                             <div className="copyright-right">
                                 <ul className="social-copyright">
-                                    <li><a href="#"><i></i></a></li>
-                                    <li><a href="#"><i ></i></a></li>
-                                    <li><a href="#"><i ></i></a></li>
-                                    <li><a href="#"><i></i></a></li>
-                                    <li><a href="#"><i></i></a></li>
+                                    <li><Link href="#"><i></i></Link></li>
+                                    <li><Link href="#"><i ></i></Link></li>
+                                    <li><Link href="#"><i ></i></Link></li>
+                                    <li><Link href="#"><i></i></Link></li>
+                                    <li><Link href="#"><i></i></Link></li>
                                 </ul>
                             </div>
                         </div>

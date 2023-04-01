@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { useEffect } from "react"
 import Slider from 'react-slick'
+import Link from "next/link"
 
 
 var setting = {
@@ -54,10 +55,10 @@ const Banner =()=>{
                     <div className="single-slide">
                         <div className="inner">
                             <div className="thumbnail">
-                                <a href="product-details.html"><Image src="/images/banner/banner-01.jpg" width={385} height={385} alt="NFT_portfolio" /></a>
+                                <Link href="product-details.html"><Image src="/images/banner/banner-01.jpg" width={385} height={385} alt="NFT_portfolio" /></Link>
                             </div>
                             <div className="banner-read-thumb">
-                                <h4><a href="product-details.html">Cubic Bazier</a></h4>
+                                <h4><Link href="product-details.html">Cubic Bazier</Link></h4>
                                 <span>John Lee</span>
                             </div>
                         </div>
@@ -70,10 +71,10 @@ const Banner =()=>{
                     <div className="single-slide">
                         <div className="inner">
                             <div className="thumbnail">
-                                <a href="product-details.html"><Image src="/images/banner/banner-02.jpg" width={385} height={385} alt="NFT_portfolio" /></a>
+                                <Link href="product-details.html"><Image src="/images/banner/banner-02.jpg" width={385} height={385} alt="NFT_portfolio" /></Link>
                             </div>
                             <div className="banner-read-thumb">
-                                <h4><a href="product-details.html">Faminho24</a></h4>
+                                <h4><Link href="product-details.html">Faminho24</Link></h4>
                                 <span>Mr.Alamin</span>
                             </div>
                         </div>
@@ -86,10 +87,10 @@ const Banner =()=>{
                     <div className="single-slide">
                         <div className="inner">
                             <div className="thumbnail">
-                                <a href="product-details.html"><Image src="/images/banner/banner-03.jpg" width={385} height={385} alt="NFT_portfolio" /></a>
+                                <Link href="product-details.html"><Image src="/images/banner/banner-03.jpg" width={385} height={385} alt="NFT_portfolio" /></Link>
                             </div>
                             <div className="banner-read-thumb">
-                                <h4><a href="product-details.html">Tzniistan</a></h4>
+                                <h4><Link href="product-details.html">Tzniistan</Link></h4>
                                 <span>Ms.maybin</span>
                             </div>
                         </div>
@@ -102,10 +103,10 @@ const Banner =()=>{
                     <div className="single-slide">
                         <div className="inner">
                             <div className="thumbnail">
-                                <a href="product-details.html"><Image src="/images/banner/banner-04.jpg" width={385} height={385} alt="NFT_portfolio" /></a>
+                                <Link href="product-details.html"><Image src="/images/banner/banner-04.jpg" width={385} height={385} alt="NFT_portfolio" /></Link>
                             </div>
                             <div className="banner-read-thumb">
-                                <h4><a href="product-details.html">Bazier</a></h4>
+                                <h4><Link href="product-details.html">Bazier</Link></h4>
                                 <span>Ms.Dhoni</span>
                             </div>
                         </div>

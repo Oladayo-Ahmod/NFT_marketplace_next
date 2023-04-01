@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useContext, useState } from 'react'
 import { TransactionContext } from "../context/TransactionContext"
+import Link from 'next/link'
 
 const Create =()=>{
 const {setFormData,CreateNft,formData,disability,fileWatcher,message} = useContext(TransactionContext)
@@ -17,7 +18,7 @@ const [fileUrl,setFileUrl] = useState()
                 </div>
                 <div className="col-lg-6 col-md-6 col-12">
                     <ul className="breadcrumb-list">
-                        <li className="item"><a href="index.html">Home</a></li>
+                        <li className="item"><Link href="index.html">Home</Link></li>
                         <li className="separator"><i className="feather-chevron-right"></i></li>
                         <li className="item current">Create a New File</li>
                     </ul>

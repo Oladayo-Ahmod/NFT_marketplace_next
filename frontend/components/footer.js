@@ -11,8 +11,8 @@ const Footer =()=>{
                     <div className="widget-content-wrapper">
                         <div className="footer-left">
                             <div className="logo-thumbnail logo-custom-css">
-                                <a className="logo-light" href="index.html"><Image width={106} height={35} src="/images/logo/logo-white.png" alt="nft-logo" /></a>
-                                <a className="logo-dark" href="index.html"><Image width={106} height={35} src="/images/logo/logo-dark.png" alt="nft-logo" /></a>
+                                <Link className="logo-light" href="index.html"><Image width={106} height={35} src="/images/logo/logo-white.png" alt="nft-logo" /></Link>
+                                <Link className="logo-dark" href="index.html"><Image width={106} height={35} src="/images/logo/logo-dark.png" alt="nft-logo" /></Link>
                             </div>
                             <p className="rn-footer-describe">
                                 Created with the collaboration of over 60 of the world's best Nuron Artists.
@@ -37,13 +37,13 @@ const Footer =()=>{
                     <div className="footer-widget widget-quicklink">
                         <h6 className="widget-title">Nuron</h6>
                         <ul className="footer-list-one">
-                            <li className="single-list"><a href="#">Protocol Explore</a></li>
-                            <li className="single-list"><a href="#">System Token</a></li>
-                            <li className="single-list"><a href="#">Otimize Time</a></li>
-                            <li className="single-list"><a href="#">Visual Checking</a></li>
-                            <li className="single-list"><a href="#">Fadeup System</a></li>
-                            <li className="single-list"><a href="#">Activity Log</a></li>
-                            <li className="single-list"><a href="#">System Auto Since</a></li>
+                            <li className="single-list"><Link href="#">Protocol Explore</Link></li>
+                            <li className="single-list"><Link href="#">System Token</Link></li>
+                            <li className="single-list"><Link href="#">Otimize Time</Link></li>
+                            <li className="single-list"><Link href="#">Visual Checking</Link></li>
+                            <li className="single-list"><Link href="#">Fadeup System</Link></li>
+                            <li className="single-list"><Link href="#">Activity Log</Link></li>
+                            <li className="single-list"><Link href="#">System Auto Since</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -52,13 +52,13 @@ const Footer =()=>{
                     <div className="footer-widget widget-information">
                         <h6 className="widget-title">Information</h6>
                         <ul className="footer-list-one">
-                            <li className="single-list"><a href="#">Market Explore</a></li>
-                            <li className="single-list"><a href="#">Ready Token</a></li>
-                            <li className="single-list"><a href="#">Main Option</a></li>
-                            <li className="single-list"><a href="#">Product Checking</a></li>
-                            <li className="single-list"><a href="blog.html">Blog Grid</a></li>
-                            <li className="single-list"><a href="about.html">About Us</a></li>
-                            <li className="single-list"><a href="#">Fix Bug </a></li>
+                            <li className="single-list"><Link href="#">Market Explore</Link></li>
+                            <li className="single-list"><Link href="#">Ready Token</Link></li>
+                            <li className="single-list"><Link href="#">Main Option</Link></li>
+                            <li className="single-list"><Link href="#">Product Checking</Link></li>
+                            <li className="single-list"><Link href="blog.html">Blog Grid</Link></li>
+                            <li className="single-list"><Link href="about.html">About Us</Link></li>
+                            <li className="single-list"><Link href="#">Fix Bug </Link></li>
                         </ul>
                     </div>
                 </div>
@@ -69,36 +69,36 @@ const Footer =()=>{
                         <ul className="footer-recent-post">
                             <li className="recent-post">
                                 <div className="thumbnail">
-                                    <a href="product-details.html">
+                                    <Link href="product-details.html">
                                         <Image  src="/images/portfolio/portfolio-01.jpg" alt="Product Images" width={60} height={60}/>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="content">
-                                    <h6 className="title"><a href="product-details.html">#21 The Wonder</a></h6>
+                                    <h6 className="title"><Link href="product-details.html">#21 The Wonder</Link></h6>
                                     <p>Highest bid 1/20</p>
                                     <span className="price">0.244wETH</span>
                                 </div>
                             </li>
                             <li className="recent-post">
                                 <div className="thumbnail">
-                                    <a href="product-details.html">
+                                    <Link href="product-details.html">
                                         <Image  src="/images/portfolio/portfolio-02.jpg" alt="Product Images" width={60} height={60}/>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="content">
-                                    <h6 className="title"><a href="product-details.html">Diamond Dog</a></h6>
+                                    <h6 className="title"><Link href="product-details.html">Diamond Dog</Link></h6>
                                     <p>Highest bid 1/20</p>
                                     <span className="price">0.022wETH</span>
                                 </div>
                             </li>
                             <li className="recent-post">
                                 <div className="thumbnail">
-                                    <a href="product-details.html">
+                                    <Link href="product-details.html">
                                         <Image  src="/images/portfolio/portfolio-03.jpg" alt="Product Images" width={60} height={60} />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="content">
-                                    <h6 className="title"><a href="product-details.html">Morgan11</a></h6>
+                                    <h6 className="title"><Link href="product-details.html">Morgan11</Link></h6>
                                     <p>Highest bid 1/20</p>
                                     <span className="price">0.892wETH</span>
                                 </div>

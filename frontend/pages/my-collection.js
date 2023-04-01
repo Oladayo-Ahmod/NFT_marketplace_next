@@ -1,7 +1,7 @@
 import Head from "next/head"
 import MyListedNFTs from "../components/my-listed-nfts"
-import Footer from '@/components/Footer'
-import Navbar from '@/components/Navbar'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 
 const MyCollection = ()=>{
     return (

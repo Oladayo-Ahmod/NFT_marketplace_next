@@ -1,6 +1,6 @@
 import MyNfts from "../components/my-nfts"
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import Head from "next/head"
 
 const My_Nfts=()=>{

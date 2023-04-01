@@ -28,7 +28,7 @@ const TopCollection=()=>{
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
                     <div className="view-more-btn text-start text-sm-end">
-                        <a className="btn-transparent" href="#">VIEW ALL<i data-feather="arrow-right"></i></a>
+                        <Link className="btn-transparent" href="#">VIEW ALL<i data-feather="arrow-right"></i></Link>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@ const TopCollection=()=>{
             <div className="row g-5">
                  {/* <!-- start single collention --> */}
                 <div  className="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" className="rn-collection-inner-one">
+                    <Link href="product-details.html" className="rn-collection-inner-one">
                         <div className="collection-wrapper">
                             <div className="collection-big-thumbnail">
                                 <Image  src="/images/collection/collection-lg-01.jpg" className='test-some' alt="Nft_Profile" width={245} height={146} />
@@ -54,12 +54,12 @@ const TopCollection=()=>{
                                 <span className="items">27 Items</span>
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 </div>
                  {/* <!-- End single collention --> */}
                  {/* <!-- start single collention --> */}
                 <div   className="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" className="rn-collection-inner-one">
+                    <Link href="product-details.html" className="rn-collection-inner-one">
                         <div className="collection-wrapper">
                             <div className="collection-big-thumbnail">
                                 <Image  src="/images/collection/collection-lg-03.jpg" width={245} height={146}  alt="Nft_Profile" />
@@ -77,12 +77,12 @@ const TopCollection=()=>{
                                 <span className="items">20 Items</span>
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 </div>
                  {/* <!-- End single collention --> */}
                  {/* <!-- start single collention --> */}
                 <div   className="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" className="rn-collection-inner-one">
+                    <Link href="product-details.html" className="rn-collection-inner-one">
                         <div className="collection-wrapper">
                             <div className="collection-big-thumbnail">
                                 <Image  src="/images/collection/collection-lg-02.jpg" alt="Nft_Profile" width={245} height={146} />
@@ -100,12 +100,12 @@ const TopCollection=()=>{
                                 <span className="items">15 Items</span>
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 </div>
                  {/* <!-- End single collention --> */}
                  {/* <!-- start single collention --> */}
                 <div className="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" className="rn-collection-inner-one">
+                    <Link href="product-details.html" className="rn-collection-inner-one">
                         <div className="collection-wrapper">
                             <div className="collection-big-thumbnail">
                                 <Image  src="/images/collection/collection-lg-04.jpg" alt="Nft_Profile" width={245} height={146} />
@@ -123,14 +123,14 @@ const TopCollection=()=>{
                                 <span className="items">10 Items</span>
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 </div>
                  {/* <!-- End single collention --> */}
             </div>
         </div>
     </div>
     {/* <!-- collection area End --> */}
-    {/* </a> */}
+    {/* </Link> */}
         </>
     )
 }

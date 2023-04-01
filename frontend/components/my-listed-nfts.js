@@ -3,6 +3,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import {abi,address} from '../constants/index'
+import Link from 'next/link'
 import {ethers} from 'ethers'
 const axios = require('axios');
 import { useEffect,useContext, useState } from 'react'
@@ -103,7 +104,7 @@ const MyListedNFTs =()=>{
                             <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                             <div className="product-style-one no-overlay">
                                 <div className="card-thumbnail">
-                                    <a href="product-details.html"><Image loader={()=>nft.image} src={nft.image} width={339} height={339} alt="NFT_portfolio" /></a>
+                                    <Link href="product-details.html"><Image loader={()=>nft.image} src={nft.image} width={339} height={339} alt="NFT_portfolio" /></Link>
                                 </div>
                                 <div className="product-share-wrapper">
                                     <div className="share-btn share-btn-activation dropdown">
@@ -115,7 +116,7 @@ const MyListedNFTs =()=>{
         
                                     </div>
                                 </div>
-                                <a href="product-details.html"><span className="product-name">{nft.description}</span></a>
+                                <Link href="product-details.html"><span className="product-name">{nft.description}</span></Link>
                                 <div className="bid-react-area">
                                     <div className="last-bid">{nft.price}ETH</div>
                                     <div className="react-area">

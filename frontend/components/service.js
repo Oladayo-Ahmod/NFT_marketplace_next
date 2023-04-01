@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Service =()=>{
     return (
@@ -21,13 +22,13 @@ const Service =()=>{
                             </div>
                             <div className="subtitle">Step-01</div>
                             <div className="content">
-                                <h4 className="title"><a href="#">Set up your wallet</a></h4>
+                                <h4 className="title"><Link href="#">Set up your wallet</Link></h4>
                                 <p className="description">Powerful features and inclusions, which makes Nuron standout,
                                     easily customizable and scalable.</p>
-                                <a className="read-more-button" href="#"><i className="feather-arrow-right"></i></a>
+                                <Link className="read-more-button" href="#"><i className="feather-arrow-right"></i></Link>
                             </div>
                         </div>
-                        <a className="over-link" href="#"></a>
+                        <Link className="over-link" href="#"></Link>
                     </div>
                 </div>
                 {/* <!-- End single service --> */}
@@ -40,13 +41,13 @@ const Service =()=>{
                             </div>
                             <div className="subtitle">Step-02</div>
                             <div className="content">
-                                <h4 className="title"><a href="#">Create your collection</a></h4>
+                                <h4 className="title"><Link href="#">Create your collection</Link></h4>
                                 <p className="description">A great collection of beautiful website templates for your need.
                                     Choose the best suitable template.</p>
-                                <a className="read-more-button" href="#"><i className="feather-arrow-right"></i></a>
+                                <Link className="read-more-button" href="#"><i className="feather-arrow-right"></i></Link>
                             </div>
                         </div>
-                        <a className="over-link" href="#"></a>
+                        <Link className="over-link" href="#"></Link>
                     </div>
                 </div>
                 {/* <!-- End single service --> */}
@@ -59,13 +60,13 @@ const Service =()=>{
                             </div>
                             <div className="subtitle">Step-03</div>
                             <div className="content">
-                                <h4 className="title"><a href="#">Add your NFT's</a></h4>
+                                <h4 className="title"><Link href="#">Add your NFT's</Link></h4>
                                 <p className="description">We've made the template fully responsive, so it looks great on
                                     all devices: desktop, tablets and.</p>
-                                <a className="read-more-button" href="#"><i className="feather-arrow-right"></i></a>
+                                <Link className="read-more-button" href="#"><i className="feather-arrow-right"></i></Link>
                             </div>
                         </div>
-                        <a className="over-link" href="#"></a>
+                        <Link className="over-link" href="#"></Link>
                     </div>
                 </div>
                 {/* <!-- End single service --> */}
@@ -78,13 +79,13 @@ const Service =()=>{
                             </div>
                             <div className="subtitle">Step-04</div>
                             <div className="content">
-                                <h4 className="title"><a href="#">Sell Your NFT's</a></h4>
+                                <h4 className="title"><Link href="#">Sell Your NFT's</Link></h4>
                                 <p className="description">I throw myself down among the tall grass by the stream as I
                                     lie close to the earth NFT's.</p>
-                                <a className="read-more-button" href="#"><i className="feather-arrow-right"></i></a>
+                                <Link className="read-more-button" href="#"><i className="feather-arrow-right"></i></Link>
                             </div>
                         </div>
-                        <a className="over-link" href="#"></a>
+                        <Link className="over-link" href="#"></Link>
                     </div>
                 </div>
                 {/* <!-- End single service --> */}

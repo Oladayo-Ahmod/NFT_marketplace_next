@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -96,7 +97,7 @@ const NewestItem =()=>{
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
                     <div className="view-more-btn text-start text-sm-end">
-                        <a className="btn-transparent" href="#">VIEW ALL<i data-feather="arrow-right"></i></a>
+                        <Link className="btn-transparent" href="#">VIEW ALL<i data-feather="arrow-right"></i></Link>
                     </div>
                 </div>
             </div>
@@ -110,7 +111,7 @@ const NewestItem =()=>{
                             <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                             <div className="product-style-one no-overlay">
                                 <div className="card-thumbnail">
-                                    <a  href={`/nft-details/${nft.tokenId}`}><Image loader={()=>nft.image} src={nft.image} width={339} height={339} alt="NFT_portfolio" /></a>
+                                    <Link  href={`/nft-details/${nft.tokenId}`}><Image loader={()=>nft.image} src={nft.image} width={339} height={339} alt="NFT_portfolio" /></Link>
                                 </div>
                                 <div className="product-share-wrapper">
                                    
@@ -126,7 +127,7 @@ const NewestItem =()=>{
         
                                     </div>
                                 </div>
-                                <a href={`/nft-details/${nft.tokenId}`}><span className="product-name">{nft.description}</span></a>
+                                <Link href={`/nft-details/${nft.tokenId}`}><span className="product-name">{nft.description}</span></Link>
                                 {/* <span className="latest-bid">Highest bid 1/20</span> */}
                                 <div className="bid-react-area">
                                     <div className="last-bid">{nft.price}ETH</div>

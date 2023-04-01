@@ -66,7 +66,7 @@ const MyNfts =()=>{
                             <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
                             <div className="product-style-one no-overlay">
                                 <div className="card-thumbnail">
-                                    <a href="product-details.html"><Image loader={()=>nft.image} src={nft.image} width={339} height={339} alt="NFT_portfolio" /></a>
+                                    <Link href="product-details.html"><Image loader={()=>nft.image} src={nft.image} width={339} height={339} alt="NFT_portfolio" /></Link>
                                 </div>
                                 <div className="product-share-wrapper">
                                     <div className="share-btn share-btn-activation dropdown">
@@ -78,7 +78,7 @@ const MyNfts =()=>{
         
                                     </div>
                                 </div>
-                                <a href="product-details.html"><span className="product-name">{nft.description}</span></a>
+                                <Link href="product-details.html"><span className="product-name">{nft.description}</span></Link>
                                 <div className="bid-react-area">
                                     <div className="last-bid">{nft.price}ETH</div>
                                     <div className="react-area">

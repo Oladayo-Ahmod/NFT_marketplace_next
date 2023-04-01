@@ -102,7 +102,7 @@ const MyListedNFTs =()=>{
                     {
                         nftDat?
                         nftDat.map((nft,i)=>(
-                            <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
+                            <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12 p-3" key={nft.tokenId}>
                             <div className="product-style-one no-overlay">
                                 <div className="card-thumbnail">
                                     <Link href="product-details.html"><Image loader={()=>nft.image} src={nft.image} width={339} height={339} alt="NFT_portfolio" /></Link>

@@ -15,22 +15,7 @@ const nextConfig = {
       fs : false
     }
     return config
-  },
-  exportPathMap: async function(
-    defaultPathMap,
-    { dev, dir, outDir, distDir, buildId }
-  ) {
-    return {
-      "/": { page: "/" },
-      "/create-nft": { page: "/create-nft" },
-      "/my-nfts": { page: "/my-nfts" },
-      "/my-collection": { page: "/my-collection" }
-    };
-  },
-  images: {
-    unoptimized: true,
-  },
-  
+  }
 }
 
 module.exports = nextConfig
